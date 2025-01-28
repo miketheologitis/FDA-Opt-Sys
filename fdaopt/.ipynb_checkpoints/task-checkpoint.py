@@ -1,0 +1,277 @@
+"""fdaopt: A Flower / HuggingFace app."""
+
+import warnings
+from collections import OrderedDict
+
+import torch
+import transformers
+from datasets.utils.logging import disable_progress_bar
+from evaluate import load as load_metric
+import evaluate
+from flwr_datasets import FederatedDataset
+from flwr_datasets.partitioner import DirichletPartitioner
+from torch.optim import AdamW
+from torch.utils.data import DataLoader
+from transformers import AutoTokenizer, DataCollatorWithPadding
+from datasets import load_dataset
+
+warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore", category=FutureWarning)
+disable_progress_bar()
+transformers.logging.set_verbosity_error()
+
+
+fds = None  # Cache FederatedDataset
+
+
+def tokenize_function(ds_path, ds_name, tokenizer):
+    """
+    Return a tokenization function based on the dataset path and name.
+
+    This function returns the appropriate tokenization function for the specified dataset.
+    Currently, it supports the GLUE MRPC dataset.
+
+    Args:
+        ds_path (str): The path or identifier of the dataset.
+        ds_name (str): The name of the dataset.
+        tokenizer (AutoTokenizer): The tokenizer to be used.
+
+    Returns:
+        function: A tokenization function.
+    """
+
+    if ds_path == "glue" and ds_name == "mrpc":
+        return lambda example: tokenizer(example["sentence1"], example["sentence2"], truncation=True)
+    if ds_path == "glue" and ds_name == "rte":
+        return lambda example: tokenizer(example["sentence1"], example["sentence2"], truncation=True)
+    if ds_path == "glue" and ds_name == "stsb":
+        return lambda example: tokenizer(example["sentence1"], example["sentence2"], truncation=True)
+    if ds_path == "glue" and ds_name == "cola":
+        return lambda example: tokenizer(example["sentence"], truncation=True)
+    if ds_path == "glue" and ds_name == "sst2":
+        return lambda example: tokenizer(example["sentence"], truncation=True)
+    if ds_path == "glue" and ds_name == "qnli":
+        return lambda example: tokenizer(example["question"], example["sentence"], truncation=True)
+
+    return None
+
+
+def tokenize_client_dataset(client_dataset, tokenize_fn):
+    """
+    Tokenize and preprocess a client dataset.
+
+    This function tokenizes and preprocesses each dataset in the provided list of client datasets.
+    It applies the specified tokenization function, renames the "label" column to "labels",
+    removes unnecessary columns, and sets the format to PyTorch tensors.
+
+    Args:
+        client_dataset (datasets.arrow_dataset.Dataset): A client dataset to be tokenized and preprocessed.
+        tokenize_fn (function): A function that takes an example and returns its tokenized form.
+
+    Returns:
+        datasets.arrow_dataset.Dataset: A tokenized and preprocessed client datasets.
+    """
+
+    # Define the expected columns
+    expected_columns = ['labels', 'input_ids', 'token_type_ids', 'attention_mask']
+
+    tok_client_dataset = client_dataset.map(tokenize_fn, batched=True)
+
+    tok_client_dataset = tok_client_dataset.rename_column("label", "labels")
+
+    # Identify columns to remove
+    columns_to_remove = [
+        column for column in tok_client_dataset.column_names
+        if column not in expected_columns
+    ]
+
+    # Remove unnecessary columns
+    tok_client_dataset = tok_client_dataset.remove_columns(columns_to_remove)
+
+    # Set the format to PyTorch tensors
+    tok_client_dataset.set_format("torch")
+
+    return tok_client_dataset
+
+
+def load_data(partition_id: int, num_partitions: int, model_name: str):
+    """Load data (training) """
+    
+    # Only initialize `FederatedDataset` once
+    global fds
+    
+    if fds is None:
+        partitioner = DirichletPartitioner(
+            num_partitions=num_partitions, alpha=1., partition_by="label"
+        )
+        fds = FederatedDataset(
+            dataset="glue",
+            subset="mrpc",
+            partitioners={"train": partitioner},
+        )
+        
+    # ---- 1. Handle training data for client
+    
+    # Create client dataset
+    client_partition = fds.load_partition(partition_id, "train")
+
+    # Load the tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    
+    # Create the tokenization function
+    tokenize_fn = tokenize_function("glue", "mrpc", tokenizer)
+    
+    # Tokenize the client dataset
+    tok_client_dataset = tokenize_client_dataset(client_partition, tokenize_fn)
+    
+    # Create DataLoader for the client dataset
+    collate_fn = DataCollatorWithPadding(tokenizer=tokenizer)
+    client_dataloader = DataLoader(
+        tok_client_dataset, shuffle=True, batch_size=8, collate_fn=collate_fn
+    )
+
+    return client_dataloader
+
+
+def train(model, trainloader, epochs, device):
+    
+    optimizer = AdamW(model.parameters(), lr=5e-5)
+    
+    # Set the model to training mode
+    model.train()
+    
+    for _ in range(epochs):
+        
+        for batch in trainloader:
+            
+            batch = {k: v.to(device) for k, v in batch.items()}
+            
+            # Perform a forward pass
+            outputs = model(**batch)
+            loss = outputs.loss
+            
+            # Backward pass: compute gradients
+            loss.backward()
+            
+            # Update model parameters
+            optimizer.step()
+            
+            # Zero the gradients before the next backward pass
+            optimizer.zero_grad()
+            
+            
+def preprocess_test_dataset(raw_test_dataset, tokenize_fn, data_collator, batch_size):
+
+    # Define the expected columns
+    expected_columns = ['labels', 'input_ids', 'token_type_ids', 'attention_mask']
+
+    tok_test_dataset = raw_test_dataset.map(tokenize_fn, batched=True)
+
+    tok_test_dataset = tok_test_dataset.rename_column("label", "labels")
+
+    # Identify columns to remove
+    columns_to_remove = [
+        column for column in tok_test_dataset.column_names
+        if column not in expected_columns
+    ]
+
+    # Remove unnecessary columns
+    tok_test_dataset = tok_test_dataset.remove_columns(columns_to_remove)
+
+    # Set the format to PyTorch tensors
+    tok_test_dataset.set_format("torch")
+
+    # Create a DataLoader for the test dataset
+    test_ds = DataLoader(
+        tok_test_dataset, batch_size=batch_size, collate_fn=data_collator
+    )
+
+    return test_ds
+
+
+def get_test_ds(model_name):
+    """ Prepare test dataset and create corresponding DataLoaders. """
+
+    # Load the raw dataset
+    raw_datasets = load_dataset(path="glue", name="mrpc")
+
+    # Test dataset
+    raw_test_dataset = raw_datasets['validation']
+
+    # Load the tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+    # Create the tokenization function
+    tokenize_fn = tokenize_function("glue", "mrpc", tokenizer)
+
+    # Create DataLoaders for each client dataset
+    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+
+    # Preprocess the test dataset
+    test_ds = preprocess_test_dataset(raw_test_dataset, tokenize_fn, data_collator, 8)
+
+    return test_ds
+
+
+def get_evaluate_fn(model, model_name):
+    """Return an evaluation function for server-side evaluation."""
+    
+    # Test dataset
+    test_ds = get_test_ds(model_name)
+    
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    
+    model.to(device)
+
+    def compute_metrics(server_round, parameters, config):
+        
+        set_weights(model, parameters)
+
+        # Load the evaluation metric
+        metric = evaluate.load(path="glue", config_name="mrpc")
+
+        testing_loss = 0.0
+        num_batches = len(test_ds)
+
+        # Set the model to evaluation mode
+        model.eval()
+
+        for batch in test_ds:
+            batch = {k: v.to(device) for k, v in batch.items()}
+
+            # Perform a forward pass
+            outputs = model(**batch)
+            loss = outputs.loss
+
+            # Get logits and predictions
+            logits = outputs.logits
+            predictions = torch.argmax(logits, dim=-1)
+
+            # Add batch predictions and references to the metric
+            metric.add_batch(predictions=predictions, references=batch["labels"])
+
+            testing_loss += loss.item()
+
+        # Calculate the average test loss
+        average_test_loss = testing_loss / num_batches
+
+        # Compute the final evaluation metrics
+        metrics = metric.compute()
+
+        # Add the average test loss to the evaluation metrics
+        metrics['testing_loss'] = average_test_loss
+
+        # Compute and return the final evaluation metrics
+        return average_test_loss, metrics
+
+    return compute_metrics
+
+
+def get_weights(model):
+    return [val.cpu().numpy() for _, val in model.state_dict().items()]
+
+
+def set_weights(model, parameters):
+    params_dict = zip(model.state_dict().keys(), parameters)
+    state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
+    model.load_state_dict(state_dict, strict=True)

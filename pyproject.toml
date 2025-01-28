@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fdaopt"
+version = "1.0.0"
+description = ""
+license = "Apache-2.0"
+dependencies = [
+    "flwr[simulation]",
+    "torch",
+    "flwr-datasets",
+    "transformers",
+    "evaluate",
+    "datasets",
+    "scikit-learn",
+    "pandas"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.flwr.app]
+publisher = "mtheologitis"
+
+[tool.flwr.app.components]
+serverapp = "fdaopt.server_app:app"
+clientapp = "fdaopt.client_app:app"
+
+[tool.flwr.app.config]
+num-server-rounds = 100
+fraction-fit = 0.5
+local-epochs = 1
+model-name = "prajjwal1/bert-tiny" # Set a larger model if you have access to more GPU resources
+num-labels = 2
+
+[tool.flwr.federations]
+default = "localhost-gpu"
+
+[tool.flwr.federations.localhost]
+options.num-supernodes = 10
+
+[tool.flwr.federations.localhost-gpu]
+options.num-supernodes = 10
+options.backend.client-resources.num-cpus = 4 # each ClientApp assumes to use 4CPUs
+options.backend.client-resources.num-gpus = 0.25 # at most 1 ClientApps will run in a given GPU
