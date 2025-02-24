@@ -1,31 +1,30 @@
-# fdaopt: A Flower / HuggingFace app
+# Communication-Efficient Federated Learning of Language Models with Generalized Federated Dynamic Averaging
 
-## Install dependencies and project
+## Abstract
+Federated Learning (FL) enables the utilization of vast, previously
+inaccessible data sources. At the same time, pre-traned Language Models (LMs) have taken the world by storm and for good reason. They exhibit remarkable emergent abilities and are readily adapted to downstream tasks. This opens one of the most exciting frontiers in FL: fine-tuning LMs. Yet, a persistent challenge in FL is the frequent, rigid communication of parameters---a problem magnified by the sheer size of these modern models. The **FedOpt** family of algorithms has become the go-to approach for FL, relying on fixed but arbitrary intervals for model exchanges. Recently, the **FDA** algorithm prescribed a dynamic approach by monitoring the training progress. However, it introduced a hard-to-calibrate parameter and imposed a rigid synchronization scheme. In this work, we address these limitations by proposing the **FDA-Opt** family of algorithms---a unified generalization of both **FDA** and **FedOpt**. **FDA-Opt** eliminates the need for tuning additional parameters with a novel dynamic scheme, incorporates accelerated optimizers, and alleviates the original synchronization bottleneck. Our experimental evaluation demonstrates that **FDA-Opt** outperforms **FedOpt** even when it is configured with hyper-parameters specifically optimized for the latter. In other words, we show that **FDA-Opt** can seamlessly replace **FedOpt**.
 
+## Enviroment
+Requires python version 3.12.
 ```bash
-pip install -e .
+pip install torch torchvision torchaudio datasets transformers pandas evaluate scikit-learn scipy matplotlib
 ```
 
-## Run with the Simulation Engine
+## Paper Experiments
 
-In the `fdaopt` directory, use `flwr run` to run a local simulation:
-
+### Create the 510 unique experiments
 ```bash
-flwr run .
+bash paper-experiments.sh
+```
+### Run Locally
+
+Here, we utilize two GPUs (cuda:0 and cuda:1), each running up to *three* concurrent experiments. This choice is subject to available GPU RAM.
+```bash
+python -m simulator --device_limits cuda:0=3 cuda:1=3
 ```
 
-Refer to the [How to Run Simulations](https://flower.ai/docs/framework/how-to-run-simulations.html) guide in the documentation for advice on how to optimize your simulations.
+You can monitor the stderr and stdout at **results/output/**.
 
-## Run with the Deployment Engine
+### Visualize results
 
-> \[!NOTE\]
-> An update to this example will show how to run this Flower application with the Deployment Engine and TLS certificates, or with Docker.
-
-## Resources
-
-- Flower website: [flower.ai](https://flower.ai/)
-- Check the documentation: [flower.ai/docs](https://flower.ai/docs/)
-- Give Flower a ⭐️ on GitHub: [GitHub](https://github.com/adap/flower)
-- Join the Flower community!
-  - [Flower Slack](https://flower.ai/join-slack/)
-  - [Flower Discuss](https://discuss.flower.ai/)
+Go to **notebooks** and run **paper-results.ipynb**.
