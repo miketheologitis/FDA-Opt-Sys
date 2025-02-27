@@ -3,7 +3,6 @@ import os
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"  # Change to available GPU indices
 
-import torch
 from flwr.client import ClientApp, NumPyClient
 from flwr.common import Context
 from transformers import AutoModelForSequenceClassification

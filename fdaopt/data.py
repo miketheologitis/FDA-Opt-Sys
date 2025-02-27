@@ -1,16 +1,10 @@
 """fdaopt: A Flower / HuggingFace app."""
 
 import warnings
-from collections import OrderedDict
-
-import torch
 import transformers
 from datasets.utils.logging import disable_progress_bar
-from evaluate import load as load_metric
-import evaluate
 from flwr_datasets import FederatedDataset
 from flwr_datasets.partitioner import DirichletPartitioner
-from torch.optim import AdamW
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, DataCollatorWithPadding
 from datasets import load_dataset
