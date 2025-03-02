@@ -1,12 +1,3 @@
-import sys
-
-# Open a file in write mode
-log_file = open("logs/server.out", "w")
-
-# Redirect stdout and stderr to the file
-sys.stdout = log_file
-sys.stderr = log_file
-
 from confluent_kafka import Consumer, KafkaError
 import subprocess
 import json
