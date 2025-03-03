@@ -1,12 +1,42 @@
+from confluent_kafka import Consumer, KafkaError
 import json
-import os
+import uuid
 
-# Get the directory of the current script (main.py)
-script_dir = os.path.dirname(os.path.realpath(__file__))
-parameter_dir = os.path.normpath(os.path.join(script_dir, '../hyperparameters/'))
 
-def load_parameters(json_name='0.json'):
-    with open(f'{parameter_dir}/{json_name}') as f:
+def load_parameters_locally(json_filename):
+    with open(json_filename) as f:
         parameters = json.load(f)
         
     return parameters
+
+
+def load_parameters_kafka(topic='FedL', bootstrap_servers='localhost:9092'):
+
+    # Consumer example
+    c = Consumer({
+        'bootstrap.servers': bootstrap_servers,
+        'group.id': str(uuid.uuid4()),
+        'auto.offset.reset': 'latest'
+    })
+
+    c.subscribe([topic])
+
+    while True:
+        msg = c.poll(1.0)
+        if not msg:
+            continue
+        if msg.error():
+            if msg.error().code() == KafkaError._PARTITION_EOF:
+                continue
+            else:
+                print(msg.error())
+                break
+                
+        val = msg.value().decode("utf-8")
+        
+        # Parse the JSON string back into a Python data structure
+        parameters = json.loads(val)
+
+        c.close()
+
+        return parameters

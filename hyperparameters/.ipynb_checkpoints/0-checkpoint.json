@@ -7,7 +7,7 @@
     "path": "glue",
     "name": "mrpc",
     "batch_size": 8,
-    "dirichlet_alpha": 1.0
+    "dirichlet_alpha": 1
   },
   "training": {
     "num_clients": 2,
@@ -28,16 +28,18 @@
   },
   "clients": {
     "network": [
-      {"id": 0, "ip": "", "port": null, "data_path": ""},
-      {"id": 1, "ip": "", "port": null, "data_path": ""},
-      {"id": 2, "ip": "", "port": null, "data_path": ""},
-      {"id": 3, "ip": "", "port": null, "data_path": ""},
-      {"id": 4, "ip": "", "port": null, "data_path": ""},
-      {"id": 5, "ip": "", "port": null, "data_path": ""},
-      {"id": 6, "ip": "", "port": null, "data_path": ""},
-      {"id": 7, "ip": "", "port": null, "data_path": ""},
-      {"id": 8, "ip": "", "port": null, "data_path": ""},
-      {"id": 9, "ip": "", "port": null, "data_path": ""}
+      {
+        "id": 0,
+        "ip": "",
+        "port": "",
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_0.pth"
+      },
+      {
+        "id": 1,
+        "ip": "",
+        "port": "",
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_1.pth"
+      }
     ],
     "lr": 0.001
   }

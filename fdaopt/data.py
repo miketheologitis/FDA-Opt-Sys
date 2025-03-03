@@ -8,6 +8,7 @@ from flwr_datasets.partitioner import DirichletPartitioner
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, DataCollatorWithPadding
 from datasets import load_dataset
+from datasets import load_from_disk
 
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -112,26 +113,29 @@ def tokenize_client_dataset(client_dataset, tokenize_fn):
     return tok_client_dataset
 
 
-def load_data(partition_id, num_partitions, model_checkpoint, ds_path, ds_name):
+def load_data(partition_id, num_partitions, model_checkpoint, ds_path, ds_name, dirichlet_alpha, data_path=""):
     """Load data (training) """
     
-    # Only initialize `FederatedDataset` once
-    global fds
+    if data_path:
+        client_partition = load_from_disk(data_path)
     
-    if fds is None:
-        partitioner = DirichletPartitioner(
-            num_partitions=num_partitions, alpha=1., partition_by="label"
-        )
-        fds = FederatedDataset(
-            dataset=ds_path,
-            subset=ds_name,
-            partitioners={"train": partitioner},
-        )
+    else:
+        global fds  # Only initialize `FederatedDataset` once
+
+        if fds is None:
+            partitioner = DirichletPartitioner(
+                num_partitions=num_partitions, alpha=dirichlet_alpha, partition_by="label"
+            )
+            fds = FederatedDataset(
+                dataset=ds_path,
+                subset=ds_name,
+                partitioners={"train": partitioner},
+            )
+    
+        # Create client dataset
+        client_partition = fds.load_partition(partition_id, "train")
         
     # ---- 1. Handle training data for client
-    
-    # Create client dataset
-    client_partition = fds.load_partition(partition_id, "train")
 
     # Load the tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)

@@ -10,9 +10,11 @@ from torch.optim import SGD
 # Import custom modules
 from fdaopt.training import get_weights, set_weights, train
 from fdaopt.data import load_data
-from fdaopt.parameters import load_parameters
+from fdaopt.parameters import load_parameters_locally, load_parameters_kafka
 
 import argparse
+
+import time
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -43,8 +45,7 @@ class FlowerClient(NumPyClient):
 # ---------------------------------------------------------------------------- #
 
 def client_func(
-    context: Context, 
-    json_name: str, 
+    context: Context,
     total_clients: int, 
     client_id: int,
     device: str,
@@ -52,6 +53,8 @@ def client_func(
     num_labels: int,
     ds_path: str,
     ds_name: str,
+    dirichlet_alpha: float,
+    data_path: str,
     client_lr: float,
     local_epochs: int
 ):
@@ -60,7 +63,6 @@ def client_func(
 
     Parameters:
     - context (Context): Flower context.
-    - json_name (str): JSON configuration file name.
     - total_clients (int): Total number of FL clients.
     - client_id (int): Unique identifier for this client.
     - device (str): Computation device ('cpu' or 'cuda').
@@ -72,10 +74,10 @@ def client_func(
     - local_epochs (int): Number of local training epochs.
     """
     
-    print(f"Client {client_id} inside `client_fn`.")
+    #print(f"Client {client_id} inside `client_fn`.")
 
     # Load dataset partition for this client
-    trainloader = load_data(client_id, total_clients, model_checkpoint, ds_path, ds_name)
+    trainloader = load_data(client_id, total_clients, model_checkpoint, ds_path, ds_name, dirichlet_alpha, data_path)
 
     # Initialize model
     model = AutoModelForSequenceClassification.from_pretrained(
@@ -104,7 +106,8 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--client_id', type=int, required=True, help="The client ID.")
-    parser.add_argument('--cuda', type=str, default="0", help="CUDA_VISIBLE_DEVICES. e.g, '0,1'")
+    parser.add_argument('--cuda', type=str, default="0", help="CUDA_VISIBLE_DEVICES.")
+    parser.add_argument('--local_json', type=str, default="", help="If given, the client reads json locally. Otherwise, client waits for kafka.")
     args = parser.parse_args()
     client_id = args.client_id
     os.environ["CUDA_VISIBLE_DEVICES"] = args.cuda  # Set GPU visibility (modify if needed)
@@ -114,8 +117,11 @@ if __name__ == '__main__':
     
     # ------------------------ Step 2: Get Json from Kafka ------------------------ #
     
-    json_name = '0.json'  # JSON file containing configuration for this client
-    params = load_parameters(json_name)  # Load parameters from JSON
+    if args.local_json:
+        params = load_parameters_locally(args.local_json)  # Load parameters from JSON
+    else:
+        params = load_parameters_kafka()
+        time.sleep(20)  # Allow server to start
     
     # ----------------------- Step 3: Load Configuration JSON ---------------------- #
     
@@ -127,6 +133,13 @@ if __name__ == '__main__':
     num_labels = params['model']['num_labels']
     ds_path = params['dataset']['path']
     ds_name = params['dataset']['name']
+    dirichlet_alpha = params['dataset']['dirichlet_alpha']
+    
+    data_path = ""
+    for client_info in  params['clients']['network']:
+        if client_info["id"] == client_id:
+            data_path = client_info["data_path"]
+            break
     
     # Extract client-specific training parameters
     client_lr = params['clients']['lr']
@@ -137,7 +150,6 @@ if __name__ == '__main__':
 
     client_fn = lambda context: client_func(
         context=context,
-        json_name=json_name, 
         total_clients=total_clients, 
         client_id=client_id,
         device=device,
@@ -145,6 +157,8 @@ if __name__ == '__main__':
         num_labels=num_labels,
         ds_path=ds_path,
         ds_name=ds_name,
+        data_path=data_path,
+        dirichlet_alpha=dirichlet_alpha,
         client_lr=client_lr,
         local_epochs=local_epochs
     )
