@@ -1,6 +1,10 @@
 """fdaopt: A Flower / HuggingFace Federated Learning Server."""
 
 import torch
+import os
+import argparse
+import threading
+import json
 import flwr.server.strategy as flwr_strat
 from flwr.common import ndarrays_to_parameters
 from flwr.server import start_server, ServerConfig
@@ -8,12 +12,7 @@ from transformers import AutoModelForSequenceClassification
 
 # Import custom modules
 from fdaopt.training import get_weights, get_evaluate_fn
-
-import os
-
-import argparse
-
-import json
+from fdaopt.networking import start_variance_monitoring_loop, create_pull_socket
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -76,6 +75,7 @@ if __name__ == '__main__':
     # Extract strategy and server details
     strategy_name = params['server']['strategy']['name']
     server_address = f"{params['server']['network']['ip']}:{params['server']['network']['port']}"
+    fda = params['server']['strategy']['fda']
 
     # ---------------------- Step 4: Initialize Model ---------------------- #
 
@@ -100,8 +100,15 @@ if __name__ == '__main__':
         initial_parameters=initial_parameters,
         evaluate_fn=get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name),
     )
+    
+    # ---------------------- Step 6: Create Pull socket that Accepts States ---------------------- #
+    if fda:
+        ip_pull_socket = params['server']['network']['ip_pull_socket']
+        port_pull_socket = params['server']['network']['port_pull_socket']
+        pull_socket = create_pull_socket(ip_pull_socket, port_pull_socket)
+        start_variance_monitoring_loop(pull_socket, clients_per_round)  # Threads and stuff...
 
-    # ---------------------- Step 6: Start Flower Server ---------------------- #
+    # ---------------------- Step 7: Start Flower Server ---------------------- #
 
     config = ServerConfig(num_rounds=total_rounds)
 

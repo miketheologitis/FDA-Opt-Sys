@@ -36,15 +36,40 @@ logging.basicConfig(level=logging.DEBUG, handlers=[file_handler, console_handler
 launched_processes = []
 
 
-def is_port_in_use(host: str, port: int) -> bool:
+def is_ip_port_in_use(host: str, port: int) -> bool:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         return s.connect_ex((host, port)) == 0
+    
+    
+def get_ips_ports_in_use(params):
+    
+    ports_ips_in_use = []
+    
+    ip = params['server']['network']['ip']
+    port = params['server']['network']['port']
+    if is_ip_port_in_use(ip, port):
+        ports_ips_in_use.append((ip, port))
+        
+    ip = params['server']['network']['ip_pull_socket']
+    port = params['server']['network']['port_pull_socket']
+    if is_ip_port_in_use(ip, port):
+        ports_ips_in_use.append((ip, port))
+
+    for client_dict in params['clients']['network']:
+        
+        ip = client_dict['ip']
+        port = client_dict['port']
+        
+        if is_ip_port_in_use(ip, port): 
+            ports_ips_in_use.append((ip, port))
+        
+    return ports_ips_in_use
 
 
 def launch_job(params):
     global launched_processes
-    
-    # -------- Step 1. Create Local .json
+        
+    # -------- Step 0. Create Local .json
     
     job_id = str(uuid.uuid4())[:8]
     json_name = "tmp-" + job_id + '.json'
@@ -60,15 +85,20 @@ def launch_job(params):
     # convert to string
     json_path_str = str(json_path)
     
-    d = {"jobid": job_id}
-    
     logging.info(f"Job is launching...", extra=d)
+    
+    # -------- Step 1. Check that requested IPS/PORTS are free
+    ports_ips_in_use = get_ips_ports_in_use(params)
+    
+    if ports_ips_in_use:
+        logging.error(f"The following requested IPS, PORTS are in use: {ports_ips_in_use}. Aborting Job...", extra=d)
+        return 
     
     # -------- Step 2. Launch Flower FL server
     server_ip = params['server']['network']['ip']
     server_port = params['server']['network']['port']
     
-    if is_port_in_use(server_ip, server_port):
+    if is_ip_port_in_use(server_ip, server_port):
         logging.error(f"The Flower server socket address {server_ip}:{server_port} is in use. Aborting Job...", extra=d)
         return
     
@@ -92,7 +122,7 @@ def launch_job(params):
     # -------- Step 3. Launch Clients
     
     # Wait so that the server has been launched
-    while not is_port_in_use(server_ip, server_port):
+    while not is_ip_port_in_use(server_ip, server_port):
         logging.info(f"Waiting for Flower FL Server to boot up...", extra=d)
         time.sleep(5)
         

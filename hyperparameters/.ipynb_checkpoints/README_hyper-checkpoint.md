@@ -17,9 +17,11 @@
   - `total_rounds`: Total number of federated training rounds.
 
 - `server`:
-  - `network`:
-    - `ip`: Server IP address.
-    - `port`: Server port number.
+    - `network`:
+      - `ip`: Server IP address.
+      - `port`: Server port number.
+      - `ip_pull_socket`: Server IP address for PULL socket.
+      - `port_pull_socket`: Server IP address for PULL socket.
     - `strategy`: Specifies the federated learning strategy used in Flower.
       - `name`: Name of the strategy (e.g., `"FedAdam"`). See [here](https://flower.ai/docs/framework/ref-api/flwr.server.strategy.html).
       - `fda`: Whether or not to use FDA extention. Either `True` or `False` 
@@ -29,8 +31,8 @@
 - `clients`:
   - `network`: List of client details:
     - `id`: Unique identifier for each client.
-    - `ip`: IP address for the client. **Optional** (empty otherwise)
-    - `port`: Port number for communication. **Optional** (empty otherwise)
+    - `ip`: IP address for client PULL socket. **Optional** (empty otherwise)
+    - `port`: Port number for client PULL socket. **Optional** (empty otherwise)
     - `data_path`: Dataset path for each client. **Optional** (empty otherwise)
   - `lr`: Learning rate for the client-side optimizer (SGD). The optimizer is fixed as Stochastic Gradient Descent (SGD) for all clients.
 

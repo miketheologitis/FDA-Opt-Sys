@@ -8,6 +8,7 @@ import transformers
 from datasets.utils.logging import disable_progress_bar
 import evaluate
 from fdaopt.data import get_test_ds
+from fdaopt.networking import send_number_matrix
 
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -15,7 +16,7 @@ disable_progress_bar()
 transformers.logging.set_verbosity_error()
 
 
-def train(model, optimizer, trainloader, device, epochs):
+def train(model, optimizer, trainloader, device, epochs, fda=False, push_to_server_socket=None):
     
     # Set the model to training mode
     model.train()
@@ -38,6 +39,9 @@ def train(model, optimizer, trainloader, device, epochs):
             
             # Zero the gradients before the next backward pass
             optimizer.zero_grad()
+            
+        if fda:
+            send_number_matrix(push_to_server_socket, 4., np.random.rand(1,2))
 
 
 def get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name):

@@ -10,6 +10,7 @@ from torch.optim import SGD
 # Import custom modules
 from fdaopt.training import get_weights, set_weights, train
 from fdaopt.data import load_data
+from fdaopt.networking import create_push_socket
 
 import argparse
 
@@ -27,13 +28,26 @@ warnings.filterwarnings("ignore")
 class FlowerClient(NumPyClient):
     """Custom Flower Client for Federated Learning using Hugging Face models."""
     
-    def __init__(self, model, optimizer, device, trainloader, local_epochs):
+    def __init__(self, model, optimizer, device, trainloader, local_epochs, ip, port, server_ip_pull_socket, server_port_pull_socket, fda):
         self.model = model
         self.optimizer = optimizer
         self.device = device
         self.trainloader = trainloader
         self.local_epochs = local_epochs
         self.model.to(self.device)
+        self.ip = ip
+        self.port = port
+        self.server_ip_pull_socket = server_ip_pull_socket
+        self.server_port_pull_socket = server_port_pull_socket
+        self.fda = fda
+        
+        self.push_to_server_socket = None
+        if self.fda:
+            self.push_to_server_socket = create_push_socket(
+                self.server_ip_pull_socket, self.server_port_pull_socket
+            )
+        
+        
 
     def fit(self, parameters, config):
         """Perform local training and return updated model weights."""
@@ -57,7 +71,12 @@ def client_func(
     dirichlet_alpha: float,
     data_path: str,
     client_lr: float,
-    local_epochs: int
+    local_epochs: int,
+    ip: str,
+    port: int,
+    server_ip_pull_socket: str,
+    server_port_pull_socket: int,
+    fda: bool
 ):
     """
     Function to initialize and return a Flower client.
@@ -94,7 +113,12 @@ def client_func(
         optimizer=optimizer,
         device=device,
         trainloader=trainloader, 
-        local_epochs=local_epochs
+        local_epochs=local_epochs,
+        ip=ip,
+        port=port,
+        server_ip_pull_socket=server_ip_pull_socket,
+        server_port_pull_socket=server_port_pull_socket,
+        fda=fda
     ).to_client()
 
 # ---------------------------------------------------------------------------- #
@@ -145,6 +169,14 @@ if __name__ == '__main__':
     local_epochs = params['training']['local_epochs']
     total_clients = params['training']['num_clients']
     
+    # Networking stuff...
+    ip = params['clients']['network'][client_id]['ip']
+    port = params['clients']['network'][client_id]['port']
+    server_ip_pull_socket = params['server']['network']['ip_pull_socket']
+    server_port_pull_socket = params['server']['network']['port_pull_socket']
+    
+    fda = params['server']['strategy']['fda']
+    
     # ----------------------- Step 4: Define Client Function ---------------------- #
 
     client_fn = lambda context: client_func(
@@ -159,7 +191,12 @@ if __name__ == '__main__':
         data_path=data_path,
         dirichlet_alpha=dirichlet_alpha,
         client_lr=client_lr,
-        local_epochs=local_epochs
+        local_epochs=local_epochs,
+        ip=ip,
+        port=port,
+        server_ip_pull_socket=server_ip_pull_socket,
+        server_port_pull_socket=server_port_pull_socket,
+        fda=fda
     )
     
     # ------------------------- Step 5: Start Flower Client ---------------------- #
