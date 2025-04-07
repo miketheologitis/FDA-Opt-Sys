@@ -6,7 +6,23 @@
 pip install flwr torch transformers datasets confluent-kafka
 ```
 
-## Run with the Simulation Engine
+## Run
+
+### Start Mediator
+
+Continuously listen and wait for parameters in Kafka and launch FL jobs:
+
+```bash
+python mediator.py --cleanup
+```
+
+Run 1-time local parameters and launch 1 job:
+```bashγσ
+python mediator.py --cleanup --local /home/mtheologitis/FDA-Opt-Sys/hyperparameters/test_8084.json
+```
+
+
+
 
 ### Start Server
 

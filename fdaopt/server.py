@@ -8,11 +8,12 @@ from transformers import AutoModelForSequenceClassification
 
 # Import custom modules
 from fdaopt.training import get_weights, get_evaluate_fn
-from fdaopt.parameters import load_parameters_locally, load_parameters_kafka
 
 import os
 
 import argparse
+
+import json
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -43,19 +44,18 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--cuda', type=str, default="0", help="CUDA_VISIBLE_DEVICES.")
-    parser.add_argument('--local_json', type=str, default="", help="If given, the client reads json locally. Otherwise, client waits for kafka.")
+    parser.add_argument('--local_json', type=str, required=True, help="The client reads json locally.")
     args = parser.parse_args()
     os.environ["CUDA_VISIBLE_DEVICES"] = args.cuda  # Set GPU visibility (modify if needed)
     
     # Set computation device
     device = "cuda" if torch.cuda.is_available() else "cpu"
     
-    # ------------------------ Step 2: Get Json from Kafka ------------------------ #
+    # ------------------------ Step 2: Get Json ------------------------ #
     
-    if args.local_json:
-        params = load_parameters_locally(args.local_json)  # Load parameters from JSON
-    else:
-        params = load_parameters_kafka()
+    # Load parameters from JSON
+    with open(args.local_json) as f:
+        params = json.load(f)
     
     # ------------------------ Step 3: Load Configuration ----------------------- #
 

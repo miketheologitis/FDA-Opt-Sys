@@ -1,0 +1,54 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.7180628203878215, {'accuracy': 0.3112745098039216, 'f1': 0.014035087719298246, 'testing_loss': 0.7180628203878215}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[93mWARNING [0m:   No fit_metrics_aggregation_fn provided
+[92mINFO [0m:      fit progress: (1, 2.3106385866800943, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 2.3106385866800943}, 23.90940025099553)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+Traceback (most recent call last):
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/server.py", line 108, in <module>
+    start_server(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/server/app.py", line 230, in start_server
+    hist = run_fl(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/server/server.py", line 492, in run_fl
+    hist, elapsed_time = server.fit(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/server/server.py", line 115, in fit
+    res_fit = self.fit_round(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/server/server.py", line 234, in fit_round
+    results, failures = fit_clients(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/server/server.py", line 353, in fit_clients
+    finished_fs, _ = concurrent.futures.wait(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/concurrent/futures/_base.py", line 307, in wait
+    waiter.event.wait(timeout)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/threading.py", line 607, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/threading.py", line 320, in wait
+    waiter.acquire()
+KeyboardInterrupt

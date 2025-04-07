@@ -10,11 +10,12 @@ from torch.optim import SGD
 # Import custom modules
 from fdaopt.training import get_weights, set_weights, train
 from fdaopt.data import load_data
-from fdaopt.parameters import load_parameters_locally, load_parameters_kafka
 
 import argparse
 
 import time
+
+import json
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -107,7 +108,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--client_id', type=int, required=True, help="The client ID.")
     parser.add_argument('--cuda', type=str, default="0", help="CUDA_VISIBLE_DEVICES.")
-    parser.add_argument('--local_json', type=str, default="", help="If given, the client reads json locally. Otherwise, client waits for kafka.")
+    parser.add_argument('--local_json', type=str, required=True, help="The client reads json locally.")
     args = parser.parse_args()
     client_id = args.client_id
     os.environ["CUDA_VISIBLE_DEVICES"] = args.cuda  # Set GPU visibility (modify if needed)
@@ -117,11 +118,9 @@ if __name__ == '__main__':
     
     # ------------------------ Step 2: Get Json from Kafka ------------------------ #
     
-    if args.local_json:
-        params = load_parameters_locally(args.local_json)  # Load parameters from JSON
-    else:
-        params = load_parameters_kafka()
-        time.sleep(20)  # Allow server to start
+    # Load parameters from JSON
+    with open(args.local_json) as f:
+        params = json.load(f)
     
     # ----------------------- Step 3: Load Configuration JSON ---------------------- #
     
