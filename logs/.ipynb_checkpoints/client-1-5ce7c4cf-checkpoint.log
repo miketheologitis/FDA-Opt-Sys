@@ -1,0 +1,115 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+08:26:09 - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+08:26:09 - Opened insecure gRPC connection (no certificates were passed)
+08:26:09 - ChannelConnectivity.IDLE
+08:26:09 - ChannelConnectivity.CONNECTING
+08:26:09 - ChannelConnectivity.READY
+[92mINFO [0m:      
+08:26:09 - 
+[92mINFO [0m:      Received: train message 8f27494a-11f3-4d6c-a292-7ca61c716152
+08:26:09 - Received: train message 8f27494a-11f3-4d6c-a292-7ca61c716152
+[91mERROR [0m:     Client raised an exception.
+Traceback (most recent call last):
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/app.py", line 572, in start_client_internal
+    reply_message = client_app(message=message, context=context)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 128, in handle_legacy_message_from_msgtype
+    fit_res = maybe_call_fit(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client.py", line 224, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/numpy_client.py", line 227, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/client.py", line 54, in fit
+    train_fda(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs, self.client_id, push_to_server_socket, pull_variance_approx_socket, sketch)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/training.py", line 99, in train_fda
+    drift_vec = vectorize(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/training.py", line 37, in vectorize
+    con.append(param.view(-1))
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+08:26:12 - Client raised an exception.
+Traceback (most recent call last):
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/app.py", line 572, in start_client_internal
+    reply_message = client_app(message=message, context=context)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 128, in handle_legacy_message_from_msgtype
+    fit_res = maybe_call_fit(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client.py", line 224, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/numpy_client.py", line 227, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/client.py", line 54, in fit
+    train_fda(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs, self.client_id, push_to_server_socket, pull_variance_approx_socket, sketch)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/training.py", line 99, in train_fda
+    drift_vec = vectorize(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/training.py", line 37, in vectorize
+    con.append(param.view(-1))
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+08:26:13 - gRPC channel closed
+Traceback (most recent call last):
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/client.py", line 207, in <module>
+    start_client(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/app.py", line 200, in start_client
+    start_client_internal(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/app.py", line 579, in start_client_internal
+    raise ex
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/app.py", line 572, in start_client_internal
+    reply_message = client_app(message=message, context=context)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 128, in handle_legacy_message_from_msgtype
+    fit_res = maybe_call_fit(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/client.py", line 224, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/flwr/client/numpy_client.py", line 227, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/client.py", line 54, in fit
+    train_fda(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs, self.client_id, push_to_server_socket, pull_variance_approx_socket, sketch)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/training.py", line 99, in train_fda
+    drift_vec = vectorize(
+  File "/home/mtheologitis/anaconda3/envs/flower/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/mtheologitis/FDA-Opt-Sys/fdaopt/training.py", line 37, in vectorize
+    con.append(param.view(-1))
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.

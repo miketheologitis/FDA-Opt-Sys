@@ -2,24 +2,23 @@
 
 import os
 import torch
+import argparse
+import time
+import json
+
 from flwr.client import NumPyClient, start_client
 from flwr.common import Context
 from transformers import AutoModelForSequenceClassification
 from torch.optim import SGD
 
 # Import custom modules
-from fdaopt.training import get_weights, set_weights, train
+from fdaopt.training import get_weights, set_weights, train, train_fda
 from fdaopt.data import load_data
-from fdaopt.networking import create_push_socket
+from fdaopt.networking import create_push_socket, create_pull_socket
+from fdaopt.sketch import AmsSketch
 
-import argparse
-
-import time
-
-import json
-
-import warnings
-warnings.filterwarnings("ignore")
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%H:%M:%S')
 
 # ---------------------------------------------------------------------------- #
 #                              Flower Client Class                             #
@@ -28,7 +27,7 @@ warnings.filterwarnings("ignore")
 class FlowerClient(NumPyClient):
     """Custom Flower Client for Federated Learning using Hugging Face models."""
     
-    def __init__(self, model, optimizer, device, trainloader, local_epochs, ip, port, server_ip_pull_socket, server_port_pull_socket, fda):
+    def __init__(self, model, optimizer, device, trainloader, local_epochs, ip, port, server_ip_pull_socket, server_port_pull_socket, fda, client_id):
         self.model = model
         self.optimizer = optimizer
         self.device = device
@@ -40,19 +39,22 @@ class FlowerClient(NumPyClient):
         self.server_ip_pull_socket = server_ip_pull_socket
         self.server_port_pull_socket = server_port_pull_socket
         self.fda = fda
+        self.client_id = client_id
         
-        self.push_to_server_socket = None
-        if self.fda:
-            self.push_to_server_socket = create_push_socket(
-                self.server_ip_pull_socket, self.server_port_pull_socket
-            )
-        
-        
-
     def fit(self, parameters, config):
         """Perform local training and return updated model weights."""
         set_weights(self.model, parameters)
-        train(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs)
+        
+        if self.fda:
+            # Create sockets for side-channel communication for local-states / variance monitoring
+            push_to_server_socket = create_push_socket(self.server_ip_pull_socket, self.server_port_pull_socket)
+            pull_variance_approx_socket = create_pull_socket(self.ip, self.port)
+            sketch = AmsSketch()
+            
+            train_fda(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs, self.client_id, push_to_server_socket, pull_variance_approx_socket, sketch)
+        else:
+            train(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs)
+            
         return get_weights(self.model), len(self.trainloader), {}
 
 # ---------------------------------------------------------------------------- #
@@ -118,7 +120,8 @@ def client_func(
         port=port,
         server_ip_pull_socket=server_ip_pull_socket,
         server_port_pull_socket=server_port_pull_socket,
-        fda=fda
+        fda=fda,
+        client_id=client_id
     ).to_client()
 
 # ---------------------------------------------------------------------------- #

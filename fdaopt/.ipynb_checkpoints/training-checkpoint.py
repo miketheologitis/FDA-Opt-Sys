@@ -1,27 +1,82 @@
 """fdaopt: A Flower / HuggingFace app."""
 
-import warnings
 from collections import OrderedDict
 
 import torch
+import numpy as np
 import transformers
-from datasets.utils.logging import disable_progress_bar
 import evaluate
 from fdaopt.data import get_test_ds
-from fdaopt.networking import send_number_matrix
+from fdaopt.networking import send_number_matrix, receive_number
 
-warnings.filterwarnings("ignore", category=UserWarning)
-warnings.filterwarnings("ignore", category=FutureWarning)
-disable_progress_bar()
-transformers.logging.set_verbosity_error()
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%H:%M:%S')
 
 
-def train(model, optimizer, trainloader, device, epochs, fda=False, push_to_server_socket=None):
+@torch.no_grad
+def compute_drift(old_params, new_params, device):
+
+    drifts = []
+
+    for old_param, new_param in zip(old_params, new_params):
+        old_param = old_param.to(device)
+        new_param = new_param.to(device)
+
+        drifts.append(
+            (new_param - old_param).to(device)
+        )
+
+    return drifts
+
+@torch.no_grad
+def vectorize(parameters, device):
+    
+    con = []
+    for param in parameters:
+        param = param.to(device)
+        con.append(param.reshape(-1))
+
+    return torch.cat(con)
+
+
+def train(model, optimizer, trainloader, device, epochs):
     
     # Set the model to training mode
     model.train()
     
-    for _ in range(epochs):
+    for i in range(epochs):
+        
+        for batch in trainloader:
+            
+            batch = {k: v.to(device) for k, v in batch.items()}
+            
+            # Perform a forward pass
+            outputs = model(**batch)
+            loss = outputs.loss
+            
+            # Backward pass: compute gradients
+            loss.backward()
+            
+            # Update model parameters
+            optimizer.step()
+            
+            # Zero the gradients before the next backward pass
+            optimizer.zero_grad()
+        
+        logging.info(f"[Client Training - FedOpt] Epoch {i+1}/{epochs} complete!")
+        
+        
+def train_fda(model, optimizer, trainloader, device, epochs, client_id, push_to_server_socket, pull_variance_approx_socket, ams_sketch):
+    
+    # Set the model to training mode
+    model.train()
+    
+    # Extract trainable parameters from the model, which reside on the device that the model resides in
+    train_params = [param for param in model.parameters() if param.requires_grad]
+    # Create a copy of the trainable parameters in the same device as model, detached from the computation graph
+    round_start_train_params = [param.detach().clone() for param in train_params]
+    
+    for i in range(epochs):
         
         for batch in trainloader:
             
@@ -40,8 +95,24 @@ def train(model, optimizer, trainloader, device, epochs, fda=False, push_to_serv
             # Zero the gradients before the next backward pass
             optimizer.zero_grad()
             
-        if fda:
-            send_number_matrix(push_to_server_socket, 4., np.random.rand(1,2))
+        
+        drift_vec = vectorize(
+            compute_drift(round_start_train_params, train_params, device),
+            device
+        )
+        # Compute the squared l2 norm of the client-drift
+        norm_sq_drift = float(torch.dot(drift_vec, drift_vec).cpu().numpy())
+        # compute sketch
+        sketch = ams_sketch.sketch_for_vector(drift_vec).numpy()
+            
+        send_number_matrix(push_to_server_socket, client_id, norm_sq_drift, sketch)
+        logging.info(f"[Client Training - FDA-Opt] Successfully sent local state to server!")
+
+        variance_approx = receive_number(pull_variance_approx_socket)
+        logging.info(f"[Client Training - FDA-Opt] Successfully received variance approximation from server: {variance_approx:.4f}!")
+        
+        logging.info(f"[Client Training - FDA-Opt] Epoch {i+1}/{epochs} complete!")
+            
 
 
 def get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name):

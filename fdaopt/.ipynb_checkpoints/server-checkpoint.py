@@ -14,8 +14,8 @@ from transformers import AutoModelForSequenceClassification
 from fdaopt.training import get_weights, get_evaluate_fn
 from fdaopt.networking import start_variance_monitoring_loop, create_pull_socket
 
-import warnings
-warnings.filterwarnings("ignore")
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%H:%M:%S')
 
 # ---------------------------------------------------------------------------- #
 #                           Strategy Selection Function                        #
@@ -76,6 +76,8 @@ if __name__ == '__main__':
     strategy_name = params['server']['strategy']['name']
     server_address = f"{params['server']['network']['ip']}:{params['server']['network']['port']}"
     fda = params['server']['strategy']['fda']
+    clients_network = params['clients']['network']  # list
+    
 
     # ---------------------- Step 4: Initialize Model ---------------------- #
 
@@ -106,7 +108,7 @@ if __name__ == '__main__':
         ip_pull_socket = params['server']['network']['ip_pull_socket']
         port_pull_socket = params['server']['network']['port_pull_socket']
         pull_socket = create_pull_socket(ip_pull_socket, port_pull_socket)
-        start_variance_monitoring_loop(pull_socket, clients_per_round)  # Threads and stuff...
+        start_variance_monitoring_loop(pull_socket, clients_per_round, clients_network)  # Threads and stuff...
 
     # ---------------------- Step 7: Start Flower Server ---------------------- #
 

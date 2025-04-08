@@ -1,0 +1,46 @@
+WARNING:root:[Monitor Thread] Starting to wait for Matrices
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+WARNING:root:[Monitor Thread] Waiting for 1 matrix.
+WARNING:flwr:DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+INFO:flwr:Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+INFO:flwr:Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+INFO:flwr:[INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+INFO:flwr:Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+INFO:flwr:Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.6422877674009285, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6422877674009285}
+INFO:flwr:initial parameters (loss, other metrics): 0.6422877674009285, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6422877674009285}
+[92mINFO [0m:      
+INFO:flwr:
+[92mINFO [0m:      [ROUND 1]
+INFO:flwr:[ROUND 1]

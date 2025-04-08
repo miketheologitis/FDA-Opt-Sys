@@ -7,8 +7,7 @@ from flwr_datasets import FederatedDataset
 from flwr_datasets.partitioner import DirichletPartitioner
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, DataCollatorWithPadding
-from datasets import load_dataset
-from datasets import load_from_disk
+from datasets import load_dataset, load_from_disk
 
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
