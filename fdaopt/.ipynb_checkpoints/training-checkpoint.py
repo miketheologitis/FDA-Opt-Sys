@@ -38,6 +38,16 @@ def vectorize(parameters, device):
 
     return torch.cat(con)
 
+@torch.no_grad
+def get_weights(model):
+    return [val.cpu().numpy() for _, val in model.state_dict().items()]
+
+@torch.no_grad
+def set_weights(model, parameters):
+    params_dict = zip(model.state_dict().keys(), parameters)
+    state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
+    model.load_state_dict(state_dict, strict=True)
+
 
 def train(model, optimizer, trainloader, device, epochs):
     
@@ -72,7 +82,7 @@ def train_fda(model, optimizer, trainloader, device, epochs, client_id, push_to_
     model.train()
     
     # Extract trainable parameters from the model, which reside on the device that the model resides in
-    train_params = [param for param in model.parameters() if param.requires_grad]
+    train_params = [param for param in model.parameters()]
     # Create a copy of the trainable parameters in the same device as model, detached from the computation graph
     round_start_train_params = [param.detach().clone() for param in train_params]
     
@@ -166,13 +176,4 @@ def get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name):
 
     return compute_metrics
             
-            
-def get_weights(model):
-    return [val.cpu().numpy() for _, val in model.state_dict().items()]
-
-
-def set_weights(model, parameters):
-    params_dict = zip(model.state_dict().keys(), parameters)
-    state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
-    model.load_state_dict(state_dict, strict=True)
     

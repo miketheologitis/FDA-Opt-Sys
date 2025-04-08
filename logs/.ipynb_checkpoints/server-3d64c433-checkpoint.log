@@ -1,0 +1,78 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+10:06:17 - DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+10:06:17 - Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+10:06:17 - Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+10:06:17 - [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+10:06:17 - Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+10:06:17 - Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.7155717880118126, {'accuracy': 0.38480392156862747, 'f1': 0.3802469135802469, 'testing_loss': 0.7155717880118126}
+10:06:18 - initial parameters (loss, other metrics): 0.7155717880118126, {'accuracy': 0.38480392156862747, 'f1': 0.3802469135802469, 'testing_loss': 0.7155717880118126}
+[92mINFO [0m:      
+10:06:18 - 
+[92mINFO [0m:      [ROUND 1]
+10:06:18 - [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+10:06:24 - configure_fit: strategy sampled 2 clients (out of 2)
+10:06:30 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+10:06:30 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0082!
+10:06:30 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0082!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:06:30 - aggregate_fit: received 2 results and 0 failures
+[93mWARNING [0m:   No fit_metrics_aggregation_fn provided
+10:06:30 - No fit_metrics_aggregation_fn provided
+[92mINFO [0m:      fit progress: (1, 1.0157483290223515, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.0157483290223515}, 12.782286458008457)
+10:06:31 - fit progress: (1, 1.0157483290223515, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.0157483290223515}, 12.782286458008457)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:06:31 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:06:31 - 
+[92mINFO [0m:      [ROUND 2]
+10:06:31 - [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+10:06:31 - configure_fit: strategy sampled 2 clients (out of 2)
+10:06:36 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+10:06:36 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0116!
+10:06:36 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0116!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:06:36 - aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      fit progress: (2, 1.1937135529211338, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1937135529211338}, 19.252049441012787)
+10:06:38 - fit progress: (2, 1.1937135529211338, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1937135529211338}, 19.252049441012787)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:06:38 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:06:38 - 
+[92mINFO [0m:      [ROUND 3]
+10:06:38 - [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+10:06:38 - configure_fit: strategy sampled 2 clients (out of 2)

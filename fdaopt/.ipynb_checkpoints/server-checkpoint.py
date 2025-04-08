@@ -1,5 +1,7 @@
 """fdaopt: A Flower / HuggingFace Federated Learning Server."""
 
+from fdaopt.fda_strategies import FdaAdam
+
 import torch
 import os
 import argparse
@@ -92,11 +94,19 @@ if __name__ == '__main__':
 
     # ---------------------- Step 5: Define Federated Strategy ---------------------- #
 
+    # if not fda:
+    
     # Get strategy class dynamically
     FedStrat = get_strategy_class(strategy_name)
 
+    # if fda:
+
     # Define FL strategy
-    strategy = FedStrat(
+    
+    # TODO: Same logic for the FdaOpt methods with getattr!!!
+    
+    #strategy = FedStrat(
+    strategy = FdaAdam(
         fraction_fit=fraction_fit,
         fraction_evaluate=0.0,  # Modify if evaluation is needed
         initial_parameters=initial_parameters,

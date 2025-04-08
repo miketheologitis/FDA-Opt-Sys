@@ -1,0 +1,129 @@
+11:41:30 - PyTorch version 2.5.1 available.
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+11:41:39 - DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+11:41:39 - Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+11:41:39 - Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+11:41:39 - [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+11:41:39 - Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+11:41:39 - Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.6779422549640431, {'accuracy': 0.625, 'f1': 0.7552, 'testing_loss': 0.6779422549640431}
+11:41:41 - initial parameters (loss, other metrics): 0.6779422549640431, {'accuracy': 0.625, 'f1': 0.7552, 'testing_loss': 0.6779422549640431}
+[92mINFO [0m:      
+11:41:41 - 
+[92mINFO [0m:      [ROUND 1]
+11:41:41 - [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:41:46 - configure_fit: strategy sampled 2 clients (out of 2)
+11:41:51 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:41:51 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0071!
+11:41:51 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0071!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:41:51 - aggregate_fit: received 2 results and 0 failures
+11:41:51 - [FdaAdam] 2!
+11:41:51 - [FdaAdam] 2!
+11:41:51 - [FdaAdam] 41!
+11:41:51 - [FdaAdam] 30522!
+[93mWARNING [0m:   No fit_metrics_aggregation_fn provided
+11:41:51 - No fit_metrics_aggregation_fn provided
+11:41:51 - [FdaAdam] <class 'flwr.common.typing.Parameters'>!
+[92mINFO [0m:      fit progress: (1, 1.7139769678469747, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.7139769678469747}, 11.825092559010955)
+11:41:53 - fit progress: (1, 1.7139769678469747, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.7139769678469747}, 11.825092559010955)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:41:53 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:41:53 - 
+[92mINFO [0m:      [ROUND 2]
+11:41:53 - [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:41:53 - configure_fit: strategy sampled 2 clients (out of 2)
+11:41:57 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:41:57 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0213!
+11:41:57 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0213!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:41:57 - aggregate_fit: received 2 results and 0 failures
+11:41:57 - [FdaAdam] 2!
+11:41:57 - [FdaAdam] 2!
+11:41:57 - [FdaAdam] 41!
+11:41:57 - [FdaAdam] 30522!
+11:41:57 - [FdaAdam] <class 'flwr.common.typing.Parameters'>!
+[92mINFO [0m:      fit progress: (2, 3.709594274850882, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 3.709594274850882}, 18.036766706005437)
+11:41:59 - fit progress: (2, 3.709594274850882, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 3.709594274850882}, 18.036766706005437)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:41:59 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:41:59 - 
+[92mINFO [0m:      [ROUND 3]
+11:41:59 - [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:41:59 - configure_fit: strategy sampled 2 clients (out of 2)
+11:42:03 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:42:03 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0602!
+11:42:03 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0602!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:42:03 - aggregate_fit: received 2 results and 0 failures
+11:42:03 - [FdaAdam] 2!
+11:42:03 - [FdaAdam] 2!
+11:42:03 - [FdaAdam] 41!
+11:42:03 - [FdaAdam] 30522!
+11:42:03 - [FdaAdam] <class 'flwr.common.typing.Parameters'>!
+[92mINFO [0m:      fit progress: (3, 4.832491056591857, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 4.832491056591857}, 25.110813803999918)
+11:42:06 - fit progress: (3, 4.832491056591857, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 4.832491056591857}, 25.110813803999918)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:42:06 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:42:06 - 
+[92mINFO [0m:      [ROUND 4]
+11:42:06 - [ROUND 4]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:42:06 - configure_fit: strategy sampled 2 clients (out of 2)
+11:42:11 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:42:11 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation -0.0064!
+11:42:11 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation -0.0064!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:42:11 - aggregate_fit: received 2 results and 0 failures
+11:42:11 - [FdaAdam] 2!
+11:42:11 - [FdaAdam] 2!
+11:42:11 - [FdaAdam] 41!
+11:42:11 - [FdaAdam] 30522!
+11:42:11 - [FdaAdam] <class 'flwr.common.typing.Parameters'>!
+[92mINFO [0m:      fit progress: (4, 1.0576169350567985, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.0576169350567985}, 31.54564101601136)
+11:42:12 - fit progress: (4, 1.0576169350567985, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.0576169350567985}, 31.54564101601136)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:42:12 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:42:12 - 
+[92mINFO [0m:      [ROUND 5]
+11:42:12 - [ROUND 5]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:42:12 - configure_fit: strategy sampled 2 clients (out of 2)
