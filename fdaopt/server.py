@@ -7,7 +7,8 @@ import os
 import argparse
 import threading
 import json
-import flwr.server.strategy as flwr_strat
+import flwr.server.strategy as flwr_strats
+import fdaopt.fda_strategies as fda_strats
 from flwr.common import ndarrays_to_parameters
 from flwr.server import start_server, ServerConfig
 from transformers import AutoModelForSequenceClassification
@@ -23,17 +24,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', date
 #                           Strategy Selection Function                        #
 # ---------------------------------------------------------------------------- #
 
-def get_strategy_class(strategy_name: str):
-    """
-    Dynamically imports and returns the strategy class from `flwr.server.strategy`.
+def get_flwr_strategy_class(strategy_name: str):
+    return getattr(flwr_strats, strategy_name) 
 
-    Parameters:
-    - strategy_name (str): The name of the strategy class as a string.
-
-    Returns:
-    - type: The strategy class from `flwr.server.strategy`
-    """
-    return getattr(flwr_strat, strategy_name)
+def get_fda_strategy_class(strategy_name: str):
+    strategy_name = strategy_name.replace('Fed', 'Fda')  # safety
+    return getattr(fda_strats, strategy_name) 
 
 # ---------------------------------------------------------------------------- #
 #                             Main Server Process                             #
@@ -97,16 +93,13 @@ if __name__ == '__main__':
     # if not fda:
     
     # Get strategy class dynamically
-    FedStrat = get_strategy_class(strategy_name)
-
-    # if fda:
+    if fda:
+        Strat = get_fda_strategy_class(strategy_name)
+    else:
+        Strat = get_flwr_strategy_class(strategy_name)
 
     # Define FL strategy
-    
-    # TODO: Same logic for the FdaOpt methods with getattr!!!
-    
-    #strategy = FedStrat(
-    strategy = FdaAdam(
+    strategy = Strat(
         fraction_fit=fraction_fit,
         fraction_evaluate=0.0,  # Modify if evaluation is needed
         initial_parameters=initial_parameters,
