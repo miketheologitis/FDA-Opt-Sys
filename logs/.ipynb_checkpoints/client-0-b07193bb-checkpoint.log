@@ -1,0 +1,200 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+14:31:03 - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+14:31:03 - Opened insecure gRPC connection (no certificates were passed)
+14:31:03 - ChannelConnectivity.IDLE
+14:31:03 - ChannelConnectivity.CONNECTING
+14:31:03 - ChannelConnectivity.READY
+[92mINFO [0m:      
+14:31:03 - 
+[92mINFO [0m:      Received: train message 97abce0d-f548-4ba6-aea7-e8b650c28c9c
+14:31:03 - Received: train message 97abce0d-f548-4ba6-aea7-e8b650c28c9c
+14:31:05 - [Client - FDA-Opt] Round's Threshold: -inf!
+14:31:10 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:10 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0058!
+14:31:10 - [Client Training - FDA-Opt] Epoch 1/10 complete!
+14:31:10 - [Client Training - FDA-Opt] Threshold is violated. Ending round!
+[92mINFO [0m:      Sent reply
+14:31:10 - Sent reply
+[92mINFO [0m:      
+14:31:12 - 
+[92mINFO [0m:      Received: train message f67b6bf6-fc6c-484c-ba79-c1a0ca46cf80
+14:31:12 - Received: train message f67b6bf6-fc6c-484c-ba79-c1a0ca46cf80
+14:31:13 - [Client - FDA-Opt] Round's Threshold: 0.0303!
+14:31:17 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:17 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0169!
+14:31:17 - [Client Training - FDA-Opt] Epoch 1/10 complete!
+14:31:17 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:23 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:23 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0307!
+14:31:23 - [Client Training - FDA-Opt] Epoch 2/10 complete!
+14:31:23 - [Client Training - FDA-Opt] Threshold is violated. Ending round!
+[92mINFO [0m:      Sent reply
+14:31:23 - Sent reply
+[92mINFO [0m:      
+14:31:25 - 
+[92mINFO [0m:      Received: train message 8930e639-9243-487a-abd4-923fbaa38c7f
+14:31:25 - Received: train message 8930e639-9243-487a-abd4-923fbaa38c7f
+14:31:26 - [Client - FDA-Opt] Round's Threshold: 0.0868!
+14:31:30 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:30 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0037!
+14:31:30 - [Client Training - FDA-Opt] Epoch 1/10 complete!
+14:31:30 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:34 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:34 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0062!
+14:31:34 - [Client Training - FDA-Opt] Epoch 2/10 complete!
+14:31:34 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:40 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:40 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0100!
+14:31:40 - [Client Training - FDA-Opt] Epoch 3/10 complete!
+14:31:40 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:43 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:43 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0117!
+14:31:43 - [Client Training - FDA-Opt] Epoch 4/10 complete!
+14:31:43 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:46 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:46 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0123!
+14:31:46 - [Client Training - FDA-Opt] Epoch 5/10 complete!
+14:31:46 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:50 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:50 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0140!
+14:31:50 - [Client Training - FDA-Opt] Epoch 6/10 complete!
+14:31:50 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:55 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:55 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0165!
+14:31:55 - [Client Training - FDA-Opt] Epoch 7/10 complete!
+14:31:55 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:31:59 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:31:59 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0197!
+14:31:59 - [Client Training - FDA-Opt] Epoch 8/10 complete!
+14:31:59 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:02 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:02 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0189!
+14:32:02 - [Client Training - FDA-Opt] Epoch 9/10 complete!
+14:32:02 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:05 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:05 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0193!
+14:32:05 - [Client Training - FDA-Opt] Epoch 10/10 complete!
+14:32:05 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+[92mINFO [0m:      Sent reply
+14:32:05 - Sent reply
+[92mINFO [0m:      
+14:32:07 - 
+[92mINFO [0m:      Received: train message cdba8764-f620-4ace-81b6-7a828ebfcba3
+14:32:07 - Received: train message cdba8764-f620-4ace-81b6-7a828ebfcba3
+14:32:08 - [Client - FDA-Opt] Round's Threshold: 0.0140!
+14:32:14 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:14 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0004!
+14:32:14 - [Client Training - FDA-Opt] Epoch 1/10 complete!
+14:32:14 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:18 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:18 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0034!
+14:32:18 - [Client Training - FDA-Opt] Epoch 2/10 complete!
+14:32:18 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:21 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:21 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0027!
+14:32:21 - [Client Training - FDA-Opt] Epoch 3/10 complete!
+14:32:21 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:24 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:24 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0030!
+14:32:24 - [Client Training - FDA-Opt] Epoch 4/10 complete!
+14:32:24 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:27 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:27 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0031!
+14:32:27 - [Client Training - FDA-Opt] Epoch 5/10 complete!
+14:32:27 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:33 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:33 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0047!
+14:32:33 - [Client Training - FDA-Opt] Epoch 6/10 complete!
+14:32:33 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:37 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:37 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0055!
+14:32:37 - [Client Training - FDA-Opt] Epoch 7/10 complete!
+14:32:37 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:39 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:39 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0077!
+14:32:39 - [Client Training - FDA-Opt] Epoch 8/10 complete!
+14:32:39 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:42 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:42 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0088!
+14:32:42 - [Client Training - FDA-Opt] Epoch 9/10 complete!
+14:32:42 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:46 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:46 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0093!
+14:32:46 - [Client Training - FDA-Opt] Epoch 10/10 complete!
+14:32:46 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+[92mINFO [0m:      Sent reply
+14:32:46 - Sent reply
+[92mINFO [0m:      
+14:32:48 - 
+[92mINFO [0m:      Received: train message eeedff4e-9edf-460f-9575-78a9931ca535
+14:32:48 - Received: train message eeedff4e-9edf-460f-9575-78a9931ca535
+14:32:49 - [Client - FDA-Opt] Round's Threshold: 0.0082!
+14:32:55 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:55 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0048!
+14:32:55 - [Client Training - FDA-Opt] Epoch 1/10 complete!
+14:32:55 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:32:58 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:32:58 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0062!
+14:32:58 - [Client Training - FDA-Opt] Epoch 2/10 complete!
+14:32:58 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:33:00 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:00 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0060!
+14:33:00 - [Client Training - FDA-Opt] Epoch 3/10 complete!
+14:33:00 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:33:04 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:04 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0066!
+14:33:04 - [Client Training - FDA-Opt] Epoch 4/10 complete!
+14:33:04 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:33:09 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:09 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0063!
+14:33:09 - [Client Training - FDA-Opt] Epoch 5/10 complete!
+14:33:09 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:33:14 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:14 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0071!
+14:33:14 - [Client Training - FDA-Opt] Epoch 6/10 complete!
+14:33:14 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:33:16 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:16 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0082!
+14:33:16 - [Client Training - FDA-Opt] Epoch 7/10 complete!
+14:33:16 - [Client Training - FDA-Opt] Threshold is violated. Ending round!
+[92mINFO [0m:      Sent reply
+14:33:16 - Sent reply
+[92mINFO [0m:      
+14:33:19 - 
+[92mINFO [0m:      Received: train message 562ec421-9e8d-4754-8a7d-84aa6d868c0f
+14:33:19 - Received: train message 562ec421-9e8d-4754-8a7d-84aa6d868c0f
+14:33:20 - [Client - FDA-Opt] Round's Threshold: 0.0059!
+14:33:24 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:24 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0048!
+14:33:24 - [Client Training - FDA-Opt] Epoch 1/10 complete!
+14:33:24 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+14:33:31 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:33:31 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0056!
+14:33:31 - [Client Training - FDA-Opt] Epoch 2/10 complete!
+14:33:31 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!

@@ -1,0 +1,36 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+13:00:38 - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+13:00:38 - Opened insecure gRPC connection (no certificates were passed)
+13:00:38 - ChannelConnectivity.IDLE
+13:00:38 - ChannelConnectivity.CONNECTING
+13:00:38 - ChannelConnectivity.READY
+[92mINFO [0m:      
+13:00:39 - 
+[92mINFO [0m:      Received: train message 74869601-9704-44b3-b9ef-705df3784c06
+13:00:39 - Received: train message 74869601-9704-44b3-b9ef-705df3784c06

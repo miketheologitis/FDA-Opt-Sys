@@ -1,0 +1,97 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+13:24:43 - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+13:24:43 - Opened insecure gRPC connection (no certificates were passed)
+13:24:43 - ChannelConnectivity.IDLE
+13:24:43 - ChannelConnectivity.CONNECTING
+13:24:43 - ChannelConnectivity.READY
+[92mINFO [0m:      
+13:24:44 - 
+[92mINFO [0m:      Received: train message 32e234f7-da1e-40da-9060-95b2e486244f
+13:24:44 - Received: train message 32e234f7-da1e-40da-9060-95b2e486244f
+13:24:45 - [Client Fit] Config: {'threshold': '1000'}!
+13:24:48 - [Client Training - FDA-Opt] Successfully sent local state to server!
+13:24:49 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0077!
+13:24:49 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+[92mINFO [0m:      Sent reply
+13:24:49 - Sent reply
+[92mINFO [0m:      
+13:24:51 - 
+[92mINFO [0m:      Received: train message 2f51a5cb-ba1b-4023-87c9-b5b399e416b0
+13:24:51 - Received: train message 2f51a5cb-ba1b-4023-87c9-b5b399e416b0
+13:24:52 - [Client Fit] Config: {'threshold': '0.008204752579331398'}!
+13:24:55 - [Client Training - FDA-Opt] Successfully sent local state to server!
+13:24:58 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0083!
+13:24:58 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+[92mINFO [0m:      Sent reply
+13:24:58 - Sent reply
+[92mINFO [0m:      
+13:25:00 - 
+[92mINFO [0m:      Received: train message 7ea1b8e0-079c-4e11-b993-35750057bdac
+13:25:00 - Received: train message 7ea1b8e0-079c-4e11-b993-35750057bdac
+13:25:01 - [Client Fit] Config: {'threshold': '0.005926605314016342'}!
+13:25:04 - [Client Training - FDA-Opt] Successfully sent local state to server!
+13:25:05 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0064!
+13:25:05 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+[92mINFO [0m:      Sent reply
+13:25:05 - Sent reply
+[92mINFO [0m:      
+13:25:07 - 
+[92mINFO [0m:      Received: train message f47435d4-07dd-4493-9dad-a6cd508d90d6
+13:25:07 - Received: train message f47435d4-07dd-4493-9dad-a6cd508d90d6
+13:25:08 - [Client Fit] Config: {'threshold': '0.005325320176780224'}!
+13:25:10 - [Client Training - FDA-Opt] Successfully sent local state to server!
+13:25:11 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0392!
+13:25:11 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+[92mINFO [0m:      Sent reply
+13:25:11 - Sent reply
+[92mINFO [0m:      
+13:25:13 - 
+[92mINFO [0m:      Received: train message 557997d3-d9cf-47a5-afbb-0f3c4f3f794e
+13:25:13 - Received: train message 557997d3-d9cf-47a5-afbb-0f3c4f3f794e
+13:25:14 - [Client Fit] Config: {'threshold': '0.04772432520985603'}!
+13:25:17 - [Client Training - FDA-Opt] Successfully sent local state to server!
+13:25:18 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.1089!
+13:25:18 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+[92mINFO [0m:      Sent reply
+13:25:18 - Sent reply
+[92mINFO [0m:      
+13:25:21 - 
+[92mINFO [0m:      Received: train message b9e5a172-9d19-4dd9-8020-191d0c76851e
+13:25:21 - Received: train message b9e5a172-9d19-4dd9-8020-191d0c76851e
+13:25:22 - [Client Fit] Config: {'threshold': '0.13215011358261108'}!
+13:25:25 - [Client Training - FDA-Opt] Successfully sent local state to server!
+13:25:25 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0323!
+13:25:25 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+[92mINFO [0m:      Sent reply
+13:25:25 - Sent reply
+[92mINFO [0m:      
+13:25:28 - 
+[92mINFO [0m:      Received: train message ff4e87d7-26ca-4890-becd-1f665b285794
+13:25:28 - Received: train message ff4e87d7-26ca-4890-becd-1f665b285794
+13:25:29 - [Client Fit] Config: {'threshold': '0.03455456346273422'}!

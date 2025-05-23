@@ -43,18 +43,42 @@ class FlowerClient(NumPyClient):
         
     def fit(self, parameters, config):
         """Perform local training and return updated model weights."""
+        
         set_weights(self.model, parameters)
         
         if self.fda:
+            threshold = float(config['threshold'])
+            
             # Create sockets for side-channel communication for local-states / variance monitoring
+            logging.info(f"[Client - FDA-Opt] Round's Threshold: {threshold:.4f}!")
+            
             push_to_server_socket = create_push_socket(self.server_ip_pull_socket, self.server_port_pull_socket)
             pull_variance_approx_socket = create_pull_socket(self.ip, self.port)
             sketch = AmsSketch()
             
-            train_fda(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs, self.client_id, push_to_server_socket, pull_variance_approx_socket, sketch)
-        else:
-            train(self.model, self.optimizer, self.trainloader, self.device, self.local_epochs)
+            epochs_completed = train_fda(
+                self.model, 
+                self.optimizer, 
+                self.trainloader, 
+                self.device, 
+                self.local_epochs, 
+                self.client_id,
+                threshold,
+                push_to_server_socket, 
+                pull_variance_approx_socket, 
+                sketch
+            )
             
+            return get_weights(self.model), len(self.trainloader), {'epochs_completed': epochs_completed}
+        
+        train(
+            self.model, 
+            self.optimizer, 
+            self.trainloader, 
+            self.device, 
+            self.local_epochs
+        )
+        
         return get_weights(self.model), len(self.trainloader), {}
 
 # ---------------------------------------------------------------------------- #

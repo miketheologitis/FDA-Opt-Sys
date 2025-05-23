@@ -1,0 +1,93 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+14:06:40 - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+14:06:40 - Opened insecure gRPC connection (no certificates were passed)
+14:06:40 - ChannelConnectivity.IDLE
+14:06:40 - ChannelConnectivity.CONNECTING
+14:06:40 - ChannelConnectivity.READY
+[92mINFO [0m:      
+14:06:40 - 
+[92mINFO [0m:      Received: train message bd5b7c6d-32ec-410d-8a9c-2de2d1ea0310
+14:06:40 - Received: train message bd5b7c6d-32ec-410d-8a9c-2de2d1ea0310
+14:06:42 - [Client - FDA-Opt] Round's Threshold: 1000.0000!
+14:06:47 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:06:50 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0077!
+14:06:50 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+14:06:50 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+[92mINFO [0m:      Sent reply
+14:06:50 - Sent reply
+[92mINFO [0m:      
+14:06:52 - 
+[92mINFO [0m:      Received: train message d468e817-c993-442a-a1e5-0d3697a15eea
+14:06:52 - Received: train message d468e817-c993-442a-a1e5-0d3697a15eea
+14:06:54 - [Client - FDA-Opt] Round's Threshold: 0.0073!
+14:06:58 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:07:01 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0109!
+14:07:01 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+14:07:01 - [Client Training - FDA-Opt] Threshold is violated. Ending round!
+[92mINFO [0m:      Sent reply
+14:07:01 - Sent reply
+[92mINFO [0m:      
+14:07:03 - 
+[92mINFO [0m:      Received: train message 78c9068b-6194-412e-b1d5-f55a5111e509
+14:07:03 - Received: train message 78c9068b-6194-412e-b1d5-f55a5111e509
+14:07:05 - [Client - FDA-Opt] Round's Threshold: 0.0108!
+14:07:09 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:07:11 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0073!
+14:07:11 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+14:07:11 - [Client Training - FDA-Opt] Variance approximation is still bellow the threshold!
+[92mINFO [0m:      Sent reply
+14:07:11 - Sent reply
+[92mINFO [0m:      
+14:07:14 - 
+[92mINFO [0m:      Received: train message 983e4d0d-e0c1-4d5f-a2a6-230b28ce18c3
+14:07:14 - Received: train message 983e4d0d-e0c1-4d5f-a2a6-230b28ce18c3
+14:07:15 - [Client - FDA-Opt] Round's Threshold: 0.0055!
+14:07:20 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:07:22 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0088!
+14:07:22 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+14:07:22 - [Client Training - FDA-Opt] Threshold is violated. Ending round!
+[92mINFO [0m:      Sent reply
+14:07:22 - Sent reply
+[92mINFO [0m:      
+14:07:25 - 
+[92mINFO [0m:      Received: train message dfd67046-cf74-4ca7-ace9-52b82234b7c9
+14:07:25 - Received: train message dfd67046-cf74-4ca7-ace9-52b82234b7c9
+14:07:26 - [Client - FDA-Opt] Round's Threshold: 0.0049!
+14:07:30 - [Client Training - FDA-Opt] Successfully sent local state to server!
+14:07:33 - [Client Training - FDA-Opt] Successfully received variance approximation from server: 0.0125!
+14:07:33 - [Client Training - FDA-Opt] Epoch 1/1 complete!
+14:07:33 - [Client Training - FDA-Opt] Threshold is violated. Ending round!
+[92mINFO [0m:      Sent reply
+14:07:33 - Sent reply
+[92mINFO [0m:      
+14:07:36 - 
+[92mINFO [0m:      Received: train message 8344fa13-040e-44dc-983a-7df4801ffd9a
+14:07:36 - Received: train message 8344fa13-040e-44dc-983a-7df4801ffd9a
+14:07:37 - [Client - FDA-Opt] Round's Threshold: 0.0067!
+14:07:41 - [Client Training - FDA-Opt] Successfully sent local state to server!

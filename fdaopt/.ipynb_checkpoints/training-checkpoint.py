@@ -76,7 +76,7 @@ def train(model, optimizer, trainloader, device, epochs):
         logging.info(f"[Client Training - FedOpt] Epoch {i+1}/{epochs} complete!")
         
         
-def train_fda(model, optimizer, trainloader, device, epochs, client_id, push_to_server_socket, pull_variance_approx_socket, ams_sketch):
+def train_fda(model, optimizer, trainloader, device, epochs, client_id, threshold, push_to_server_socket, pull_variance_approx_socket, ams_sketch):
     
     # Set the model to training mode
     model.train()
@@ -122,6 +122,14 @@ def train_fda(model, optimizer, trainloader, device, epochs, client_id, push_to_
         logging.info(f"[Client Training - FDA-Opt] Successfully received variance approximation from server: {variance_approx:.4f}!")
         
         logging.info(f"[Client Training - FDA-Opt] Epoch {i+1}/{epochs} complete!")
+    
+        if variance_approx > threshold:
+            logging.info(f"[Client Training - FDA-Opt] Threshold is violated. Ending round!")
+            return i+1
+        
+        logging.info(f"[Client Training - FDA-Opt] Variance approximation is still bellow the threshold!")
+        
+    return i+1
             
 
 

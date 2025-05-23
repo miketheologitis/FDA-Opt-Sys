@@ -13,7 +13,7 @@ from flwr.common import (
 )
 from flwr.server.strategy.aggregate import aggregate, parameters_to_ndarrays
 from flwr.server.client_proxy import ClientProxy
-from flwr.server.strategy import FedAdam
+from flwr.server.strategy import FedAdam, FedAvgM, FedAdagrad
 
 import torch
 
@@ -38,8 +38,10 @@ def vectorize_ndarrays(parameters):
 
 class FdaAdam(FedAdam):
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self, local_epochs, threshold, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.local_epochs = local_epochs
+        self.threshold = threshold
         
         
     def aggregate_fit(
@@ -72,15 +74,20 @@ class FdaAdam(FedAdam):
         variance = sum([
             torch.dot(drift, drift)
             for drift in drifts
-        ]) / len(drifts)
+        ]).item() / len(drifts)
         
         logging.info(f"[FdaAdam] Actual Variance: {variance}!")
-        
         
         """Aggregate fit results using weighted average."""
         # fedavg_parameters_aggregated : 'flwr.common.typing.Parameters'
         fedavg_parameters_aggregated, metrics_aggregated = super().aggregate_fit(
             server_round=server_round, results=results, failures=failures
         )
+        
+        epochs_completed = metrics_aggregated['epochs_completed']
+        
+        self.threshold.value = ((self.local_epochs / 2) / epochs_completed) * variance
+        
+        logging.info(f"[FdaAdam] epochs completed: {epochs_completed}  ,  new threshold: {self.threshold.value}!")
         
         return fedavg_parameters_aggregated, metrics_aggregated

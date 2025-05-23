@@ -1,12 +1,11 @@
 """fdaopt: A Flower / HuggingFace Federated Learning Server."""
 
-from fdaopt.fda_strategies import FdaAdam
-
 import torch
 import os
 import argparse
 import threading
 import json
+from types import SimpleNamespace
 import flwr.server.strategy as flwr_strats
 import fdaopt.fda_strategies as fda_strats
 from flwr.common import ndarrays_to_parameters
@@ -60,6 +59,7 @@ if __name__ == '__main__':
     total_rounds = params['training']['total_rounds']
     num_clients = params['training']['num_clients']
     clients_per_round = params['training']['clients_per_round']
+    local_epochs = params['training']['local_epochs']
 
     # Compute client fraction for FL strategy
     fraction_fit = clients_per_round / num_clients
@@ -95,30 +95,60 @@ if __name__ == '__main__':
     # Get strategy class dynamically
     if fda:
         Strat = get_fda_strategy_class(strategy_name)
-    else:
-        Strat = get_flwr_strategy_class(strategy_name)
-
-    # Define FL strategy
-    strategy = Strat(
-        fraction_fit=fraction_fit,
-        fraction_evaluate=0.0,  # Modify if evaluation is needed
-        initial_parameters=initial_parameters,
-        evaluate_fn=get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name),
-    )
-    
-    # ---------------------- Step 6: Create Pull socket that Accepts States ---------------------- #
-    if fda:
+        
+        threshold = SimpleNamespace(value=float('-inf'))  # TODO: init value
+        on_fit_config_fn = lambda _: {'threshold': str(threshold.value)}
+        
+        # List[Tuple[int, Metrics]], key_metrics
+        fit_metrics_aggregation_fn = lambda key_metrics: key_metrics[0][1] if key_metrics else {}
+        
+        # Define FL strategy
+        strategy = Strat(
+            local_epochs=local_epochs,
+            threshold=threshold,
+            fraction_fit=fraction_fit,
+            fraction_evaluate=0.0,  # Modify if evaluation is needed
+            initial_parameters=initial_parameters,
+            evaluate_fn=get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name),
+            on_fit_config_fn=on_fit_config_fn,
+            fit_metrics_aggregation_fn=fit_metrics_aggregation_fn
+        )
+        
+        # ---------------------- Step 6: Create Pull socket that Accepts States ---------------------- #
         ip_pull_socket = params['server']['network']['ip_pull_socket']
         port_pull_socket = params['server']['network']['port_pull_socket']
         pull_socket = create_pull_socket(ip_pull_socket, port_pull_socket)
         start_variance_monitoring_loop(pull_socket, clients_per_round, clients_network)  # Threads and stuff...
+        
+        # ---------------------- Step 7: Start Flower Server ---------------------- #
+        
+        config = ServerConfig(num_rounds=total_rounds)
 
-    # ---------------------- Step 7: Start Flower Server ---------------------- #
+        start_server(
+            server_address=server_address,
+            config=config,
+            strategy=strategy
+        )
+        
+        
+        
+    else:
+        Strat = get_flwr_strategy_class(strategy_name)
 
-    config = ServerConfig(num_rounds=total_rounds)
+        # Define FL strategy
+        strategy = Strat(
+            fraction_fit=fraction_fit,
+            fraction_evaluate=0.0,  # Modify if evaluation is needed
+            initial_parameters=initial_parameters,
+            evaluate_fn=get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name),
+        )
 
-    start_server(
-        server_address=server_address,
-        config=config,
-        strategy=strategy
-    )
+        # ---------------------- Step 6: Start Flower Server ---------------------- #
+
+        config = ServerConfig(num_rounds=total_rounds)
+
+        start_server(
+            server_address=server_address,
+            config=config,
+            strategy=strategy
+        )
