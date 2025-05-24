@@ -52,5 +52,5 @@
 
 
 ```bash
-kafka-console-producer.sh --bootstrap-server localhost:9092 --topic FedL < 0_k.json
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic FedL < test_1.json
 ```

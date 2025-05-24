@@ -3,8 +3,6 @@
 from collections import OrderedDict
 
 import torch
-import numpy as np
-import transformers
 import evaluate
 from fdaopt.data import get_test_ds
 from fdaopt.networking import send_number_matrix, receive_number
@@ -15,9 +13,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', date
 
 @torch.no_grad
 def compute_drift(old_params, new_params, device):
+    """Compute the drifts between old and new parameters."""
 
     drifts = []
-
     for old_param, new_param in zip(old_params, new_params):
         old_param = old_param.to(device)
         new_param = new_param.to(device)
@@ -30,7 +28,8 @@ def compute_drift(old_params, new_params, device):
 
 @torch.no_grad
 def vectorize(parameters, device):
-    
+    """Vectorize a list of parameters."""
+
     con = []
     for param in parameters:
         param = param.to(device)
@@ -40,10 +39,14 @@ def vectorize(parameters, device):
 
 @torch.no_grad
 def get_weights(model):
+    """Get the model weights as a list of numpy arrays."""
+
     return [val.cpu().numpy() for _, val in model.state_dict().items()]
 
 @torch.no_grad
 def set_weights(model, parameters):
+    """Set the model weights from a list of numpy arrays."""
+
     params_dict = zip(model.state_dict().keys(), parameters)
     state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
     model.load_state_dict(state_dict, strict=True)
@@ -129,7 +132,7 @@ def train_fda(model, optimizer, trainloader, device, epochs, client_id, threshol
         
         logging.info(f"[Client Training - FDA-Opt] Variance approximation is still bellow the threshold!")
         
-    return i+1
+    return epochs
             
 
 

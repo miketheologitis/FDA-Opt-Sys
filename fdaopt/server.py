@@ -23,12 +23,25 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', date
 #                           Strategy Selection Function                        #
 # ---------------------------------------------------------------------------- #
 
-def get_flwr_strategy_class(strategy_name: str):
-    return getattr(flwr_strats, strategy_name) 
+def get_flwr_strategy_class(strat_name: str):
+    """ Get the Flower strategy class based on the strategy name.
+    Args:
+        strat_name: the name of the strategy to be used.
 
-def get_fda_strategy_class(strategy_name: str):
-    strategy_name = strategy_name.replace('Fed', 'Fda')  # safety
-    return getattr(fda_strats, strategy_name) 
+    Returns:
+        The corresponding Flower strategy class.
+    """
+    return getattr(flwr_strats, strat_name)
+
+def get_fda_strategy_class(strat_name: str):
+    """ Get the FDA strategy class based on the strategy name.
+    Args:
+        strat_name: the name of the strategy to be used.
+    Returns:
+        The corresponding FDA strategy class.
+    """
+    strat_name = strat_name.replace('Fed', 'Fda')  # safety
+    return getattr(fda_strats, strat_name)
 
 # ---------------------------------------------------------------------------- #
 #                             Main Server Process                             #
@@ -89,17 +102,24 @@ if __name__ == '__main__':
     initial_parameters = ndarrays_to_parameters(weights)
 
     # ---------------------- Step 5: Define Federated Strategy ---------------------- #
-
-    # if not fda:
     
     # Get strategy class dynamically
     if fda:
         Strat = get_fda_strategy_class(strategy_name)
-        
-        threshold = SimpleNamespace(value=float('-inf'))  # TODO: init value
+
+        # Initialize the threshold for FDA-Opt as a SimpleNamespace container
+        threshold = SimpleNamespace(value=float('-inf'))
+
+        # Define the on_fit_config_fn to pass the threshold to clients
+        # This function is called before each `fit` round and allows us to pass custom parameters
+        # such as the round's threshold value to the clients.
         on_fit_config_fn = lambda _: {'threshold': str(threshold.value)}
         
-        # List[Tuple[int, Metrics]], key_metrics
+        # `key_metrics` is List[Tuple[int, Metrics]]
+        # This function is called after each `fit` round to aggregate the metrics from clients.
+        # The clients with FDA-Opt, currently, return the `epochs_completed` -- the number of epochs they completed.
+        # Thus, we can use the first client's metrics as the aggregated metrics (same for all clients) so that
+        # the server knows how many epochs were completed in the round locally.
         fit_metrics_aggregation_fn = lambda key_metrics: key_metrics[0][1] if key_metrics else {}
         
         # Define FL strategy
@@ -110,8 +130,8 @@ if __name__ == '__main__':
             fraction_evaluate=0.0,  # Modify if evaluation is needed
             initial_parameters=initial_parameters,
             evaluate_fn=get_evaluate_fn(model, device, model_checkpoint, ds_path, ds_name),
-            on_fit_config_fn=on_fit_config_fn,
-            fit_metrics_aggregation_fn=fit_metrics_aggregation_fn
+            on_fit_config_fn=on_fit_config_fn,  # to pass threshold to clients before each fit round
+            fit_metrics_aggregation_fn=fit_metrics_aggregation_fn  # to aggregate clients' metrics after each fit round
         )
         
         # ---------------------- Step 6: Create Pull socket that Accepts States ---------------------- #

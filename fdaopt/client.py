@@ -3,7 +3,6 @@
 import os
 import torch
 import argparse
-import time
 import json
 
 from flwr.client import NumPyClient, start_client
@@ -27,7 +26,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', date
 class FlowerClient(NumPyClient):
     """Custom Flower Client for Federated Learning using Hugging Face models."""
     
-    def __init__(self, model, optimizer, device, trainloader, local_epochs, ip, port, server_ip_pull_socket, server_port_pull_socket, fda, client_id):
+    def __init__(self, model, optimizer, device, trainloader, local_epochs, ip,
+                 port, server_ip_pull_socket, server_port_pull_socket, fda, client_id):
         self.model = model
         self.optimizer = optimizer
         self.device = device
@@ -51,11 +51,14 @@ class FlowerClient(NumPyClient):
             
             # Create sockets for side-channel communication for local-states / variance monitoring
             logging.info(f"[Client - FDA-Opt] Round's Threshold: {threshold:.4f}!")
-            
+
+            # Create push and pull sockets for variance approximation communication
             push_to_server_socket = create_push_socket(self.server_ip_pull_socket, self.server_port_pull_socket)
             pull_variance_approx_socket = create_pull_socket(self.ip, self.port)
+
             sketch = AmsSketch()
-            
+
+            # Start local FDA-Opt training round
             epochs_completed = train_fda(
                 self.model, 
                 self.optimizer, 
@@ -70,7 +73,8 @@ class FlowerClient(NumPyClient):
             )
             
             return get_weights(self.model), len(self.trainloader), {'epochs_completed': epochs_completed}
-        
+
+        # Start local FedOpt training round
         train(
             self.model, 
             self.optimizer, 

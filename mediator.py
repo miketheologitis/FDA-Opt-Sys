@@ -32,29 +32,47 @@ console_handler.setFormatter(logging.Formatter(LOG_FORMAT, datefmt=DATE_FORMAT))
 # Configure the root logger
 logging.basicConfig(level=logging.DEBUG, handlers=[file_handler, console_handler])
 
-
+# Global variable to keep track of launched processes
 launched_processes = []
 
 
 def is_ip_port_in_use(host: str, port: int) -> bool:
+    """    Check if a specific IP and port are currently in use.
+    Args:
+        host (str): The IP address to check.
+        port (int): The port number to check.
+    Returns:
+        bool: True if the IP and port are in use, False otherwise.
+    """
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         return s.connect_ex((host, port)) == 0
     
     
 def get_ips_ports_in_use(params):
+    """
+    Check if the requested client/server IPs and ports in `params` are already in use.
+    Args:
+        params:
+
+    Returns:
+
+    """
     
     ports_ips_in_use = []
-    
+
+    # Check server IP and port
     ip = params['server']['network']['ip']
     port = params['server']['network']['port']
     if is_ip_port_in_use(ip, port):
         ports_ips_in_use.append((ip, port))
-        
+
+    # Check server pull socket IP and port
     ip = params['server']['network']['ip_pull_socket']
     port = params['server']['network']['port_pull_socket']
     if is_ip_port_in_use(ip, port):
         ports_ips_in_use.append((ip, port))
 
+    # Check each client IP and port
     for client_dict in params['clients']['network']:
         
         ip = client_dict['ip']
@@ -70,7 +88,8 @@ def launch_job(params):
     global launched_processes
         
     # -------- Step 0. Create Local .json
-    
+
+    # Generate a unique job ID and create a temporary JSON file name
     job_id = str(uuid.uuid4())[:8]
     json_name = "tmp-" + job_id + '.json'
     json_path = LOCAL_HYPERPARAMS_DIR / json_name
@@ -104,7 +123,7 @@ def launch_job(params):
     
     log_file = LOCAL_LOGS_DIR / f"server-{job_id}.log"
     with open(log_file, "w") as log:
-        
+
         env = dict(os.environ, TERM="dumb")
         
         proc = subprocess.Popen(
@@ -154,7 +173,8 @@ def launch_job(params):
     
 
 def listen_to_kafka(topic='FedL', bootstrap_servers='localhost:9092'):
-    
+
+    # Set up logging
     d = {"jobid": 'Root'}
 
     # Consumer example
@@ -164,10 +184,10 @@ def listen_to_kafka(topic='FedL', bootstrap_servers='localhost:9092'):
         'auto.offset.reset': 'latest'
     })
 
+    # Subscribe to the topic
     c.subscribe([topic])
     
     logging.info(f"Just subcribed to Kafka topic {topic}!", extra=d)
-    
     logging.info(f"Waiting for new jobs from Kafka...!", extra=d)
 
     while True:
@@ -180,7 +200,8 @@ def listen_to_kafka(topic='FedL', bootstrap_servers='localhost:9092'):
             else:
                 print(msg.error())
                 break
-                
+
+        # Decode the message value
         val = msg.value().decode("utf-8")
         
         logging.info(f"Just read new job parameters!", extra=d)
@@ -221,7 +242,8 @@ if __name__ == '__main__':
         
         for file in LOCAL_HYPERPARAMS_DIR.glob('tmp-*.json'):
                 file.unlink()
-        
+
+        # Cleanup logs if requested
         if args.cleanup:
             logging.info(f"Cleaning up server/client logs as requested...", extra=d)
             
@@ -232,7 +254,8 @@ if __name__ == '__main__':
             logging.info(f"Cleaned up server/client logs!", extra=d)
             
         logging.warning("Terminating all subprocesses...", extra=d)
-        
+
+        # Terminate all launched processes
         for proc in launched_processes:
             if proc.poll() is None:  # still running
                 try:
@@ -241,7 +264,9 @@ if __name__ == '__main__':
                 except subprocess.TimeoutExpired:
                     proc.kill()
         logging.info("All subprocesses terminated. Exiting...", extra=d)
+
     except Exception as e:
         logging.exception(f"Unhandled exception occurred: {e}", extra=d)
+
     finally:
         logging.info("Mediator shutdown complete.", extra=d)
