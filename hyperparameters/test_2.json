@@ -34,61 +34,61 @@
         "id": 0,
         "ip": "localhost",
         "port": 9250,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_0.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_0.pth"
       },
       {
         "id": 1,
         "ip": "localhost",
         "port": 9251,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_1.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_1.pth"
       },
       {
         "id": 2,
         "ip": "localhost",
         "port": 9252,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_2.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_2.pth"
       },
       {
         "id": 3,
         "ip": "localhost",
         "port": 9253,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_3.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_3.pth"
       },
       {
         "id": 4,
         "ip": "localhost",
         "port": 9254,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_4.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_4.pth"
       },
       {
         "id": 5,
         "ip": "localhost",
         "port": 9255,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_5.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_5.pth"
       },
       {
         "id": 6,
         "ip": "localhost",
         "port": 9256,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_6.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_6.pth"
       },
       {
         "id": 7,
         "ip": "localhost",
         "port": 9257,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_7.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_7.pth"
       },
       {
         "id": 8,
         "ip": "localhost",
         "port": 9258,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_8.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_8.pth"
       },
       {
         "id": 9,
         "ip": "localhost",
         "port": 9259,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_9.pth"
+        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_9.pth"
       }
     ],
     "lr": 0.001
