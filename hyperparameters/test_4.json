@@ -18,9 +18,9 @@
   "server": {
     "network": {
       "ip": "localhost",
-      "port": 8083,
+      "port": 8089,
       "ip_pull_socket": "localhost",
-      "port_pull_socket": 9101
+      "port_pull_socket": 9104
     },
     "strategy": {
       "name": "FedAdam",
@@ -33,14 +33,14 @@
       {
         "id": 0,
         "ip": "localhost",
-        "port": 9199,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_0.pth"
+        "port": 9301,
+        "data_path": ""
       },
       {
         "id": 1,
         "ip": "localhost",
-        "port": 9201,
-        "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_1.pth"
+        "port": 9302,
+        "data_path": ""
       }
     ],
     "lr": 0.001

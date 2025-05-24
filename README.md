@@ -18,10 +18,10 @@ python mediator.py --cleanup
 
 For example, go to `/hyperparameters` and run:
 ```bash
-kafka-console-producer.sh --bootstrap-server localhost:9092 --topic  FedL < test_8085.json
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic  FedL < test_1.json
 ```
 
 Run 1-time local parameters and launch 1 job:
 ```bash
-python mediator.py --cleanup --local /home/mtheologitis/FDA-Opt-Sys/hyperparameters/test_8084.json
+python mediator.py --cleanup --local /home/mtheologitis/FDA-Opt-Sys/hyperparameters/test_2.json
 ```
