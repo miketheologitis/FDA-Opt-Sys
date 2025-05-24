@@ -1,0 +1,146 @@
+{
+  "builder_name": "arrow",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "mrpc",
+  "dataset_size": 4973407,
+  "description": "",
+  "download_checksums": {
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_0.pth/cache-e853d1127361fd59.arrow": {
+      "num_bytes": 259808,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_0.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 114616,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_1.pth/cache-b35c7786fde1cd79.arrow": {
+      "num_bytes": 352944,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_1.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 154152,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_2.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 183744,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_3.pth/cache-18ca30d6e65cdc1f.arrow": {
+      "num_bytes": 71136,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_3.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 30688,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_4.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 62672,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_5.pth/cache-160ddc358853c82e.arrow": {
+      "num_bytes": 167216,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_5.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 74064,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_6.pth/cache-4c3aa124dd96d00e.arrow": {
+      "num_bytes": 153224,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_6.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 67264,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_7.pth/cache-bf5ecaf507728a23.arrow": {
+      "num_bytes": 352584,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_7.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 154528,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_8.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 44192,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_9.pth/cache-8769ef69fc7f766a.arrow": {
+      "num_bytes": 153144,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_9.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 67336,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_0.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 1497792,
+      "checksum": null
+    },
+    "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c2_1.pth/data-00000-of-00001.arrow": {
+      "num_bytes": 996424,
+      "checksum": null
+    }
+  },
+  "download_size": 4957528,
+  "features": {
+    "sentence1": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "sentence2": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "names": [
+        "not_equivalent",
+        "equivalent"
+      ],
+      "_type": "ClassLabel"
+    },
+    "idx": {
+      "dtype": "int32",
+      "_type": "Value"
+    },
+    "input_ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "token_type_ids": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "attention_mask": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 9930935,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 4973407,
+      "num_examples": 12364,
+      "dataset_name": "mrpc"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
