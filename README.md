@@ -23,5 +23,5 @@ kafka-console-producer.sh --bootstrap-server localhost:9092 --topic  FedL < test
 
 Run 1-time local parameters and launch 1 job:
 ```bash
-python mediator.py --cleanup --local /home/mtheologitis/FDA-Opt-Sys/hyperparameters/test_2.json
+jq -c . test_1.json | kafka-console-producer.sh --bootstrap-server localhost:9092 --topic FedL
 ```
