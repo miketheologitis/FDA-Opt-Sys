@@ -1,0 +1,47 @@
+11:35:51 - PyTorch version 2.5.1 available.
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+11:35:59 - DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+11:35:59 - Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+11:35:59 - Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+11:35:59 - [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+11:35:59 - Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+11:35:59 - Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.6404539685623318, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6404539685623318}
+11:36:01 - initial parameters (loss, other metrics): 0.6404539685623318, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6404539685623318}
+[92mINFO [0m:      
+11:36:01 - 
+[92mINFO [0m:      [ROUND 1]
+11:36:01 - [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:36:08 - configure_fit: strategy sampled 2 clients (out of 2)

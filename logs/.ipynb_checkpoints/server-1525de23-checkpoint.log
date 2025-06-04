@@ -1,0 +1,64 @@
+10:49:31 - PyTorch version 2.5.1 available.
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+10:49:39 - DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=10, no round_timeout
+10:49:39 - Starting Flower server, config: num_rounds=10, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (10 rounds), SSL is disabled
+10:49:39 - Flower ECE: gRPC server running (10 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+10:49:39 - [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+10:49:39 - Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+10:49:39 - Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.7065315667320701, {'accuracy': 0.34068627450980393, 'f1': 0.18731117824773413, 'testing_loss': 0.7065315667320701}
+10:49:41 - initial parameters (loss, other metrics): 0.7065315667320701, {'accuracy': 0.34068627450980393, 'f1': 0.18731117824773413, 'testing_loss': 0.7065315667320701}
+[92mINFO [0m:      
+10:49:41 - 
+[92mINFO [0m:      [ROUND 1]
+10:49:41 - [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+10:49:47 - configure_fit: strategy sampled 2 clients (out of 2)
+10:49:51 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:49:51 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation 0.0038!
+10:49:51 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation 0.0038!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:49:51 - aggregate_fit: received 2 results and 0 failures
+10:49:51 - [FdaAdam] Actual Variance: 0.0033475090749561787!
+10:49:52 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.016737545374780893!
+[92mINFO [0m:      fit progress: (1, 2.6763860397902546, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.6763860397902546}, 12.253432711120695)
+10:49:53 - fit progress: (1, 2.6763860397902546, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.6763860397902546}, 12.253432711120695)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:49:53 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:49:53 - 
+[92mINFO [0m:      [ROUND 2]
+10:49:53 - [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 10)
+10:49:53 - configure_fit: strategy sampled 2 clients (out of 10)

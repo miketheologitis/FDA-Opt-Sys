@@ -124,7 +124,7 @@ def launch_job(params):
     log_file = LOCAL_LOGS_DIR / f"server-{job_id}.log"
     with open(log_file, "w") as log:
 
-        env = dict(os.environ, TERM="dumb")
+        env = dict(os.environ, TERM="dumb", JOB_ID=job_id)
         
         proc = subprocess.Popen(
             [sys.executable, "-m", "fdaopt.server", '--local_json', json_path_str],
@@ -155,7 +155,7 @@ def launch_job(params):
         
         with open(log_file, "w") as log:
             
-            env = dict(os.environ, TERM="dumb")
+            env = dict(os.environ, TERM="dumb", JOB_ID=job_id)
             
             proc = subprocess.Popen(
                 [sys.executable, "-m", "fdaopt.client", '--client_id', str(i), '--local_json', json_path_str, '--cuda', '0'],

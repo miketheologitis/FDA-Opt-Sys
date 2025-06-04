@@ -1,0 +1,186 @@
+10:54:07 - PyTorch version 2.5.1 available.
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+10:54:16 - DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+10:54:16 - Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+10:54:16 - Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+10:54:16 - [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+10:54:16 - Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+10:54:16 - Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.6711409232195686, {'accuracy': 0.6764705882352942, 'f1': 0.8035714285714286, 'testing_loss': 0.6711409232195686}
+10:54:18 - initial parameters (loss, other metrics): 0.6711409232195686, {'accuracy': 0.6764705882352942, 'f1': 0.8035714285714286, 'testing_loss': 0.6711409232195686}
+[92mINFO [0m:      
+10:54:18 - 
+[92mINFO [0m:      [ROUND 1]
+10:54:18 - [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+10:54:24 - configure_fit: strategy sampled 2 clients (out of 2)
+10:54:28 - [Monitor Variance] Aggregated local states successfully from Client IDs [3, 2]!
+10:54:28 - [Monitor Variance] Successfully sent back to Client 3 at localhost:9203 the variance approximation 0.0004!
+10:54:28 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation 0.0004!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:54:29 - aggregate_fit: received 2 results and 0 failures
+10:54:29 - [FdaAdam] Actual Variance: 0.0005774570745415986!
+10:54:29 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.002887285372707993!
+[92mINFO [0m:      fit progress: (1, 0.6726826575456881, {'accuracy': 0.6200980392156863, 'f1': 0.7266313932980599, 'testing_loss': 0.6726826575456881}, 12.23477694997564)
+10:54:30 - fit progress: (1, 0.6726826575456881, {'accuracy': 0.6200980392156863, 'f1': 0.7266313932980599, 'testing_loss': 0.6726826575456881}, 12.23477694997564)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:54:30 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:54:30 - 
+[92mINFO [0m:      [ROUND 2]
+10:54:30 - [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 10)
+10:54:30 - configure_fit: strategy sampled 2 clients (out of 10)
+10:54:34 - [Monitor Variance] Aggregated local states successfully from Client IDs [4, 6]!
+10:54:34 - [Monitor Variance] Successfully sent back to Client 4 at localhost:9204 the variance approximation 0.0090!
+10:54:34 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0090!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:54:34 - aggregate_fit: received 2 results and 0 failures
+10:54:34 - [FdaAdam] Actual Variance: 0.009060225449502468!
+10:54:34 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.04530112724751234!
+[92mINFO [0m:      fit progress: (2, 2.2156713456314914, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.2156713456314914}, 17.883684273343533)
+10:54:36 - fit progress: (2, 2.2156713456314914, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.2156713456314914}, 17.883684273343533)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:54:36 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:54:36 - 
+[92mINFO [0m:      [ROUND 3]
+10:54:36 - [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 10)
+10:54:36 - configure_fit: strategy sampled 2 clients (out of 10)
+10:54:40 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:40 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0001!
+10:54:40 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0001!
+10:54:40 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:40 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0150!
+10:54:40 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0150!
+10:54:41 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:41 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0153!
+10:54:41 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0153!
+10:54:42 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:42 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0148!
+10:54:42 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0148!
+10:54:43 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:43 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0183!
+10:54:43 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0183!
+10:54:44 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:44 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0181!
+10:54:44 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0181!
+10:54:44 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:44 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0201!
+10:54:44 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0201!
+10:54:45 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:45 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0201!
+10:54:45 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0201!
+10:54:46 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:46 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0199!
+10:54:46 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0199!
+10:54:47 - [Monitor Variance] Aggregated local states successfully from Client IDs [6, 0]!
+10:54:47 - [Monitor Variance] Successfully sent back to Client 6 at localhost:9206 the variance approximation 0.0198!
+10:54:47 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0198!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:54:47 - aggregate_fit: received 2 results and 0 failures
+10:54:47 - [FdaAdam] Actual Variance: 0.024577388539910316!
+10:54:47 - [FdaAdam] epochs completed: 10  ,  new threshold: 0.012288694269955158!
+[92mINFO [0m:      fit progress: (3, 6.337346235911052, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 6.337346235911052}, 30.585995621047914)
+10:54:48 - fit progress: (3, 6.337346235911052, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 6.337346235911052}, 30.585995621047914)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:54:48 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:54:48 - 
+[92mINFO [0m:      [ROUND 4]
+10:54:48 - [ROUND 4]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 10)
+10:54:48 - configure_fit: strategy sampled 2 clients (out of 10)
+10:54:52 - [Monitor Variance] Aggregated local states successfully from Client IDs [2, 7]!
+10:54:52 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0331!
+10:54:52 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0331!
+10:54:54 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:54:54 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0344!
+10:54:54 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0344!
+10:54:55 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:54:55 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0330!
+10:54:55 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0330!
+10:54:56 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:54:56 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0311!
+10:54:56 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0311!
+10:54:57 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:54:57 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0334!
+10:54:57 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0334!
+10:54:59 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:54:59 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0331!
+10:54:59 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0331!
+10:55:00 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:55:00 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0327!
+10:55:00 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0327!
+10:55:01 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:55:01 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0336!
+10:55:01 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0336!
+10:55:03 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:55:03 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0335!
+10:55:03 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0335!
+10:55:04 - [Monitor Variance] Aggregated local states successfully from Client IDs [7, 2]!
+10:55:04 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation -0.0338!
+10:55:04 - [Monitor Variance] Successfully sent back to Client 2 at localhost:9202 the variance approximation -0.0338!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:55:04 - aggregate_fit: received 2 results and 0 failures
+10:55:04 - [FdaAdam] Actual Variance: 0.006317192688584328!
+10:55:05 - [FdaAdam] epochs completed: 10  ,  new threshold: 0.003158596344292164!
+[92mINFO [0m:      fit progress: (4, 2.6265900698553213, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.6265900698553213}, 48.06246151216328)
+10:55:06 - fit progress: (4, 2.6265900698553213, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.6265900698553213}, 48.06246151216328)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:55:06 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:55:06 - 
+[92mINFO [0m:      [ROUND 5]
+10:55:06 - [ROUND 5]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 10)
+10:55:06 - configure_fit: strategy sampled 2 clients (out of 10)
+10:55:09 - [Monitor Variance] Aggregated local states successfully from Client IDs [4, 7]!
+10:55:09 - [Monitor Variance] Successfully sent back to Client 4 at localhost:9204 the variance approximation 0.0230!
+10:55:09 - [Monitor Variance] Successfully sent back to Client 7 at localhost:9207 the variance approximation 0.0230!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+10:55:10 - aggregate_fit: received 2 results and 0 failures
+10:55:10 - [FdaAdam] Actual Variance: 0.030205897986888885!
+10:55:10 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.15102948993444443!
+[92mINFO [0m:      fit progress: (5, 3.1693255003765977, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 3.1693255003765977}, 53.5057716970332)
+10:55:11 - fit progress: (5, 3.1693255003765977, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 3.1693255003765977}, 53.5057716970332)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+10:55:11 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+10:55:11 - 
+[92mINFO [0m:      [ROUND 6]
+10:55:11 - [ROUND 6]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 10)
+10:55:11 - configure_fit: strategy sampled 2 clients (out of 10)

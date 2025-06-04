@@ -1,0 +1,2773 @@
+11:26:03 - PyTorch version 2.5.1 available.
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+11:26:12 - DEPRECATED FEATURE: flwr.server.start_server() is deprecated.
+	Instead, use the `flower-superlink` CLI command to start a SuperLink as shown below:
+
+		$ flower-superlink --insecure
+
+	To view usage and all available options, run:
+
+		$ flower-superlink --help
+
+	Using `start_server()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      Starting Flower server, config: num_rounds=100, no round_timeout
+11:26:12 - Starting Flower server, config: num_rounds=100, no round_timeout
+[92mINFO [0m:      Flower ECE: gRPC server running (100 rounds), SSL is disabled
+11:26:12 - Flower ECE: gRPC server running (100 rounds), SSL is disabled
+[92mINFO [0m:      [INIT]
+11:26:12 - [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+11:26:12 - Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+11:26:12 - Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.6845992043906567, {'accuracy': 0.6127450980392157, 'f1': 0.7198581560283688, 'testing_loss': 0.6845992043906567}
+11:26:14 - initial parameters (loss, other metrics): 0.6845992043906567, {'accuracy': 0.6127450980392157, 'f1': 0.7198581560283688, 'testing_loss': 0.6845992043906567}
+[92mINFO [0m:      
+11:26:14 - 
+[92mINFO [0m:      [ROUND 1]
+11:26:14 - [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:18 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:22 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:26:22 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0021!
+11:26:23 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0021!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:23 - aggregate_fit: received 2 results and 0 failures
+11:26:23 - [FdaAdam] Actual Variance: 0.002102368511259556!
+11:26:23 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001051184255629778!
+[92mINFO [0m:      fit progress: (1, 2.882860606729296, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.882860606729296}, 9.712654951959848)
+11:26:24 - fit progress: (1, 2.882860606729296, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.882860606729296}, 9.712654951959848)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:24 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:24 - 
+[92mINFO [0m:      [ROUND 2]
+11:26:24 - [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:24 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:28 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:28 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0341!
+11:26:28 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0341!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:28 - aggregate_fit: received 2 results and 0 failures
+11:26:28 - [FdaAdam] Actual Variance: 0.03428001329302788!
+11:26:28 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.01714000664651394!
+[92mINFO [0m:      fit progress: (2, 4.58353432487039, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 4.58353432487039}, 15.208981939125806)
+11:26:30 - fit progress: (2, 4.58353432487039, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 4.58353432487039}, 15.208981939125806)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:30 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:30 - 
+[92mINFO [0m:      [ROUND 3]
+11:26:30 - [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:30 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:32 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:32 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0288!
+11:26:32 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0288!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:33 - aggregate_fit: received 2 results and 0 failures
+11:26:33 - [FdaAdam] Actual Variance: 0.0009014392271637917!
+11:26:33 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.00045071961358189583!
+[92mINFO [0m:      fit progress: (3, 0.7577821974660836, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7577821974660836}, 19.73799545923248)
+11:26:34 - fit progress: (3, 0.7577821974660836, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7577821974660836}, 19.73799545923248)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:34 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:34 - 
+[92mINFO [0m:      [ROUND 4]
+11:26:34 - [ROUND 4]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:34 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:37 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:37 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0506!
+11:26:37 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0506!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:37 - aggregate_fit: received 2 results and 0 failures
+11:26:37 - [FdaAdam] Actual Variance: 0.05307311564683914!
+11:26:37 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.02653655782341957!
+[92mINFO [0m:      fit progress: (4, 2.7956108006465534, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.7956108006465534}, 24.353214733302593)
+11:26:39 - fit progress: (4, 2.7956108006465534, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.7956108006465534}, 24.353214733302593)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:39 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:39 - 
+[92mINFO [0m:      [ROUND 5]
+11:26:39 - [ROUND 5]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:39 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:42 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:42 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0358!
+11:26:42 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0358!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:42 - aggregate_fit: received 2 results and 0 failures
+11:26:42 - [FdaAdam] Actual Variance: 0.03324046730995178!
+11:26:42 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.01662023365497589!
+[92mINFO [0m:      fit progress: (5, 2.4591898816853406, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.4591898816853406}, 29.371704204007983)
+11:26:44 - fit progress: (5, 2.4591898816853406, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 2.4591898816853406}, 29.371704204007983)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:44 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:44 - 
+[92mINFO [0m:      [ROUND 6]
+11:26:44 - [ROUND 6]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:44 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:47 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:47 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0307!
+11:26:47 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0307!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:47 - aggregate_fit: received 2 results and 0 failures
+11:26:47 - [FdaAdam] Actual Variance: 0.028889533132314682!
+11:26:48 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.014444766566157341!
+[92mINFO [0m:      fit progress: (6, 0.73766708724639, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.73766708724639}, 34.47949479939416)
+11:26:49 - fit progress: (6, 0.73766708724639, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.73766708724639}, 34.47949479939416)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:49 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:49 - 
+[92mINFO [0m:      [ROUND 7]
+11:26:49 - [ROUND 7]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:49 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:52 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:52 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:26:52 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:52 - aggregate_fit: received 2 results and 0 failures
+11:26:52 - [FdaAdam] Actual Variance: 0.0035495480988174677!
+11:26:52 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017747740494087338!
+[92mINFO [0m:      fit progress: (7, 2.15070461993124, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 2.15070461993124}, 39.54266284406185)
+11:26:54 - fit progress: (7, 2.15070461993124, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 2.15070461993124}, 39.54266284406185)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:26:54 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:26:54 - 
+[92mINFO [0m:      [ROUND 8]
+11:26:54 - [ROUND 8]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:26:54 - configure_fit: strategy sampled 2 clients (out of 2)
+11:26:58 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:26:58 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0060!
+11:26:58 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0060!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:26:58 - aggregate_fit: received 2 results and 0 failures
+11:26:58 - [FdaAdam] Actual Variance: 0.0015896291006356478!
+11:26:58 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0007948145503178239!
+[92mINFO [0m:      fit progress: (8, 1.2603789065398423, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.2603789065398423}, 45.5569137702696)
+11:27:00 - fit progress: (8, 1.2603789065398423, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.2603789065398423}, 45.5569137702696)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:00 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:00 - 
+[92mINFO [0m:      [ROUND 9]
+11:27:00 - [ROUND 9]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:00 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:03 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:03 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0039!
+11:27:03 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0039!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:03 - aggregate_fit: received 2 results and 0 failures
+11:27:03 - [FdaAdam] Actual Variance: 0.002026886213570833!
+11:27:04 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0010134431067854166!
+[92mINFO [0m:      fit progress: (9, 1.3764763560109572, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.3764763560109572}, 50.29743780801073)
+11:27:05 - fit progress: (9, 1.3764763560109572, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.3764763560109572}, 50.29743780801073)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:05 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:05 - 
+[92mINFO [0m:      [ROUND 10]
+11:27:05 - [ROUND 10]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:05 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:08 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:08 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0111!
+11:27:08 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0111!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:08 - aggregate_fit: received 2 results and 0 failures
+11:27:08 - [FdaAdam] Actual Variance: 0.01076001487672329!
+11:27:08 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.005380007438361645!
+[92mINFO [0m:      fit progress: (10, 1.6889774545607175, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.6889774545607175}, 55.311406549066305)
+11:27:10 - fit progress: (10, 1.6889774545607175, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.6889774545607175}, 55.311406549066305)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:10 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:10 - 
+[92mINFO [0m:      [ROUND 11]
+11:27:10 - [ROUND 11]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:10 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:13 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:13 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0149!
+11:27:13 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0149!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:13 - aggregate_fit: received 2 results and 0 failures
+11:27:14 - [FdaAdam] Actual Variance: 0.014593084342777729!
+11:27:14 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0072965421713888645!
+[92mINFO [0m:      fit progress: (11, 1.1796364999357976, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1796364999357976}, 60.49885632423684)
+11:27:15 - fit progress: (11, 1.1796364999357976, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1796364999357976}, 60.49885632423684)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:15 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:15 - 
+[92mINFO [0m:      [ROUND 12]
+11:27:15 - [ROUND 12]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:15 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:19 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:19 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0072!
+11:27:19 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0072!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:19 - aggregate_fit: received 2 results and 0 failures
+11:27:19 - [FdaAdam] Actual Variance: 0.007103026378899813!
+11:27:19 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0035515131894499063!
+[92mINFO [0m:      fit progress: (12, 0.6298312690912509, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6298312690912509}, 66.40945821627975)
+11:27:21 - fit progress: (12, 0.6298312690912509, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6298312690912509}, 66.40945821627975)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:21 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:21 - 
+[92mINFO [0m:      [ROUND 13]
+11:27:21 - [ROUND 13]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:21 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:24 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:24 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0028!
+11:27:24 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0028!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:24 - aggregate_fit: received 2 results and 0 failures
+11:27:24 - [FdaAdam] Actual Variance: 0.0026667281053960323!
+11:27:24 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0013333640526980162!
+[92mINFO [0m:      fit progress: (13, 1.068628452572168, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.068628452572168}, 71.62003527907655)
+11:27:26 - fit progress: (13, 1.068628452572168, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 1.068628452572168}, 71.62003527907655)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:26 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:26 - 
+[92mINFO [0m:      [ROUND 14]
+11:27:26 - [ROUND 14]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:26 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:29 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:29 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0032!
+11:27:29 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0032!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:29 - aggregate_fit: received 2 results and 0 failures
+11:27:29 - [FdaAdam] Actual Variance: 0.002080177888274193!
+11:27:29 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0010400889441370964!
+[92mINFO [0m:      fit progress: (14, 0.684244756605111, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.684244756605111}, 76.21046125236899)
+11:27:31 - fit progress: (14, 0.684244756605111, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.684244756605111}, 76.21046125236899)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:31 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:31 - 
+[92mINFO [0m:      [ROUND 15]
+11:27:31 - [ROUND 15]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:31 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:33 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:33 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0028!
+11:27:33 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0028!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:34 - aggregate_fit: received 2 results and 0 failures
+11:27:34 - [FdaAdam] Actual Variance: 0.0024732807651162148!
+11:27:34 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0012366403825581074!
+[92mINFO [0m:      fit progress: (15, 0.9176428366233321, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9176428366233321}, 80.77553765336052)
+11:27:35 - fit progress: (15, 0.9176428366233321, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9176428366233321}, 80.77553765336052)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:35 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:35 - 
+[92mINFO [0m:      [ROUND 16]
+11:27:35 - [ROUND 16]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:35 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:38 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:38 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0047!
+11:27:38 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0047!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:39 - aggregate_fit: received 2 results and 0 failures
+11:27:39 - [FdaAdam] Actual Variance: 0.004811079241335392!
+11:27:39 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.002405539620667696!
+[92mINFO [0m:      fit progress: (16, 1.356025895980351, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.356025895980351}, 86.27657165098935)
+11:27:41 - fit progress: (16, 1.356025895980351, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.356025895980351}, 86.27657165098935)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:41 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:41 - 
+[92mINFO [0m:      [ROUND 17]
+11:27:41 - [ROUND 17]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:41 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:45 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:45 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0094!
+11:27:45 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0094!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:45 - aggregate_fit: received 2 results and 0 failures
+11:27:45 - [FdaAdam] Actual Variance: 0.009248843416571617!
+11:27:45 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0046244217082858086!
+[92mINFO [0m:      fit progress: (17, 1.1776380532001163, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1776380532001163}, 92.40575643721968)
+11:27:47 - fit progress: (17, 1.1776380532001163, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1776380532001163}, 92.40575643721968)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:47 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:47 - 
+[92mINFO [0m:      [ROUND 18]
+11:27:47 - [ROUND 18]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:47 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:51 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:27:51 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0072!
+11:27:51 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0072!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:51 - aggregate_fit: received 2 results and 0 failures
+11:27:51 - [FdaAdam] Actual Variance: 0.007105037569999695!
+11:27:51 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0035525187849998474!
+[92mINFO [0m:      fit progress: (18, 0.6777427681520873, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6777427681520873}, 97.83709130808711)
+11:27:52 - fit progress: (18, 0.6777427681520873, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6777427681520873}, 97.83709130808711)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:52 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:52 - 
+[92mINFO [0m:      [ROUND 19]
+11:27:52 - [ROUND 19]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:52 - configure_fit: strategy sampled 2 clients (out of 2)
+11:27:55 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:27:55 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0033!
+11:27:55 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0033!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:27:55 - aggregate_fit: received 2 results and 0 failures
+11:27:56 - [FdaAdam] Actual Variance: 0.0033478648401796818!
+11:27:56 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0016739324200898409!
+[92mINFO [0m:      fit progress: (19, 0.7450198238971186, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 0.7450198238971186}, 102.3647515270859)
+11:27:57 - fit progress: (19, 0.7450198238971186, {'accuracy': 0.3161764705882353, 'f1': 0.0, 'testing_loss': 0.7450198238971186}, 102.3647515270859)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:27:57 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:27:57 - 
+[92mINFO [0m:      [ROUND 20]
+11:27:57 - [ROUND 20]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:27:57 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:00 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:00 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0029!
+11:28:00 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0029!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:00 - aggregate_fit: received 2 results and 0 failures
+11:28:00 - [FdaAdam] Actual Variance: 0.0024023638106882572!
+11:28:00 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0012011819053441286!
+[92mINFO [0m:      fit progress: (20, 0.6840192149667179, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6840192149667179}, 107.191095859278)
+11:28:02 - fit progress: (20, 0.6840192149667179, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6840192149667179}, 107.191095859278)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:02 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:02 - 
+[92mINFO [0m:      [ROUND 21]
+11:28:02 - [ROUND 21]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:02 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:05 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:05 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0028!
+11:28:05 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0028!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:06 - aggregate_fit: received 2 results and 0 failures
+11:28:06 - [FdaAdam] Actual Variance: 0.0025168214924633503!
+11:28:06 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0012584107462316751!
+[92mINFO [0m:      fit progress: (21, 0.7426778230012632, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7426778230012632}, 112.80454623000696)
+11:28:07 - fit progress: (21, 0.7426778230012632, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7426778230012632}, 112.80454623000696)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:07 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:07 - 
+[92mINFO [0m:      [ROUND 22]
+11:28:07 - [ROUND 22]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:07 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:11 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:11 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+11:28:11 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:11 - aggregate_fit: received 2 results and 0 failures
+11:28:11 - [FdaAdam] Actual Variance: 0.0037493084091693163!
+11:28:12 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018746542045846581!
+[92mINFO [0m:      fit progress: (22, 1.1139550873023623, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1139550873023623}, 118.72492763306946)
+11:28:13 - fit progress: (22, 1.1139550873023623, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.1139550873023623}, 118.72492763306946)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:13 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:13 - 
+[92mINFO [0m:      [ROUND 23]
+11:28:13 - [ROUND 23]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:13 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:17 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:17 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0065!
+11:28:17 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0065!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:17 - aggregate_fit: received 2 results and 0 failures
+11:28:17 - [FdaAdam] Actual Variance: 0.006503865122795105!
+11:28:17 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0032519325613975525!
+[92mINFO [0m:      fit progress: (23, 1.0795164645156439, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.0795164645156439}, 124.05257598636672)
+11:28:18 - fit progress: (23, 1.0795164645156439, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 1.0795164645156439}, 124.05257598636672)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:18 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:18 - 
+[92mINFO [0m:      [ROUND 24]
+11:28:18 - [ROUND 24]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:18 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:22 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:22 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0062!
+11:28:22 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0062!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:22 - aggregate_fit: received 2 results and 0 failures
+11:28:22 - [FdaAdam] Actual Variance: 0.006189590319991112!
+11:28:22 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.003094795159995556!
+[92mINFO [0m:      fit progress: (24, 0.718775820498373, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.718775820498373}, 129.1065897163935)
+11:28:23 - fit progress: (24, 0.718775820498373, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.718775820498373}, 129.1065897163935)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:23 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:23 - 
+[92mINFO [0m:      [ROUND 25]
+11:28:23 - [ROUND 25]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:23 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:26 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:26 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:28:26 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:27 - aggregate_fit: received 2 results and 0 failures
+11:28:27 - [FdaAdam] Actual Variance: 0.0036272918805480003!
+11:28:27 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018136459402740002!
+[92mINFO [0m:      fit progress: (25, 0.647586233475629, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.647586233475629}, 134.34463042626157)
+11:28:29 - fit progress: (25, 0.647586233475629, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.647586233475629}, 134.34463042626157)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:29 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:29 - 
+[92mINFO [0m:      [ROUND 26]
+11:28:29 - [ROUND 26]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:29 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:33 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:33 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0029!
+11:28:33 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0029!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:33 - aggregate_fit: received 2 results and 0 failures
+11:28:33 - [FdaAdam] Actual Variance: 0.0026469167787581682!
+11:28:33 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0013234583893790841!
+[92mINFO [0m:      fit progress: (26, 0.6412072123265734, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6412072123265734}, 140.6023746212013)
+11:28:35 - fit progress: (26, 0.6412072123265734, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6412072123265734}, 140.6023746212013)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:35 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:35 - 
+[92mINFO [0m:      [ROUND 27]
+11:28:35 - [ROUND 27]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:35 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:39 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:39 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0029!
+11:28:39 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0029!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:39 - aggregate_fit: received 2 results and 0 failures
+11:28:39 - [FdaAdam] Actual Variance: 0.002678509568795562!
+11:28:39 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001339254784397781!
+[92mINFO [0m:      fit progress: (27, 0.7182260322220185, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7182260322220185}, 146.2808673833497)
+11:28:41 - fit progress: (27, 0.7182260322220185, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7182260322220185}, 146.2808673833497)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:41 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:41 - 
+[92mINFO [0m:      [ROUND 28]
+11:28:41 - [ROUND 28]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:41 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:44 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:44 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:28:44 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:44 - aggregate_fit: received 2 results and 0 failures
+11:28:44 - [FdaAdam] Actual Variance: 0.0036337939091026783!
+11:28:44 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018168969545513391!
+[92mINFO [0m:      fit progress: (28, 0.9876253907294834, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9876253907294834}, 151.46874314406887)
+11:28:46 - fit progress: (28, 0.9876253907294834, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9876253907294834}, 151.46874314406887)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:46 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:46 - 
+[92mINFO [0m:      [ROUND 29]
+11:28:46 - [ROUND 29]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:46 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:49 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:28:49 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0054!
+11:28:49 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0054!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:49 - aggregate_fit: received 2 results and 0 failures
+11:28:49 - [FdaAdam] Actual Variance: 0.0054381052032113075!
+11:28:50 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0027190526016056538!
+[92mINFO [0m:      fit progress: (29, 0.9506986979029927, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9506986979029927}, 156.8845464172773)
+11:28:51 - fit progress: (29, 0.9506986979029927, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9506986979029927}, 156.8845464172773)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:51 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:51 - 
+[92mINFO [0m:      [ROUND 30]
+11:28:51 - [ROUND 30]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:51 - configure_fit: strategy sampled 2 clients (out of 2)
+11:28:55 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:28:55 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0051!
+11:28:55 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0051!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:28:55 - aggregate_fit: received 2 results and 0 failures
+11:28:55 - [FdaAdam] Actual Variance: 0.00515690166503191!
+11:28:55 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.002578450832515955!
+[92mINFO [0m:      fit progress: (30, 0.6877045622643303, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6877045622643303}, 162.08498894330114)
+11:28:56 - fit progress: (30, 0.6877045622643303, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6877045622643303}, 162.08498894330114)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:28:56 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:28:56 - 
+[92mINFO [0m:      [ROUND 31]
+11:28:56 - [ROUND 31]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:28:56 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:00 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:00 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0034!
+11:29:00 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0034!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:00 - aggregate_fit: received 2 results and 0 failures
+11:29:00 - [FdaAdam] Actual Variance: 0.003462474560365081!
+11:29:01 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017312372801825404!
+[92mINFO [0m:      fit progress: (31, 0.6294815207228941, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6294815207228941}, 167.41701636323705)
+11:29:02 - fit progress: (31, 0.6294815207228941, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6294815207228941}, 167.41701636323705)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:02 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:02 - 
+[92mINFO [0m:      [ROUND 32]
+11:29:02 - [ROUND 32]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:02 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:05 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:05 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0029!
+11:29:05 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0029!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:06 - aggregate_fit: received 2 results and 0 failures
+11:29:06 - [FdaAdam] Actual Variance: 0.002773731481283903!
+11:29:06 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0013868657406419516!
+[92mINFO [0m:      fit progress: (32, 0.6241953852129918, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6241953852129918}, 172.97284963494167)
+11:29:07 - fit progress: (32, 0.6241953852129918, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6241953852129918}, 172.97284963494167)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:07 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:07 - 
+[92mINFO [0m:      [ROUND 33]
+11:29:07 - [ROUND 33]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:07 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:10 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:10 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0030!
+11:29:10 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0030!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:11 - aggregate_fit: received 2 results and 0 failures
+11:29:11 - [FdaAdam] Actual Variance: 0.002925605047494173!
+11:29:11 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0014628025237470865!
+[92mINFO [0m:      fit progress: (33, 0.7564675962808085, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7564675962808085}, 177.68068481329829)
+11:29:12 - fit progress: (33, 0.7564675962808085, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7564675962808085}, 177.68068481329829)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:12 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:12 - 
+[92mINFO [0m:      [ROUND 34]
+11:29:12 - [ROUND 34]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:12 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:15 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:15 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0038!
+11:29:15 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0038!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:15 - aggregate_fit: received 2 results and 0 failures
+11:29:15 - [FdaAdam] Actual Variance: 0.0038812137208878994!
+11:29:15 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019406068604439497!
+[92mINFO [0m:      fit progress: (34, 0.9207717695949125, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9207717695949125}, 182.36415762035176)
+11:29:17 - fit progress: (34, 0.9207717695949125, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.9207717695949125}, 182.36415762035176)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:17 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:17 - 
+[92mINFO [0m:      [ROUND 35]
+11:29:17 - [ROUND 35]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:17 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:20 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:20 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0049!
+11:29:20 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0049!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:20 - aggregate_fit: received 2 results and 0 failures
+11:29:20 - [FdaAdam] Actual Variance: 0.00496503384783864!
+11:29:20 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.00248251692391932!
+[92mINFO [0m:      fit progress: (35, 0.8172793747747645, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.8172793747747645}, 187.0927916020155)
+11:29:21 - fit progress: (35, 0.8172793747747645, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.8172793747747645}, 187.0927916020155)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:21 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:21 - 
+[92mINFO [0m:      [ROUND 36]
+11:29:21 - [ROUND 36]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:21 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:25 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:29:25 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0042!
+11:29:25 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0042!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:25 - aggregate_fit: received 2 results and 0 failures
+11:29:25 - [FdaAdam] Actual Variance: 0.004262580070644617!
+11:29:25 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0021312900353223085!
+[92mINFO [0m:      fit progress: (36, 0.6440042660516851, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6440042660516851}, 192.25325451605022)
+11:29:27 - fit progress: (36, 0.6440042660516851, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6440042660516851}, 192.25325451605022)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:27 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:27 - 
+[92mINFO [0m:      [ROUND 37]
+11:29:27 - [ROUND 37]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:27 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:30 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:30 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0031!
+11:29:30 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0031!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:30 - aggregate_fit: received 2 results and 0 failures
+11:29:30 - [FdaAdam] Actual Variance: 0.00317680137231946!
+11:29:30 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.00158840068615973!
+[92mINFO [0m:      fit progress: (37, 0.6240173753570107, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6240173753570107}, 196.89335393114015)
+11:29:31 - fit progress: (37, 0.6240173753570107, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6240173753570107}, 196.89335393114015)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:31 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:31 - 
+[92mINFO [0m:      [ROUND 38]
+11:29:31 - [ROUND 38]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:31 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:34 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:29:34 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0029!
+11:29:34 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0029!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:34 - aggregate_fit: received 2 results and 0 failures
+11:29:35 - [FdaAdam] Actual Variance: 0.002882664790377021!
+11:29:35 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0014413323951885104!
+[92mINFO [0m:      fit progress: (38, 0.6602098573656643, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6602098573656643}, 201.69263452896848)
+11:29:36 - fit progress: (38, 0.6602098573656643, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6602098573656643}, 201.69263452896848)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:36 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:36 - 
+[92mINFO [0m:      [ROUND 39]
+11:29:36 - [ROUND 39]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:36 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:39 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:29:39 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0032!
+11:29:39 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0032!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:39 - aggregate_fit: received 2 results and 0 failures
+11:29:39 - [FdaAdam] Actual Variance: 0.003300641430541873!
+11:29:39 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0016503207152709365!
+[92mINFO [0m:      fit progress: (39, 0.8147716088330045, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.8147716088330045}, 206.2271617790684)
+11:29:41 - fit progress: (39, 0.8147716088330045, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.8147716088330045}, 206.2271617790684)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:41 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:41 - 
+[92mINFO [0m:      [ROUND 40]
+11:29:41 - [ROUND 40]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:41 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:44 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:44 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0042!
+11:29:44 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0042!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:44 - aggregate_fit: received 2 results and 0 failures
+11:29:44 - [FdaAdam] Actual Variance: 0.004259947687387466!
+11:29:44 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.002129973843693733!
+[92mINFO [0m:      fit progress: (40, 0.83927929956539, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.83927929956539}, 210.75727691315114)
+11:29:45 - fit progress: (40, 0.83927929956539, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.83927929956539}, 210.75727691315114)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:45 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:45 - 
+[92mINFO [0m:      [ROUND 41]
+11:29:45 - [ROUND 41]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:45 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:49 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:49 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0043!
+11:29:49 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0043!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:49 - aggregate_fit: received 2 results and 0 failures
+11:29:49 - [FdaAdam] Actual Variance: 0.004423581995069981!
+11:29:49 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0022117909975349903!
+[92mINFO [0m:      fit progress: (41, 0.6954893005244872, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6954893005244872}, 216.37043835408986)
+11:29:51 - fit progress: (41, 0.6954893005244872, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6954893005244872}, 216.37043835408986)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:51 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:51 - 
+[92mINFO [0m:      [ROUND 42]
+11:29:51 - [ROUND 42]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:51 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:54 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:29:54 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0034!
+11:29:54 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0034!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:54 - aggregate_fit: received 2 results and 0 failures
+11:29:54 - [FdaAdam] Actual Variance: 0.0035347274970263243!
+11:29:55 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017673637485131621!
+[92mINFO [0m:      fit progress: (42, 0.6281063445642883, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6281063445642883}, 221.34968399908394)
+11:29:56 - fit progress: (42, 0.6281063445642883, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6281063445642883}, 221.34968399908394)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:29:56 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:29:56 - 
+[92mINFO [0m:      [ROUND 43]
+11:29:56 - [ROUND 43]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:29:56 - configure_fit: strategy sampled 2 clients (out of 2)
+11:29:59 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:29:59 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0030!
+11:29:59 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0030!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:29:59 - aggregate_fit: received 2 results and 0 failures
+11:29:59 - [FdaAdam] Actual Variance: 0.003020006464794278!
+11:29:59 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001510003232397139!
+[92mINFO [0m:      fit progress: (43, 0.6413076449843014, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6413076449843014}, 225.92065079137683)
+11:30:00 - fit progress: (43, 0.6413076449843014, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6413076449843014}, 225.92065079137683)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:00 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:00 - 
+[92mINFO [0m:      [ROUND 44]
+11:30:00 - [ROUND 44]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:00 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:03 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:03 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0031!
+11:30:03 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0031!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:04 - aggregate_fit: received 2 results and 0 failures
+11:30:04 - [FdaAdam] Actual Variance: 0.0031648282893002033!
+11:30:04 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0015824141446501017!
+[92mINFO [0m:      fit progress: (44, 0.7471363223066517, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7471363223066517}, 230.8735519349575)
+11:30:05 - fit progress: (44, 0.7471363223066517, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7471363223066517}, 230.8735519349575)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:05 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:05 - 
+[92mINFO [0m:      [ROUND 45]
+11:30:05 - [ROUND 45]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:05 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:08 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:08 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:30:08 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:08 - aggregate_fit: received 2 results and 0 failures
+11:30:08 - [FdaAdam] Actual Variance: 0.0038576475344598293!
+11:30:08 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019288237672299147!
+11:30:10 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (45, 0.8121655359864235, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.8121655359864235}, 235.38252768013626)
+11:30:10 - fit progress: (45, 0.8121655359864235, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.8121655359864235}, 235.38252768013626)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:10 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:10 - 
+[92mINFO [0m:      [ROUND 46]
+11:30:10 - [ROUND 46]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:10 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:12 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:12 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0042!
+11:30:12 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0042!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:12 - aggregate_fit: received 2 results and 0 failures
+11:30:12 - [FdaAdam] Actual Variance: 0.0042662424966692924!
+11:30:12 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0021331212483346462!
+11:30:14 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (46, 0.7190504813311147, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7190504813311147}, 239.56017233897)
+11:30:14 - fit progress: (46, 0.7190504813311147, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7190504813311147}, 239.56017233897)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:14 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:14 - 
+[92mINFO [0m:      [ROUND 47]
+11:30:14 - [ROUND 47]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:14 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:16 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:16 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+11:30:16 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:16 - aggregate_fit: received 2 results and 0 failures
+11:30:16 - [FdaAdam] Actual Variance: 0.0036924919113516808!
+11:30:17 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018462459556758404!
+11:30:18 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (47, 0.6396791829782373, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6396791829782373}, 244.14105044631287)
+11:30:18 - fit progress: (47, 0.6396791829782373, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6396791829782373}, 244.14105044631287)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:18 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:18 - 
+[92mINFO [0m:      [ROUND 48]
+11:30:18 - [ROUND 48]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:18 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:21 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:21 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0031!
+11:30:21 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0031!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:21 - aggregate_fit: received 2 results and 0 failures
+11:30:21 - [FdaAdam] Actual Variance: 0.0031585474498569965!
+11:30:21 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0015792737249284983!
+11:30:23 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (48, 0.6432416748766806, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6432416748766806}, 248.88234692439437)
+11:30:23 - fit progress: (48, 0.6432416748766806, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6432416748766806}, 248.88234692439437)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:23 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:23 - 
+[92mINFO [0m:      [ROUND 49]
+11:30:23 - [ROUND 49]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:23 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:26 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:26 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0031!
+11:30:26 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0031!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:26 - aggregate_fit: received 2 results and 0 failures
+11:30:26 - [FdaAdam] Actual Variance: 0.0031919809989631176!
+11:30:26 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0015959904994815588!
+[92mINFO [0m:      fit progress: (49, 0.722458538179304, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.722458538179304}, 252.98369841696694)
+11:30:27 - fit progress: (49, 0.722458538179304, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.722458538179304}, 252.98369841696694)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:27 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:27 - 
+[92mINFO [0m:      [ROUND 50]
+11:30:27 - [ROUND 50]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:27 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:31 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:30:31 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:30:31 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:31 - aggregate_fit: received 2 results and 0 failures
+11:30:31 - [FdaAdam] Actual Variance: 0.0037211463786661625!
+11:30:31 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018605731893330812!
+[92mINFO [0m:      fit progress: (50, 0.7835290706625172, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7835290706625172}, 257.72408846300095)
+11:30:32 - fit progress: (50, 0.7835290706625172, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7835290706625172}, 257.72408846300095)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:32 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:32 - 
+[92mINFO [0m:      [ROUND 51]
+11:30:32 - [ROUND 51]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:32 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:35 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:35 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0040!
+11:30:35 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0040!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:35 - aggregate_fit: received 2 results and 0 failures
+11:30:35 - [FdaAdam] Actual Variance: 0.004099149256944656!
+11:30:35 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.002049574628472328!
+[92mINFO [0m:      fit progress: (51, 0.7170146496272555, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7170146496272555}, 262.46125976601616)
+11:30:37 - fit progress: (51, 0.7170146496272555, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7170146496272555}, 262.46125976601616)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:37 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:37 - 
+[92mINFO [0m:      [ROUND 52]
+11:30:37 - [ROUND 52]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:37 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:41 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:30:41 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:30:41 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:41 - aggregate_fit: received 2 results and 0 failures
+11:30:41 - [FdaAdam] Actual Variance: 0.003693315666168928!
+11:30:41 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001846657833084464!
+[92mINFO [0m:      fit progress: (52, 0.6485381745824627, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6485381745824627}, 267.7909637861885)
+11:30:42 - fit progress: (52, 0.6485381745824627, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6485381745824627}, 267.7909637861885)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:42 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:42 - 
+[92mINFO [0m:      [ROUND 53]
+11:30:42 - [ROUND 53]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:42 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:45 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:45 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0032!
+11:30:45 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0032!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:46 - aggregate_fit: received 2 results and 0 failures
+11:30:46 - [FdaAdam] Actual Variance: 0.003244834253564477!
+11:30:46 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0016224171267822385!
+[92mINFO [0m:      fit progress: (53, 0.6526791009248472, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6526791009248472}, 272.68702110415325)
+11:30:47 - fit progress: (53, 0.6526791009248472, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6526791009248472}, 272.68702110415325)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:47 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:47 - 
+[92mINFO [0m:      [ROUND 54]
+11:30:47 - [ROUND 54]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:47 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:51 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:30:51 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0032!
+11:30:51 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0032!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:51 - aggregate_fit: received 2 results and 0 failures
+11:30:51 - [FdaAdam] Actual Variance: 0.0032794123981148005!
+11:30:51 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0016397061990574002!
+[92mINFO [0m:      fit progress: (54, 0.7211177299420038, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7211177299420038}, 277.8842511223629)
+11:30:52 - fit progress: (54, 0.7211177299420038, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7211177299420038}, 277.8842511223629)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:52 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:52 - 
+[92mINFO [0m:      [ROUND 55]
+11:30:52 - [ROUND 55]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:52 - configure_fit: strategy sampled 2 clients (out of 2)
+11:30:55 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:30:55 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:30:55 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:30:55 - aggregate_fit: received 2 results and 0 failures
+11:30:55 - [FdaAdam] Actual Variance: 0.0037267887964844704!
+11:30:56 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018633943982422352!
+[92mINFO [0m:      fit progress: (55, 0.7620922309510848, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7620922309510848}, 282.35516631696373)
+11:30:57 - fit progress: (55, 0.7620922309510848, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7620922309510848}, 282.35516631696373)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:30:57 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:30:57 - 
+[92mINFO [0m:      [ROUND 56]
+11:30:57 - [ROUND 56]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:30:57 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:01 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:01 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0039!
+11:31:01 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0039!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:01 - aggregate_fit: received 2 results and 0 failures
+11:31:01 - [FdaAdam] Actual Variance: 0.00398020725697279!
+11:31:02 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001990103628486395!
+[92mINFO [0m:      fit progress: (56, 0.7031640077338499, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7031640077338499}, 288.44664623821154)
+11:31:03 - fit progress: (56, 0.7031640077338499, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7031640077338499}, 288.44664623821154)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:03 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:03 - 
+[92mINFO [0m:      [ROUND 57]
+11:31:03 - [ROUND 57]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:03 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:06 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:31:06 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:31:06 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:07 - aggregate_fit: received 2 results and 0 failures
+11:31:07 - [FdaAdam] Actual Variance: 0.0036225449293851852!
+11:31:07 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018112724646925926!
+[92mINFO [0m:      fit progress: (57, 0.6534800377546572, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6534800377546572}, 293.71323707699776)
+11:31:08 - fit progress: (57, 0.6534800377546572, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6534800377546572}, 293.71323707699776)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:08 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:08 - 
+[92mINFO [0m:      [ROUND 58]
+11:31:08 - [ROUND 58]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:08 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:12 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:12 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0032!
+11:31:12 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0032!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:12 - aggregate_fit: received 2 results and 0 failures
+11:31:12 - [FdaAdam] Actual Variance: 0.0032969850581139326!
+11:31:12 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0016484925290569663!
+[92mINFO [0m:      fit progress: (58, 0.6679808436071172, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6679808436071172}, 299.0589720220305)
+11:31:13 - fit progress: (58, 0.6679808436071172, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6679808436071172}, 299.0589720220305)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:13 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:13 - 
+[92mINFO [0m:      [ROUND 59]
+11:31:13 - [ROUND 59]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:13 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:17 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:31:17 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0033!
+11:31:17 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0033!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:17 - aggregate_fit: received 2 results and 0 failures
+11:31:17 - [FdaAdam] Actual Variance: 0.003403184935450554!
+11:31:17 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001701592467725277!
+[92mINFO [0m:      fit progress: (59, 0.729511020230312, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.729511020230312}, 304.15155810303986)
+11:31:18 - fit progress: (59, 0.729511020230312, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.729511020230312}, 304.15155810303986)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:19 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:19 - 
+[92mINFO [0m:      [ROUND 60]
+11:31:19 - [ROUND 60]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:19 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:22 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:31:22 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:31:22 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:22 - aggregate_fit: received 2 results and 0 failures
+11:31:22 - [FdaAdam] Actual Variance: 0.003793370211496949!
+11:31:22 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018966851057484746!
+[92mINFO [0m:      fit progress: (60, 0.7422303484351027, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7422303484351027}, 309.1955739171244)
+11:31:24 - fit progress: (60, 0.7422303484351027, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7422303484351027}, 309.1955739171244)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:24 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:24 - 
+[92mINFO [0m:      [ROUND 61]
+11:31:24 - [ROUND 61]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:24 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:28 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:28 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0038!
+11:31:28 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0038!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:28 - aggregate_fit: received 2 results and 0 failures
+11:31:28 - [FdaAdam] Actual Variance: 0.0038741466123610735!
+11:31:28 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019370733061805367!
+[92mINFO [0m:      fit progress: (61, 0.6864278705096712, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6864278705096712}, 314.61001683212817)
+11:31:29 - fit progress: (61, 0.6864278705096712, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6864278705096712}, 314.61001683212817)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:29 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:29 - 
+[92mINFO [0m:      [ROUND 62]
+11:31:29 - [ROUND 62]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:29 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:32 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:32 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0034!
+11:31:32 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0034!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:32 - aggregate_fit: received 2 results and 0 failures
+11:31:32 - [FdaAdam] Actual Variance: 0.0035341880284249783!
+11:31:32 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017670940142124891!
+[92mINFO [0m:      fit progress: (62, 0.6596037257535785, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6596037257535785}, 319.3036916432902)
+11:31:34 - fit progress: (62, 0.6596037257535785, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6596037257535785}, 319.3036916432902)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:34 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:34 - 
+[92mINFO [0m:      [ROUND 63]
+11:31:34 - [ROUND 63]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:34 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:37 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:37 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0033!
+11:31:37 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0033!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:37 - aggregate_fit: received 2 results and 0 failures
+11:31:37 - [FdaAdam] Actual Variance: 0.0033587077632546425!
+11:31:37 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0016793538816273212!
+11:31:39 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (63, 0.6896258227381051, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6896258227381051}, 324.8049195120111)
+11:31:39 - fit progress: (63, 0.6896258227381051, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6896258227381051}, 324.8049195120111)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:39 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:39 - 
+[92mINFO [0m:      [ROUND 64]
+11:31:39 - [ROUND 64]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:39 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:42 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:42 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+11:31:42 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:42 - aggregate_fit: received 2 results and 0 failures
+11:31:42 - [FdaAdam] Actual Variance: 0.0035617549438029528!
+11:31:42 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017808774719014764!
+[92mINFO [0m:      fit progress: (64, 0.7361142237981161, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7361142237981161}, 329.13320045918226)
+11:31:43 - fit progress: (64, 0.7361142237981161, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7361142237981161}, 329.13320045918226)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:43 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:43 - 
+[92mINFO [0m:      [ROUND 65]
+11:31:43 - [ROUND 65]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:43 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:47 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:31:47 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:31:47 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:47 - aggregate_fit: received 2 results and 0 failures
+11:31:47 - [FdaAdam] Actual Variance: 0.0038510593585669994!
+11:31:47 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019255296792834997!
+[92mINFO [0m:      fit progress: (65, 0.7185784902642754, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7185784902642754}, 334.50875242520124)
+11:31:49 - fit progress: (65, 0.7185784902642754, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7185784902642754}, 334.50875242520124)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:49 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:49 - 
+[92mINFO [0m:      [ROUND 66]
+11:31:49 - [ROUND 66]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:49 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:52 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:52 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:31:52 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:52 - aggregate_fit: received 2 results and 0 failures
+11:31:53 - [FdaAdam] Actual Variance: 0.0037482548505067825!
+11:31:53 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018741274252533913!
+[92mINFO [0m:      fit progress: (66, 0.6741336572404001, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6741336572404001}, 339.6717926929705)
+11:31:54 - fit progress: (66, 0.6741336572404001, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6741336572404001}, 339.6717926929705)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:31:54 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:31:54 - 
+[92mINFO [0m:      [ROUND 67]
+11:31:54 - [ROUND 67]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:31:54 - configure_fit: strategy sampled 2 clients (out of 2)
+11:31:58 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:31:58 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0034!
+11:31:58 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0034!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:31:58 - aggregate_fit: received 2 results and 0 failures
+11:31:58 - [FdaAdam] Actual Variance: 0.0034736301749944687!
+11:31:58 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017368150874972343!
+[92mINFO [0m:      fit progress: (67, 0.673237113976011, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.673237113976011}, 345.37356639513746)
+11:32:00 - fit progress: (67, 0.673237113976011, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.673237113976011}, 345.37356639513746)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:00 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:00 - 
+[92mINFO [0m:      [ROUND 68]
+11:32:00 - [ROUND 68]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:00 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:03 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:03 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0034!
+11:32:03 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0034!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:04 - aggregate_fit: received 2 results and 0 failures
+11:32:04 - [FdaAdam] Actual Variance: 0.003471790114417672!
+11:32:04 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001735895057208836!
+[92mINFO [0m:      fit progress: (68, 0.7135501118267283, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7135501118267283}, 350.8762836670503)
+11:32:05 - fit progress: (68, 0.7135501118267283, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7135501118267283}, 350.8762836670503)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:05 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:05 - 
+[92mINFO [0m:      [ROUND 69]
+11:32:05 - [ROUND 69]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:05 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:09 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:32:09 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:32:09 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:09 - aggregate_fit: received 2 results and 0 failures
+11:32:09 - [FdaAdam] Actual Variance: 0.0037295862566679716!
+11:32:09 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018647931283339858!
+[92mINFO [0m:      fit progress: (69, 0.729756194879027, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.729756194879027}, 355.8446837570518)
+11:32:10 - fit progress: (69, 0.729756194879027, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.729756194879027}, 355.8446837570518)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:10 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:10 - 
+[92mINFO [0m:      [ROUND 70]
+11:32:10 - [ROUND 70]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:10 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:14 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:32:14 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:32:14 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:14 - aggregate_fit: received 2 results and 0 failures
+11:32:14 - [FdaAdam] Actual Variance: 0.0038321614265441895!
+11:32:14 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019160807132720947!
+[92mINFO [0m:      fit progress: (70, 0.694237457186568, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.694237457186568}, 361.17642909195274)
+11:32:16 - fit progress: (70, 0.694237457186568, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.694237457186568}, 361.17642909195274)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:16 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:16 - 
+[92mINFO [0m:      [ROUND 71]
+11:32:16 - [ROUND 71]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:16 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:19 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:19 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:32:19 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:19 - aggregate_fit: received 2 results and 0 failures
+11:32:19 - [FdaAdam] Actual Variance: 0.003619035007432103!
+11:32:19 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018095175037160516!
+[92mINFO [0m:      fit progress: (71, 0.6736545466324863, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6736545466324863}, 366.0257305800915)
+11:32:20 - fit progress: (71, 0.6736545466324863, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6736545466324863}, 366.0257305800915)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:20 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:20 - 
+[92mINFO [0m:      [ROUND 72]
+11:32:20 - [ROUND 72]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:20 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:23 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:23 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0034!
+11:32:23 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0034!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:24 - aggregate_fit: received 2 results and 0 failures
+11:32:24 - [FdaAdam] Actual Variance: 0.003491636598482728!
+11:32:24 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001745818299241364!
+[92mINFO [0m:      fit progress: (72, 0.6968863983364666, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6968863983364666}, 370.77011953806505)
+11:32:25 - fit progress: (72, 0.6968863983364666, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6968863983364666}, 370.77011953806505)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:25 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:25 - 
+[92mINFO [0m:      [ROUND 73]
+11:32:25 - [ROUND 73]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:25 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:28 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:28 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:32:28 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:28 - aggregate_fit: received 2 results and 0 failures
+11:32:28 - [FdaAdam] Actual Variance: 0.0036442133132368326!
+11:32:29 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018221066566184163!
+[92mINFO [0m:      fit progress: (73, 0.7260417038319158, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7260417038319158}, 375.59471126738936)
+11:32:30 - fit progress: (73, 0.7260417038319158, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7260417038319158}, 375.59471126738936)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:30 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:30 - 
+[92mINFO [0m:      [ROUND 74]
+11:32:30 - [ROUND 74]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:30 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:33 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:32:33 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:32:33 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:33 - aggregate_fit: received 2 results and 0 failures
+11:32:33 - [FdaAdam] Actual Variance: 0.003826637752354145!
+11:32:33 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019133188761770725!
+[92mINFO [0m:      fit progress: (74, 0.7085828299031538, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7085828299031538}, 380.40971686830744)
+11:32:35 - fit progress: (74, 0.7085828299031538, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7085828299031538}, 380.40971686830744)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:35 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:35 - 
+[92mINFO [0m:      [ROUND 75]
+11:32:35 - [ROUND 75]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:35 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:38 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:38 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+11:32:38 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:38 - aggregate_fit: received 2 results and 0 failures
+11:32:38 - [FdaAdam] Actual Variance: 0.0037249925080686808!
+11:32:38 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018624962540343404!
+[92mINFO [0m:      fit progress: (75, 0.6809570947114159, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6809570947114159}, 385.0158956120722)
+11:32:39 - fit progress: (75, 0.6809570947114159, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6809570947114159}, 385.0158956120722)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:39 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:39 - 
+[92mINFO [0m:      [ROUND 76]
+11:32:39 - [ROUND 76]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:39 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:43 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:32:43 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+11:32:43 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:43 - aggregate_fit: received 2 results and 0 failures
+11:32:43 - [FdaAdam] Actual Variance: 0.003557052928954363!
+11:32:43 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0017785264644771814!
+[92mINFO [0m:      fit progress: (76, 0.6896717262034323, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6896717262034323}, 390.34183180425316)
+11:32:45 - fit progress: (76, 0.6896717262034323, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6896717262034323}, 390.34183180425316)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:45 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:45 - 
+[92mINFO [0m:      [ROUND 77]
+11:32:45 - [ROUND 77]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:45 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:48 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:48 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:32:48 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:48 - aggregate_fit: received 2 results and 0 failures
+11:32:48 - [FdaAdam] Actual Variance: 0.003616930916905403!
+11:32:48 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018084654584527016!
+[92mINFO [0m:      fit progress: (77, 0.71860945984429, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.71860945984429}, 395.26960557093844)
+11:32:50 - fit progress: (77, 0.71860945984429, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.71860945984429}, 395.26960557093844)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:50 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:50 - 
+[92mINFO [0m:      [ROUND 78]
+11:32:50 - [ROUND 78]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:50 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:53 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:32:53 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:32:53 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:53 - aggregate_fit: received 2 results and 0 failures
+11:32:53 - [FdaAdam] Actual Variance: 0.0037991793360561132!
+11:32:53 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018995896680280566!
+[92mINFO [0m:      fit progress: (78, 0.7151314367850622, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7151314367850622}, 399.9845849890262)
+11:32:54 - fit progress: (78, 0.7151314367850622, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7151314367850622}, 399.9845849890262)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:32:54 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:32:54 - 
+[92mINFO [0m:      [ROUND 79]
+11:32:54 - [ROUND 79]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:32:54 - configure_fit: strategy sampled 2 clients (out of 2)
+11:32:58 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:32:58 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:32:58 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:32:58 - aggregate_fit: received 2 results and 0 failures
+11:32:58 - [FdaAdam] Actual Variance: 0.003782507497817278!
+11:32:58 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001891253748908639!
+[92mINFO [0m:      fit progress: (79, 0.6888620120053198, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6888620120053198}, 405.19655893417075)
+11:33:00 - fit progress: (79, 0.6888620120053198, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6888620120053198}, 405.19655893417075)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:00 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:00 - 
+[92mINFO [0m:      [ROUND 80]
+11:33:00 - [ROUND 80]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:00 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:03 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:33:03 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+11:33:03 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:03 - aggregate_fit: received 2 results and 0 failures
+11:33:03 - [FdaAdam] Actual Variance: 0.0036252662539482117!
+11:33:04 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018126331269741058!
+[92mINFO [0m:      fit progress: (80, 0.6886186669854557, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6886186669854557}, 410.6480602780357)
+11:33:05 - fit progress: (80, 0.6886186669854557, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6886186669854557}, 410.6480602780357)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:05 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:05 - 
+[92mINFO [0m:      [ROUND 81]
+11:33:05 - [ROUND 81]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:05 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:08 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:08 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0035!
+11:33:08 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0035!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:08 - aggregate_fit: received 2 results and 0 failures
+11:33:08 - [FdaAdam] Actual Variance: 0.003628178033977747!
+11:33:08 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018140890169888735!
+11:33:10 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (81, 0.7130305714466992, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7130305714466992}, 415.9483536831103)
+11:33:10 - fit progress: (81, 0.7130305714466992, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7130305714466992}, 415.9483536831103)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:10 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:10 - 
+[92mINFO [0m:      [ROUND 82]
+11:33:10 - [ROUND 82]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:10 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:13 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:13 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:33:13 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:13 - aggregate_fit: received 2 results and 0 failures
+11:33:13 - [FdaAdam] Actual Variance: 0.0037829121574759483!
+11:33:13 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018914560787379742!
+11:33:15 - Using the latest cached version of the module from /home/mtheologitis/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--glue/05234ba7acc44554edcca0978db5fa3bc600eeee66229abe79ff9887eacaf3ed (last modified on Mon Jul  8 13:10:07 2024) since it couldn't be found locally at evaluate-metric--glue, or remotely on the Hugging Face Hub.
+[92mINFO [0m:      fit progress: (82, 0.7166963178737491, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7166963178737491}, 421.1352369203232)
+11:33:15 - fit progress: (82, 0.7166963178737491, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7166963178737491}, 421.1352369203232)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:15 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:15 - 
+[92mINFO [0m:      [ROUND 83]
+11:33:15 - [ROUND 83]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:15 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:19 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:19 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:33:19 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:19 - aggregate_fit: received 2 results and 0 failures
+11:33:19 - [FdaAdam] Actual Variance: 0.0038094210904091597!
+11:33:19 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019047105452045798!
+[92mINFO [0m:      fit progress: (83, 0.6946318304421855, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6946318304421855}, 425.7297415882349)
+11:33:20 - fit progress: (83, 0.6946318304421855, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6946318304421855}, 425.7297415882349)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:20 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:20 - 
+[92mINFO [0m:      [ROUND 84]
+11:33:20 - [ROUND 84]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:20 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:23 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:23 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+11:33:23 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:23 - aggregate_fit: received 2 results and 0 failures
+11:33:24 - [FdaAdam] Actual Variance: 0.0036788759753108025!
+11:33:24 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018394379876554012!
+[92mINFO [0m:      fit progress: (84, 0.6904463169037127, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6904463169037127}, 430.60753852594644)
+11:33:25 - fit progress: (84, 0.6904463169037127, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6904463169037127}, 430.60753852594644)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:25 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:25 - 
+[92mINFO [0m:      [ROUND 85]
+11:33:25 - [ROUND 85]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:25 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:28 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:33:28 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:33:28 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:29 - aggregate_fit: received 2 results and 0 failures
+11:33:29 - [FdaAdam] Actual Variance: 0.0036570816300809383!
+11:33:29 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018285408150404692!
+[92mINFO [0m:      fit progress: (85, 0.7103656723218805, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7103656723218805}, 435.5953897279687)
+11:33:30 - fit progress: (85, 0.7103656723218805, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7103656723218805}, 435.5953897279687)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:30 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:30 - 
+[92mINFO [0m:      [ROUND 86]
+11:33:30 - [ROUND 86]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:30 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:33 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:33 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:33:33 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:33 - aggregate_fit: received 2 results and 0 failures
+11:33:33 - [FdaAdam] Actual Variance: 0.00378378015011549!
+11:33:33 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001891890075057745!
+[92mINFO [0m:      fit progress: (86, 0.7160899016787025, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7160899016787025}, 440.42445727437735)
+11:33:35 - fit progress: (86, 0.7160899016787025, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7160899016787025}, 440.42445727437735)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:35 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:35 - 
+[92mINFO [0m:      [ROUND 87]
+11:33:35 - [ROUND 87]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:35 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:38 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:33:38 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:33:38 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:38 - aggregate_fit: received 2 results and 0 failures
+11:33:38 - [FdaAdam] Actual Variance: 0.0038225343450903893!
+11:33:38 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019112671725451946!
+[92mINFO [0m:      fit progress: (87, 0.697920151200949, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.697920151200949}, 445.5127597232349)
+11:33:40 - fit progress: (87, 0.697920151200949, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.697920151200949}, 445.5127597232349)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:40 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:40 - 
+[92mINFO [0m:      [ROUND 88]
+11:33:40 - [ROUND 88]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:40 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:43 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:33:43 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:33:43 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:44 - aggregate_fit: received 2 results and 0 failures
+11:33:44 - [FdaAdam] Actual Variance: 0.003715973347425461!
+11:33:44 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018579866737127304!
+[92mINFO [0m:      fit progress: (88, 0.6932884840404286, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6932884840404286}, 451.225284953136)
+11:33:46 - fit progress: (88, 0.6932884840404286, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6932884840404286}, 451.225284953136)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:46 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:46 - 
+[92mINFO [0m:      [ROUND 89]
+11:33:46 - [ROUND 89]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:46 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:49 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:49 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+11:33:49 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:49 - aggregate_fit: received 2 results and 0 failures
+11:33:49 - [FdaAdam] Actual Variance: 0.0036913519725203514!
+11:33:49 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018456759862601757!
+[92mINFO [0m:      fit progress: (89, 0.7099790955875435, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7099790955875435}, 456.6181778362952)
+11:33:51 - fit progress: (89, 0.7099790955875435, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7099790955875435}, 456.6181778362952)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:51 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:51 - 
+[92mINFO [0m:      [ROUND 90]
+11:33:51 - [ROUND 90]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:51 - configure_fit: strategy sampled 2 clients (out of 2)
+11:33:55 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:33:55 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:33:55 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:33:55 - aggregate_fit: received 2 results and 0 failures
+11:33:55 - [FdaAdam] Actual Variance: 0.0037975460290908813!
+11:33:55 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018987730145454407!
+[92mINFO [0m:      fit progress: (90, 0.7147293736537298, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7147293736537298}, 462.1316243703477)
+11:33:56 - fit progress: (90, 0.7147293736537298, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7147293736537298}, 462.1316243703477)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:33:56 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:33:56 - 
+[92mINFO [0m:      [ROUND 91]
+11:33:56 - [ROUND 91]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:33:56 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:00 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:34:00 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:34:00 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:00 - aggregate_fit: received 2 results and 0 failures
+11:34:00 - [FdaAdam] Actual Variance: 0.0038301071617752314!
+11:34:00 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019150535808876157!
+[92mINFO [0m:      fit progress: (91, 0.6993597970873702, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6993597970873702}, 467.3490661410615)
+11:34:02 - fit progress: (91, 0.6993597970873702, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6993597970873702}, 467.3490661410615)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:02 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:02 - 
+[92mINFO [0m:      [ROUND 92]
+11:34:02 - [ROUND 92]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:02 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:05 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:34:05 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:34:05 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:05 - aggregate_fit: received 2 results and 0 failures
+11:34:05 - [FdaAdam] Actual Variance: 0.003740452229976654!
+11:34:05 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001870226114988327!
+[92mINFO [0m:      fit progress: (92, 0.696453123700385, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.696453123700385}, 472.1648071440868)
+11:34:07 - fit progress: (92, 0.696453123700385, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.696453123700385}, 472.1648071440868)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:07 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:07 - 
+[92mINFO [0m:      [ROUND 93]
+11:34:07 - [ROUND 93]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:07 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:10 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:34:10 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0036!
+11:34:10 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0036!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:10 - aggregate_fit: received 2 results and 0 failures
+11:34:10 - [FdaAdam] Actual Variance: 0.00372627517208457!
+11:34:10 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001863137586042285!
+[92mINFO [0m:      fit progress: (93, 0.7109380092690972, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7109380092690972}, 477.2458003810607)
+11:34:12 - fit progress: (93, 0.7109380092690972, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7109380092690972}, 477.2458003810607)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:12 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:12 - 
+[92mINFO [0m:      [ROUND 94]
+11:34:12 - [ROUND 94]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:12 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:18 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:34:18 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:34:18 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:19 - aggregate_fit: received 2 results and 0 failures
+11:34:19 - [FdaAdam] Actual Variance: 0.003818223252892494!
+11:34:19 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.001909111626446247!
+[92mINFO [0m:      fit progress: (94, 0.7129780255696353, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7129780255696353}, 485.7581033613533)
+11:34:20 - fit progress: (94, 0.7129780255696353, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7129780255696353}, 485.7581033613533)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:20 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:20 - 
+[92mINFO [0m:      [ROUND 95]
+11:34:20 - [ROUND 95]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:20 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:24 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:34:24 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:34:24 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:24 - aggregate_fit: received 2 results and 0 failures
+11:34:24 - [FdaAdam] Actual Variance: 0.0038340443279594183!
+11:34:24 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019170221639797091!
+[92mINFO [0m:      fit progress: (95, 0.6997879892587662, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6997879892587662}, 491.6301953662187)
+11:34:26 - fit progress: (95, 0.6997879892587662, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6997879892587662}, 491.6301953662187)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:26 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:26 - 
+[92mINFO [0m:      [ROUND 96]
+11:34:26 - [ROUND 96]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:26 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:29 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:34:29 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:34:29 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:29 - aggregate_fit: received 2 results and 0 failures
+11:34:30 - [FdaAdam] Actual Variance: 0.003757358528673649!
+11:34:30 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018786792643368244!
+[92mINFO [0m:      fit progress: (96, 0.6998951788626465, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6998951788626465}, 496.69673384539783)
+11:34:31 - fit progress: (96, 0.6998951788626465, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.6998951788626465}, 496.69673384539783)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:31 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:31 - 
+[92mINFO [0m:      [ROUND 97]
+11:34:31 - [ROUND 97]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:31 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:35 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:34:35 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:34:35 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:35 - aggregate_fit: received 2 results and 0 failures
+11:34:35 - [FdaAdam] Actual Variance: 0.0037613441236317158!
+11:34:35 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018806720618158579!
+[92mINFO [0m:      fit progress: (97, 0.7123411227675045, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7123411227675045}, 501.6944752619602)
+11:34:36 - fit progress: (97, 0.7123411227675045, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7123411227675045}, 501.6944752619602)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:36 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:36 - 
+[92mINFO [0m:      [ROUND 98]
+11:34:36 - [ROUND 98]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:36 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:39 - [Monitor Variance] Aggregated local states successfully from Client IDs [0, 1]!
+11:34:39 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+11:34:39 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:39 - aggregate_fit: received 2 results and 0 failures
+11:34:39 - [FdaAdam] Actual Variance: 0.003840140998363495!
+11:34:39 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019200704991817474!
+[92mINFO [0m:      fit progress: (98, 0.710765430448102, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.710765430448102}, 506.6644553653896)
+11:34:41 - fit progress: (98, 0.710765430448102, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.710765430448102}, 506.6644553653896)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:41 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:41 - 
+[92mINFO [0m:      [ROUND 99]
+11:34:41 - [ROUND 99]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:41 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:45 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:34:45 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:34:45 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:45 - aggregate_fit: received 2 results and 0 failures
+11:34:45 - [FdaAdam] Actual Variance: 0.003833757247775793!
+11:34:45 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0019168786238878965!
+[92mINFO [0m:      fit progress: (99, 0.7000593718360452, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7000593718360452}, 511.90226127626374)
+11:34:46 - fit progress: (99, 0.7000593718360452, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7000593718360452}, 511.90226127626374)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:46 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:46 - 
+[92mINFO [0m:      [ROUND 100]
+11:34:46 - [ROUND 100]
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+11:34:46 - configure_fit: strategy sampled 2 clients (out of 2)
+11:34:50 - [Monitor Variance] Aggregated local states successfully from Client IDs [1, 0]!
+11:34:50 - [Monitor Variance] Successfully sent back to Client 1 at localhost:9201 the variance approximation 0.0037!
+11:34:50 - [Monitor Variance] Successfully sent back to Client 0 at localhost:9199 the variance approximation 0.0037!
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+11:34:50 - aggregate_fit: received 2 results and 0 failures
+11:34:50 - [FdaAdam] Actual Variance: 0.0037717903032898903!
+11:34:50 - [FdaAdam] epochs completed: 1  ,  new threshold: 0.0018858951516449451!
+[92mINFO [0m:      fit progress: (100, 0.7037209658061757, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7037209658061757}, 516.9771938519552)
+11:34:51 - fit progress: (100, 0.7037209658061757, {'accuracy': 0.6838235294117647, 'f1': 0.8122270742358079, 'testing_loss': 0.7037209658061757}, 516.9771938519552)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+11:34:51 - configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+11:34:51 - 
+[92mINFO [0m:      [SUMMARY]
+11:34:51 - [SUMMARY]
+[92mINFO [0m:      Run finished 100 round(s) in 516.98s
+11:34:51 - Run finished 100 round(s) in 516.98s
+[92mINFO [0m:      	History (loss, centralized):
+11:34:51 - 	History (loss, centralized):
+[92mINFO [0m:      		round 0: 0.6845992043906567
+11:34:51 - 		round 0: 0.6845992043906567
+[92mINFO [0m:      		round 1: 2.882860606729296
+11:34:51 - 		round 1: 2.882860606729296
+[92mINFO [0m:      		round 2: 4.58353432487039
+11:34:51 - 		round 2: 4.58353432487039
+[92mINFO [0m:      		round 3: 0.7577821974660836
+11:34:51 - 		round 3: 0.7577821974660836
+[92mINFO [0m:      		round 4: 2.7956108006465534
+11:34:51 - 		round 4: 2.7956108006465534
+[92mINFO [0m:      		round 5: 2.4591898816853406
+11:34:51 - 		round 5: 2.4591898816853406
+[92mINFO [0m:      		round 6: 0.73766708724639
+11:34:51 - 		round 6: 0.73766708724639
+[92mINFO [0m:      		round 7: 2.15070461993124
+11:34:51 - 		round 7: 2.15070461993124
+[92mINFO [0m:      		round 8: 1.2603789065398423
+11:34:51 - 		round 8: 1.2603789065398423
+[92mINFO [0m:      		round 9: 1.3764763560109572
+11:34:51 - 		round 9: 1.3764763560109572
+[92mINFO [0m:      		round 10: 1.6889774545607175
+11:34:51 - 		round 10: 1.6889774545607175
+[92mINFO [0m:      		round 11: 1.1796364999357976
+11:34:51 - 		round 11: 1.1796364999357976
+[92mINFO [0m:      		round 12: 0.6298312690912509
+11:34:51 - 		round 12: 0.6298312690912509
+[92mINFO [0m:      		round 13: 1.068628452572168
+11:34:51 - 		round 13: 1.068628452572168
+[92mINFO [0m:      		round 14: 0.684244756605111
+11:34:51 - 		round 14: 0.684244756605111
+[92mINFO [0m:      		round 15: 0.9176428366233321
+11:34:51 - 		round 15: 0.9176428366233321
+[92mINFO [0m:      		round 16: 1.356025895980351
+11:34:51 - 		round 16: 1.356025895980351
+[92mINFO [0m:      		round 17: 1.1776380532001163
+11:34:51 - 		round 17: 1.1776380532001163
+[92mINFO [0m:      		round 18: 0.6777427681520873
+11:34:51 - 		round 18: 0.6777427681520873
+[92mINFO [0m:      		round 19: 0.7450198238971186
+11:34:51 - 		round 19: 0.7450198238971186
+[92mINFO [0m:      		round 20: 0.6840192149667179
+11:34:51 - 		round 20: 0.6840192149667179
+[92mINFO [0m:      		round 21: 0.7426778230012632
+11:34:51 - 		round 21: 0.7426778230012632
+[92mINFO [0m:      		round 22: 1.1139550873023623
+11:34:51 - 		round 22: 1.1139550873023623
+[92mINFO [0m:      		round 23: 1.0795164645156439
+11:34:51 - 		round 23: 1.0795164645156439
+[92mINFO [0m:      		round 24: 0.718775820498373
+11:34:51 - 		round 24: 0.718775820498373
+[92mINFO [0m:      		round 25: 0.647586233475629
+11:34:51 - 		round 25: 0.647586233475629
+[92mINFO [0m:      		round 26: 0.6412072123265734
+11:34:51 - 		round 26: 0.6412072123265734
+[92mINFO [0m:      		round 27: 0.7182260322220185
+11:34:51 - 		round 27: 0.7182260322220185
+[92mINFO [0m:      		round 28: 0.9876253907294834
+11:34:51 - 		round 28: 0.9876253907294834
+[92mINFO [0m:      		round 29: 0.9506986979029927
+11:34:51 - 		round 29: 0.9506986979029927
+[92mINFO [0m:      		round 30: 0.6877045622643303
+11:34:51 - 		round 30: 0.6877045622643303
+[92mINFO [0m:      		round 31: 0.6294815207228941
+11:34:51 - 		round 31: 0.6294815207228941
+[92mINFO [0m:      		round 32: 0.6241953852129918
+11:34:51 - 		round 32: 0.6241953852129918
+[92mINFO [0m:      		round 33: 0.7564675962808085
+11:34:51 - 		round 33: 0.7564675962808085
+[92mINFO [0m:      		round 34: 0.9207717695949125
+11:34:51 - 		round 34: 0.9207717695949125
+[92mINFO [0m:      		round 35: 0.8172793747747645
+11:34:51 - 		round 35: 0.8172793747747645
+[92mINFO [0m:      		round 36: 0.6440042660516851
+11:34:51 - 		round 36: 0.6440042660516851
+[92mINFO [0m:      		round 37: 0.6240173753570107
+11:34:51 - 		round 37: 0.6240173753570107
+[92mINFO [0m:      		round 38: 0.6602098573656643
+11:34:51 - 		round 38: 0.6602098573656643
+[92mINFO [0m:      		round 39: 0.8147716088330045
+11:34:51 - 		round 39: 0.8147716088330045
+[92mINFO [0m:      		round 40: 0.83927929956539
+11:34:51 - 		round 40: 0.83927929956539
+[92mINFO [0m:      		round 41: 0.6954893005244872
+11:34:51 - 		round 41: 0.6954893005244872
+[92mINFO [0m:      		round 42: 0.6281063445642883
+11:34:51 - 		round 42: 0.6281063445642883
+[92mINFO [0m:      		round 43: 0.6413076449843014
+11:34:51 - 		round 43: 0.6413076449843014
+[92mINFO [0m:      		round 44: 0.7471363223066517
+11:34:51 - 		round 44: 0.7471363223066517
+[92mINFO [0m:      		round 45: 0.8121655359864235
+11:34:51 - 		round 45: 0.8121655359864235
+[92mINFO [0m:      		round 46: 0.7190504813311147
+11:34:51 - 		round 46: 0.7190504813311147
+[92mINFO [0m:      		round 47: 0.6396791829782373
+11:34:51 - 		round 47: 0.6396791829782373
+[92mINFO [0m:      		round 48: 0.6432416748766806
+11:34:51 - 		round 48: 0.6432416748766806
+[92mINFO [0m:      		round 49: 0.722458538179304
+11:34:51 - 		round 49: 0.722458538179304
+[92mINFO [0m:      		round 50: 0.7835290706625172
+11:34:51 - 		round 50: 0.7835290706625172
+[92mINFO [0m:      		round 51: 0.7170146496272555
+11:34:51 - 		round 51: 0.7170146496272555
+[92mINFO [0m:      		round 52: 0.6485381745824627
+11:34:51 - 		round 52: 0.6485381745824627
+[92mINFO [0m:      		round 53: 0.6526791009248472
+11:34:51 - 		round 53: 0.6526791009248472
+[92mINFO [0m:      		round 54: 0.7211177299420038
+11:34:51 - 		round 54: 0.7211177299420038
+[92mINFO [0m:      		round 55: 0.7620922309510848
+11:34:51 - 		round 55: 0.7620922309510848
+[92mINFO [0m:      		round 56: 0.7031640077338499
+11:34:51 - 		round 56: 0.7031640077338499
+[92mINFO [0m:      		round 57: 0.6534800377546572
+11:34:51 - 		round 57: 0.6534800377546572
+[92mINFO [0m:      		round 58: 0.6679808436071172
+11:34:51 - 		round 58: 0.6679808436071172
+[92mINFO [0m:      		round 59: 0.729511020230312
+11:34:51 - 		round 59: 0.729511020230312
+[92mINFO [0m:      		round 60: 0.7422303484351027
+11:34:51 - 		round 60: 0.7422303484351027
+[92mINFO [0m:      		round 61: 0.6864278705096712
+11:34:51 - 		round 61: 0.6864278705096712
+[92mINFO [0m:      		round 62: 0.6596037257535785
+11:34:51 - 		round 62: 0.6596037257535785
+[92mINFO [0m:      		round 63: 0.6896258227381051
+11:34:51 - 		round 63: 0.6896258227381051
+[92mINFO [0m:      		round 64: 0.7361142237981161
+11:34:51 - 		round 64: 0.7361142237981161
+[92mINFO [0m:      		round 65: 0.7185784902642754
+11:34:51 - 		round 65: 0.7185784902642754
+[92mINFO [0m:      		round 66: 0.6741336572404001
+11:34:51 - 		round 66: 0.6741336572404001
+[92mINFO [0m:      		round 67: 0.673237113976011
+11:34:51 - 		round 67: 0.673237113976011
+[92mINFO [0m:      		round 68: 0.7135501118267283
+11:34:51 - 		round 68: 0.7135501118267283
+[92mINFO [0m:      		round 69: 0.729756194879027
+11:34:51 - 		round 69: 0.729756194879027
+[92mINFO [0m:      		round 70: 0.694237457186568
+11:34:51 - 		round 70: 0.694237457186568
+[92mINFO [0m:      		round 71: 0.6736545466324863
+11:34:51 - 		round 71: 0.6736545466324863
+[92mINFO [0m:      		round 72: 0.6968863983364666
+11:34:51 - 		round 72: 0.6968863983364666
+[92mINFO [0m:      		round 73: 0.7260417038319158
+11:34:51 - 		round 73: 0.7260417038319158
+[92mINFO [0m:      		round 74: 0.7085828299031538
+11:34:51 - 		round 74: 0.7085828299031538
+[92mINFO [0m:      		round 75: 0.6809570947114159
+11:34:51 - 		round 75: 0.6809570947114159
+[92mINFO [0m:      		round 76: 0.6896717262034323
+11:34:51 - 		round 76: 0.6896717262034323
+[92mINFO [0m:      		round 77: 0.71860945984429
+11:34:51 - 		round 77: 0.71860945984429
+[92mINFO [0m:      		round 78: 0.7151314367850622
+11:34:51 - 		round 78: 0.7151314367850622
+[92mINFO [0m:      		round 79: 0.6888620120053198
+11:34:51 - 		round 79: 0.6888620120053198
+[92mINFO [0m:      		round 80: 0.6886186669854557
+11:34:51 - 		round 80: 0.6886186669854557
+[92mINFO [0m:      		round 81: 0.7130305714466992
+11:34:51 - 		round 81: 0.7130305714466992
+[92mINFO [0m:      		round 82: 0.7166963178737491
+11:34:51 - 		round 82: 0.7166963178737491
+[92mINFO [0m:      		round 83: 0.6946318304421855
+11:34:51 - 		round 83: 0.6946318304421855
+[92mINFO [0m:      		round 84: 0.6904463169037127
+11:34:51 - 		round 84: 0.6904463169037127
+[92mINFO [0m:      		round 85: 0.7103656723218805
+11:34:51 - 		round 85: 0.7103656723218805
+[92mINFO [0m:      		round 86: 0.7160899016787025
+11:34:51 - 		round 86: 0.7160899016787025
+[92mINFO [0m:      		round 87: 0.697920151200949
+11:34:51 - 		round 87: 0.697920151200949
+[92mINFO [0m:      		round 88: 0.6932884840404286
+11:34:51 - 		round 88: 0.6932884840404286
+[92mINFO [0m:      		round 89: 0.7099790955875435
+11:34:51 - 		round 89: 0.7099790955875435
+[92mINFO [0m:      		round 90: 0.7147293736537298
+11:34:51 - 		round 90: 0.7147293736537298
+[92mINFO [0m:      		round 91: 0.6993597970873702
+11:34:51 - 		round 91: 0.6993597970873702
+[92mINFO [0m:      		round 92: 0.696453123700385
+11:34:51 - 		round 92: 0.696453123700385
+[92mINFO [0m:      		round 93: 0.7109380092690972
+11:34:51 - 		round 93: 0.7109380092690972
+[92mINFO [0m:      		round 94: 0.7129780255696353
+11:34:51 - 		round 94: 0.7129780255696353
+[92mINFO [0m:      		round 95: 0.6997879892587662
+11:34:51 - 		round 95: 0.6997879892587662
+[92mINFO [0m:      		round 96: 0.6998951788626465
+11:34:51 - 		round 96: 0.6998951788626465
+[92mINFO [0m:      		round 97: 0.7123411227675045
+11:34:51 - 		round 97: 0.7123411227675045
+[92mINFO [0m:      		round 98: 0.710765430448102
+11:34:51 - 		round 98: 0.710765430448102
+[92mINFO [0m:      		round 99: 0.7000593718360452
+11:34:51 - 		round 99: 0.7000593718360452
+[92mINFO [0m:      		round 100: 0.7037209658061757
+11:34:51 - 		round 100: 0.7037209658061757
+[92mINFO [0m:      	History (metrics, distributed, fit):
+11:34:51 - 	History (metrics, distributed, fit):
+[92mINFO [0m:      	{'epochs_completed': [(1, 1),
+11:34:51 - 	{'epochs_completed': [(1, 1),
+[92mINFO [0m:      	                      (2, 1),
+11:34:51 - 	                      (2, 1),
+[92mINFO [0m:      	                      (3, 1),
+11:34:51 - 	                      (3, 1),
+[92mINFO [0m:      	                      (4, 1),
+11:34:51 - 	                      (4, 1),
+[92mINFO [0m:      	                      (5, 1),
+11:34:51 - 	                      (5, 1),
+[92mINFO [0m:      	                      (6, 1),
+11:34:51 - 	                      (6, 1),
+[92mINFO [0m:      	                      (7, 1),
+11:34:51 - 	                      (7, 1),
+[92mINFO [0m:      	                      (8, 1),
+11:34:51 - 	                      (8, 1),
+[92mINFO [0m:      	                      (9, 1),
+11:34:51 - 	                      (9, 1),
+[92mINFO [0m:      	                      (10, 1),
+11:34:51 - 	                      (10, 1),
+[92mINFO [0m:      	                      (11, 1),
+11:34:51 - 	                      (11, 1),
+[92mINFO [0m:      	                      (12, 1),
+11:34:51 - 	                      (12, 1),
+[92mINFO [0m:      	                      (13, 1),
+11:34:51 - 	                      (13, 1),
+[92mINFO [0m:      	                      (14, 1),
+11:34:51 - 	                      (14, 1),
+[92mINFO [0m:      	                      (15, 1),
+11:34:51 - 	                      (15, 1),
+[92mINFO [0m:      	                      (16, 1),
+11:34:51 - 	                      (16, 1),
+[92mINFO [0m:      	                      (17, 1),
+11:34:51 - 	                      (17, 1),
+[92mINFO [0m:      	                      (18, 1),
+11:34:51 - 	                      (18, 1),
+[92mINFO [0m:      	                      (19, 1),
+11:34:51 - 	                      (19, 1),
+[92mINFO [0m:      	                      (20, 1),
+11:34:51 - 	                      (20, 1),
+[92mINFO [0m:      	                      (21, 1),
+11:34:51 - 	                      (21, 1),
+[92mINFO [0m:      	                      (22, 1),
+11:34:51 - 	                      (22, 1),
+[92mINFO [0m:      	                      (23, 1),
+11:34:51 - 	                      (23, 1),
+[92mINFO [0m:      	                      (24, 1),
+11:34:51 - 	                      (24, 1),
+[92mINFO [0m:      	                      (25, 1),
+11:34:51 - 	                      (25, 1),
+[92mINFO [0m:      	                      (26, 1),
+11:34:51 - 	                      (26, 1),
+[92mINFO [0m:      	                      (27, 1),
+11:34:51 - 	                      (27, 1),
+[92mINFO [0m:      	                      (28, 1),
+11:34:51 - 	                      (28, 1),
+[92mINFO [0m:      	                      (29, 1),
+11:34:51 - 	                      (29, 1),
+[92mINFO [0m:      	                      (30, 1),
+11:34:51 - 	                      (30, 1),
+[92mINFO [0m:      	                      (31, 1),
+11:34:51 - 	                      (31, 1),
+[92mINFO [0m:      	                      (32, 1),
+11:34:51 - 	                      (32, 1),
+[92mINFO [0m:      	                      (33, 1),
+11:34:51 - 	                      (33, 1),
+[92mINFO [0m:      	                      (34, 1),
+11:34:51 - 	                      (34, 1),
+[92mINFO [0m:      	                      (35, 1),
+11:34:51 - 	                      (35, 1),
+[92mINFO [0m:      	                      (36, 1),
+11:34:51 - 	                      (36, 1),
+[92mINFO [0m:      	                      (37, 1),
+11:34:51 - 	                      (37, 1),
+[92mINFO [0m:      	                      (38, 1),
+11:34:51 - 	                      (38, 1),
+[92mINFO [0m:      	                      (39, 1),
+11:34:51 - 	                      (39, 1),
+[92mINFO [0m:      	                      (40, 1),
+11:34:51 - 	                      (40, 1),
+[92mINFO [0m:      	                      (41, 1),
+11:34:51 - 	                      (41, 1),
+[92mINFO [0m:      	                      (42, 1),
+11:34:51 - 	                      (42, 1),
+[92mINFO [0m:      	                      (43, 1),
+11:34:51 - 	                      (43, 1),
+[92mINFO [0m:      	                      (44, 1),
+11:34:51 - 	                      (44, 1),
+[92mINFO [0m:      	                      (45, 1),
+11:34:51 - 	                      (45, 1),
+[92mINFO [0m:      	                      (46, 1),
+11:34:51 - 	                      (46, 1),
+[92mINFO [0m:      	                      (47, 1),
+11:34:51 - 	                      (47, 1),
+[92mINFO [0m:      	                      (48, 1),
+11:34:51 - 	                      (48, 1),
+[92mINFO [0m:      	                      (49, 1),
+11:34:51 - 	                      (49, 1),
+[92mINFO [0m:      	                      (50, 1),
+11:34:51 - 	                      (50, 1),
+[92mINFO [0m:      	                      (51, 1),
+11:34:51 - 	                      (51, 1),
+[92mINFO [0m:      	                      (52, 1),
+11:34:51 - 	                      (52, 1),
+[92mINFO [0m:      	                      (53, 1),
+11:34:51 - 	                      (53, 1),
+[92mINFO [0m:      	                      (54, 1),
+11:34:51 - 	                      (54, 1),
+[92mINFO [0m:      	                      (55, 1),
+11:34:51 - 	                      (55, 1),
+[92mINFO [0m:      	                      (56, 1),
+11:34:51 - 	                      (56, 1),
+[92mINFO [0m:      	                      (57, 1),
+11:34:51 - 	                      (57, 1),
+[92mINFO [0m:      	                      (58, 1),
+11:34:51 - 	                      (58, 1),
+[92mINFO [0m:      	                      (59, 1),
+11:34:51 - 	                      (59, 1),
+[92mINFO [0m:      	                      (60, 1),
+11:34:51 - 	                      (60, 1),
+[92mINFO [0m:      	                      (61, 1),
+11:34:51 - 	                      (61, 1),
+[92mINFO [0m:      	                      (62, 1),
+11:34:51 - 	                      (62, 1),
+[92mINFO [0m:      	                      (63, 1),
+11:34:51 - 	                      (63, 1),
+[92mINFO [0m:      	                      (64, 1),
+11:34:51 - 	                      (64, 1),
+[92mINFO [0m:      	                      (65, 1),
+11:34:51 - 	                      (65, 1),
+[92mINFO [0m:      	                      (66, 1),
+11:34:51 - 	                      (66, 1),
+[92mINFO [0m:      	                      (67, 1),
+11:34:51 - 	                      (67, 1),
+[92mINFO [0m:      	                      (68, 1),
+11:34:51 - 	                      (68, 1),
+[92mINFO [0m:      	                      (69, 1),
+11:34:51 - 	                      (69, 1),
+[92mINFO [0m:      	                      (70, 1),
+11:34:51 - 	                      (70, 1),
+[92mINFO [0m:      	                      (71, 1),
+11:34:51 - 	                      (71, 1),
+[92mINFO [0m:      	                      (72, 1),
+11:34:51 - 	                      (72, 1),
+[92mINFO [0m:      	                      (73, 1),
+11:34:51 - 	                      (73, 1),
+[92mINFO [0m:      	                      (74, 1),
+11:34:51 - 	                      (74, 1),
+[92mINFO [0m:      	                      (75, 1),
+11:34:51 - 	                      (75, 1),
+[92mINFO [0m:      	                      (76, 1),
+11:34:51 - 	                      (76, 1),
+[92mINFO [0m:      	                      (77, 1),
+11:34:51 - 	                      (77, 1),
+[92mINFO [0m:      	                      (78, 1),
+11:34:51 - 	                      (78, 1),
+[92mINFO [0m:      	                      (79, 1),
+11:34:51 - 	                      (79, 1),
+[92mINFO [0m:      	                      (80, 1),
+11:34:51 - 	                      (80, 1),
+[92mINFO [0m:      	                      (81, 1),
+11:34:51 - 	                      (81, 1),
+[92mINFO [0m:      	                      (82, 1),
+11:34:51 - 	                      (82, 1),
+[92mINFO [0m:      	                      (83, 1),
+11:34:51 - 	                      (83, 1),
+[92mINFO [0m:      	                      (84, 1),
+11:34:51 - 	                      (84, 1),
+[92mINFO [0m:      	                      (85, 1),
+11:34:51 - 	                      (85, 1),
+[92mINFO [0m:      	                      (86, 1),
+11:34:51 - 	                      (86, 1),
+[92mINFO [0m:      	                      (87, 1),
+11:34:51 - 	                      (87, 1),
+[92mINFO [0m:      	                      (88, 1),
+11:34:51 - 	                      (88, 1),
+[92mINFO [0m:      	                      (89, 1),
+11:34:51 - 	                      (89, 1),
+[92mINFO [0m:      	                      (90, 1),
+11:34:51 - 	                      (90, 1),
+[92mINFO [0m:      	                      (91, 1),
+11:34:51 - 	                      (91, 1),
+[92mINFO [0m:      	                      (92, 1),
+11:34:51 - 	                      (92, 1),
+[92mINFO [0m:      	                      (93, 1),
+11:34:51 - 	                      (93, 1),
+[92mINFO [0m:      	                      (94, 1),
+11:34:51 - 	                      (94, 1),
+[92mINFO [0m:      	                      (95, 1),
+11:34:51 - 	                      (95, 1),
+[92mINFO [0m:      	                      (96, 1),
+11:34:51 - 	                      (96, 1),
+[92mINFO [0m:      	                      (97, 1),
+11:34:51 - 	                      (97, 1),
+[92mINFO [0m:      	                      (98, 1),
+11:34:51 - 	                      (98, 1),
+[92mINFO [0m:      	                      (99, 1),
+11:34:51 - 	                      (99, 1),
+[92mINFO [0m:      	                      (100, 1)]}
+11:34:51 - 	                      (100, 1)]}
+[92mINFO [0m:      	History (metrics, centralized):
+11:34:51 - 	History (metrics, centralized):
+[92mINFO [0m:      	{'accuracy': [(0, 0.6127450980392157),
+11:34:51 - 	{'accuracy': [(0, 0.6127450980392157),
+[92mINFO [0m:      	              (1, 0.6838235294117647),
+11:34:51 - 	              (1, 0.6838235294117647),
+[92mINFO [0m:      	              (2, 0.3161764705882353),
+11:34:51 - 	              (2, 0.3161764705882353),
+[92mINFO [0m:      	              (3, 0.6838235294117647),
+11:34:51 - 	              (3, 0.6838235294117647),
+[92mINFO [0m:      	              (4, 0.6838235294117647),
+11:34:51 - 	              (4, 0.6838235294117647),
+[92mINFO [0m:      	              (5, 0.6838235294117647),
+11:34:51 - 	              (5, 0.6838235294117647),
+[92mINFO [0m:      	              (6, 0.6838235294117647),
+11:34:51 - 	              (6, 0.6838235294117647),
+[92mINFO [0m:      	              (7, 0.3161764705882353),
+11:34:51 - 	              (7, 0.3161764705882353),
+[92mINFO [0m:      	              (8, 0.3161764705882353),
+11:34:51 - 	              (8, 0.3161764705882353),
+[92mINFO [0m:      	              (9, 0.6838235294117647),
+11:34:51 - 	              (9, 0.6838235294117647),
+[92mINFO [0m:      	              (10, 0.6838235294117647),
+11:34:51 - 	              (10, 0.6838235294117647),
+[92mINFO [0m:      	              (11, 0.6838235294117647),
+11:34:51 - 	              (11, 0.6838235294117647),
+[92mINFO [0m:      	              (12, 0.6838235294117647),
+11:34:51 - 	              (12, 0.6838235294117647),
+[92mINFO [0m:      	              (13, 0.3161764705882353),
+11:34:51 - 	              (13, 0.3161764705882353),
+[92mINFO [0m:      	              (14, 0.6838235294117647),
+11:34:51 - 	              (14, 0.6838235294117647),
+[92mINFO [0m:      	              (15, 0.6838235294117647),
+11:34:51 - 	              (15, 0.6838235294117647),
+[92mINFO [0m:      	              (16, 0.6838235294117647),
+11:34:51 - 	              (16, 0.6838235294117647),
+[92mINFO [0m:      	              (17, 0.6838235294117647),
+11:34:51 - 	              (17, 0.6838235294117647),
+[92mINFO [0m:      	              (18, 0.6838235294117647),
+11:34:51 - 	              (18, 0.6838235294117647),
+[92mINFO [0m:      	              (19, 0.3161764705882353),
+11:34:51 - 	              (19, 0.3161764705882353),
+[92mINFO [0m:      	              (20, 0.6838235294117647),
+11:34:51 - 	              (20, 0.6838235294117647),
+[92mINFO [0m:      	              (21, 0.6838235294117647),
+11:34:51 - 	              (21, 0.6838235294117647),
+[92mINFO [0m:      	              (22, 0.6838235294117647),
+11:34:51 - 	              (22, 0.6838235294117647),
+[92mINFO [0m:      	              (23, 0.6838235294117647),
+11:34:51 - 	              (23, 0.6838235294117647),
+[92mINFO [0m:      	              (24, 0.6838235294117647),
+11:34:51 - 	              (24, 0.6838235294117647),
+[92mINFO [0m:      	              (25, 0.6838235294117647),
+11:34:51 - 	              (25, 0.6838235294117647),
+[92mINFO [0m:      	              (26, 0.6838235294117647),
+11:34:51 - 	              (26, 0.6838235294117647),
+[92mINFO [0m:      	              (27, 0.6838235294117647),
+11:34:51 - 	              (27, 0.6838235294117647),
+[92mINFO [0m:      	              (28, 0.6838235294117647),
+11:34:51 - 	              (28, 0.6838235294117647),
+[92mINFO [0m:      	              (29, 0.6838235294117647),
+11:34:51 - 	              (29, 0.6838235294117647),
+[92mINFO [0m:      	              (30, 0.6838235294117647),
+11:34:51 - 	              (30, 0.6838235294117647),
+[92mINFO [0m:      	              (31, 0.6838235294117647),
+11:34:51 - 	              (31, 0.6838235294117647),
+[92mINFO [0m:      	              (32, 0.6838235294117647),
+11:34:51 - 	              (32, 0.6838235294117647),
+[92mINFO [0m:      	              (33, 0.6838235294117647),
+11:34:51 - 	              (33, 0.6838235294117647),
+[92mINFO [0m:      	              (34, 0.6838235294117647),
+11:34:51 - 	              (34, 0.6838235294117647),
+[92mINFO [0m:      	              (35, 0.6838235294117647),
+11:34:51 - 	              (35, 0.6838235294117647),
+[92mINFO [0m:      	              (36, 0.6838235294117647),
+11:34:51 - 	              (36, 0.6838235294117647),
+[92mINFO [0m:      	              (37, 0.6838235294117647),
+11:34:51 - 	              (37, 0.6838235294117647),
+[92mINFO [0m:      	              (38, 0.6838235294117647),
+11:34:51 - 	              (38, 0.6838235294117647),
+[92mINFO [0m:      	              (39, 0.6838235294117647),
+11:34:51 - 	              (39, 0.6838235294117647),
+[92mINFO [0m:      	              (40, 0.6838235294117647),
+11:34:51 - 	              (40, 0.6838235294117647),
+[92mINFO [0m:      	              (41, 0.6838235294117647),
+11:34:51 - 	              (41, 0.6838235294117647),
+[92mINFO [0m:      	              (42, 0.6838235294117647),
+11:34:51 - 	              (42, 0.6838235294117647),
+[92mINFO [0m:      	              (43, 0.6838235294117647),
+11:34:51 - 	              (43, 0.6838235294117647),
+[92mINFO [0m:      	              (44, 0.6838235294117647),
+11:34:51 - 	              (44, 0.6838235294117647),
+[92mINFO [0m:      	              (45, 0.6838235294117647),
+11:34:51 - 	              (45, 0.6838235294117647),
+[92mINFO [0m:      	              (46, 0.6838235294117647),
+11:34:51 - 	              (46, 0.6838235294117647),
+[92mINFO [0m:      	              (47, 0.6838235294117647),
+11:34:51 - 	              (47, 0.6838235294117647),
+[92mINFO [0m:      	              (48, 0.6838235294117647),
+11:34:51 - 	              (48, 0.6838235294117647),
+[92mINFO [0m:      	              (49, 0.6838235294117647),
+11:34:51 - 	              (49, 0.6838235294117647),
+[92mINFO [0m:      	              (50, 0.6838235294117647),
+11:34:51 - 	              (50, 0.6838235294117647),
+[92mINFO [0m:      	              (51, 0.6838235294117647),
+11:34:51 - 	              (51, 0.6838235294117647),
+[92mINFO [0m:      	              (52, 0.6838235294117647),
+11:34:51 - 	              (52, 0.6838235294117647),
+[92mINFO [0m:      	              (53, 0.6838235294117647),
+11:34:51 - 	              (53, 0.6838235294117647),
+[92mINFO [0m:      	              (54, 0.6838235294117647),
+11:34:51 - 	              (54, 0.6838235294117647),
+[92mINFO [0m:      	              (55, 0.6838235294117647),
+11:34:51 - 	              (55, 0.6838235294117647),
+[92mINFO [0m:      	              (56, 0.6838235294117647),
+11:34:51 - 	              (56, 0.6838235294117647),
+[92mINFO [0m:      	              (57, 0.6838235294117647),
+11:34:51 - 	              (57, 0.6838235294117647),
+[92mINFO [0m:      	              (58, 0.6838235294117647),
+11:34:51 - 	              (58, 0.6838235294117647),
+[92mINFO [0m:      	              (59, 0.6838235294117647),
+11:34:51 - 	              (59, 0.6838235294117647),
+[92mINFO [0m:      	              (60, 0.6838235294117647),
+11:34:51 - 	              (60, 0.6838235294117647),
+[92mINFO [0m:      	              (61, 0.6838235294117647),
+11:34:51 - 	              (61, 0.6838235294117647),
+[92mINFO [0m:      	              (62, 0.6838235294117647),
+11:34:51 - 	              (62, 0.6838235294117647),
+[92mINFO [0m:      	              (63, 0.6838235294117647),
+11:34:51 - 	              (63, 0.6838235294117647),
+[92mINFO [0m:      	              (64, 0.6838235294117647),
+11:34:51 - 	              (64, 0.6838235294117647),
+[92mINFO [0m:      	              (65, 0.6838235294117647),
+11:34:51 - 	              (65, 0.6838235294117647),
+[92mINFO [0m:      	              (66, 0.6838235294117647),
+11:34:51 - 	              (66, 0.6838235294117647),
+[92mINFO [0m:      	              (67, 0.6838235294117647),
+11:34:51 - 	              (67, 0.6838235294117647),
+[92mINFO [0m:      	              (68, 0.6838235294117647),
+11:34:51 - 	              (68, 0.6838235294117647),
+[92mINFO [0m:      	              (69, 0.6838235294117647),
+11:34:51 - 	              (69, 0.6838235294117647),
+[92mINFO [0m:      	              (70, 0.6838235294117647),
+11:34:51 - 	              (70, 0.6838235294117647),
+[92mINFO [0m:      	              (71, 0.6838235294117647),
+11:34:51 - 	              (71, 0.6838235294117647),
+[92mINFO [0m:      	              (72, 0.6838235294117647),
+11:34:51 - 	              (72, 0.6838235294117647),
+[92mINFO [0m:      	              (73, 0.6838235294117647),
+11:34:51 - 	              (73, 0.6838235294117647),
+[92mINFO [0m:      	              (74, 0.6838235294117647),
+11:34:51 - 	              (74, 0.6838235294117647),
+[92mINFO [0m:      	              (75, 0.6838235294117647),
+11:34:51 - 	              (75, 0.6838235294117647),
+[92mINFO [0m:      	              (76, 0.6838235294117647),
+11:34:51 - 	              (76, 0.6838235294117647),
+[92mINFO [0m:      	              (77, 0.6838235294117647),
+11:34:51 - 	              (77, 0.6838235294117647),
+[92mINFO [0m:      	              (78, 0.6838235294117647),
+11:34:51 - 	              (78, 0.6838235294117647),
+[92mINFO [0m:      	              (79, 0.6838235294117647),
+11:34:51 - 	              (79, 0.6838235294117647),
+[92mINFO [0m:      	              (80, 0.6838235294117647),
+11:34:51 - 	              (80, 0.6838235294117647),
+[92mINFO [0m:      	              (81, 0.6838235294117647),
+11:34:51 - 	              (81, 0.6838235294117647),
+[92mINFO [0m:      	              (82, 0.6838235294117647),
+11:34:51 - 	              (82, 0.6838235294117647),
+[92mINFO [0m:      	              (83, 0.6838235294117647),
+11:34:51 - 	              (83, 0.6838235294117647),
+[92mINFO [0m:      	              (84, 0.6838235294117647),
+11:34:51 - 	              (84, 0.6838235294117647),
+[92mINFO [0m:      	              (85, 0.6838235294117647),
+11:34:51 - 	              (85, 0.6838235294117647),
+[92mINFO [0m:      	              (86, 0.6838235294117647),
+11:34:51 - 	              (86, 0.6838235294117647),
+[92mINFO [0m:      	              (87, 0.6838235294117647),
+11:34:51 - 	              (87, 0.6838235294117647),
+[92mINFO [0m:      	              (88, 0.6838235294117647),
+11:34:51 - 	              (88, 0.6838235294117647),
+[92mINFO [0m:      	              (89, 0.6838235294117647),
+11:34:51 - 	              (89, 0.6838235294117647),
+[92mINFO [0m:      	              (90, 0.6838235294117647),
+11:34:51 - 	              (90, 0.6838235294117647),
+[92mINFO [0m:      	              (91, 0.6838235294117647),
+11:34:51 - 	              (91, 0.6838235294117647),
+[92mINFO [0m:      	              (92, 0.6838235294117647),
+11:34:51 - 	              (92, 0.6838235294117647),
+[92mINFO [0m:      	              (93, 0.6838235294117647),
+11:34:51 - 	              (93, 0.6838235294117647),
+[92mINFO [0m:      	              (94, 0.6838235294117647),
+11:34:51 - 	              (94, 0.6838235294117647),
+[92mINFO [0m:      	              (95, 0.6838235294117647),
+11:34:51 - 	              (95, 0.6838235294117647),
+[92mINFO [0m:      	              (96, 0.6838235294117647),
+11:34:51 - 	              (96, 0.6838235294117647),
+[92mINFO [0m:      	              (97, 0.6838235294117647),
+11:34:51 - 	              (97, 0.6838235294117647),
+[92mINFO [0m:      	              (98, 0.6838235294117647),
+11:34:51 - 	              (98, 0.6838235294117647),
+[92mINFO [0m:      	              (99, 0.6838235294117647),
+11:34:51 - 	              (99, 0.6838235294117647),
+[92mINFO [0m:      	              (100, 0.6838235294117647)],
+11:34:51 - 	              (100, 0.6838235294117647)],
+[92mINFO [0m:      	 'f1': [(0, 0.7198581560283688),
+11:34:51 - 	 'f1': [(0, 0.7198581560283688),
+[92mINFO [0m:      	        (1, 0.8122270742358079),
+11:34:51 - 	        (1, 0.8122270742358079),
+[92mINFO [0m:      	        (2, 0.0),
+11:34:51 - 	        (2, 0.0),
+[92mINFO [0m:      	        (3, 0.8122270742358079),
+11:34:51 - 	        (3, 0.8122270742358079),
+[92mINFO [0m:      	        (4, 0.8122270742358079),
+11:34:51 - 	        (4, 0.8122270742358079),
+[92mINFO [0m:      	        (5, 0.8122270742358079),
+11:34:51 - 	        (5, 0.8122270742358079),
+[92mINFO [0m:      	        (6, 0.8122270742358079),
+11:34:51 - 	        (6, 0.8122270742358079),
+[92mINFO [0m:      	        (7, 0.0),
+11:34:51 - 	        (7, 0.0),
+[92mINFO [0m:      	        (8, 0.0),
+11:34:51 - 	        (8, 0.0),
+[92mINFO [0m:      	        (9, 0.8122270742358079),
+11:34:51 - 	        (9, 0.8122270742358079),
+[92mINFO [0m:      	        (10, 0.8122270742358079),
+11:34:51 - 	        (10, 0.8122270742358079),
+[92mINFO [0m:      	        (11, 0.8122270742358079),
+11:34:51 - 	        (11, 0.8122270742358079),
+[92mINFO [0m:      	        (12, 0.8122270742358079),
+11:34:51 - 	        (12, 0.8122270742358079),
+[92mINFO [0m:      	        (13, 0.0),
+11:34:51 - 	        (13, 0.0),
+[92mINFO [0m:      	        (14, 0.8122270742358079),
+11:34:51 - 	        (14, 0.8122270742358079),
+[92mINFO [0m:      	        (15, 0.8122270742358079),
+11:34:51 - 	        (15, 0.8122270742358079),
+[92mINFO [0m:      	        (16, 0.8122270742358079),
+11:34:51 - 	        (16, 0.8122270742358079),
+[92mINFO [0m:      	        (17, 0.8122270742358079),
+11:34:51 - 	        (17, 0.8122270742358079),
+[92mINFO [0m:      	        (18, 0.8122270742358079),
+11:34:51 - 	        (18, 0.8122270742358079),
+[92mINFO [0m:      	        (19, 0.0),
+11:34:51 - 	        (19, 0.0),
+[92mINFO [0m:      	        (20, 0.8122270742358079),
+11:34:51 - 	        (20, 0.8122270742358079),
+[92mINFO [0m:      	        (21, 0.8122270742358079),
+11:34:51 - 	        (21, 0.8122270742358079),
+[92mINFO [0m:      	        (22, 0.8122270742358079),
+11:34:51 - 	        (22, 0.8122270742358079),
+[92mINFO [0m:      	        (23, 0.8122270742358079),
+11:34:51 - 	        (23, 0.8122270742358079),
+[92mINFO [0m:      	        (24, 0.8122270742358079),
+11:34:51 - 	        (24, 0.8122270742358079),
+[92mINFO [0m:      	        (25, 0.8122270742358079),
+11:34:51 - 	        (25, 0.8122270742358079),
+[92mINFO [0m:      	        (26, 0.8122270742358079),
+11:34:51 - 	        (26, 0.8122270742358079),
+[92mINFO [0m:      	        (27, 0.8122270742358079),
+11:34:51 - 	        (27, 0.8122270742358079),
+[92mINFO [0m:      	        (28, 0.8122270742358079),
+11:34:51 - 	        (28, 0.8122270742358079),
+[92mINFO [0m:      	        (29, 0.8122270742358079),
+11:34:51 - 	        (29, 0.8122270742358079),
+[92mINFO [0m:      	        (30, 0.8122270742358079),
+11:34:51 - 	        (30, 0.8122270742358079),
+[92mINFO [0m:      	        (31, 0.8122270742358079),
+11:34:51 - 	        (31, 0.8122270742358079),
+[92mINFO [0m:      	        (32, 0.8122270742358079),
+11:34:51 - 	        (32, 0.8122270742358079),
+[92mINFO [0m:      	        (33, 0.8122270742358079),
+11:34:51 - 	        (33, 0.8122270742358079),
+[92mINFO [0m:      	        (34, 0.8122270742358079),
+11:34:51 - 	        (34, 0.8122270742358079),
+[92mINFO [0m:      	        (35, 0.8122270742358079),
+11:34:51 - 	        (35, 0.8122270742358079),
+[92mINFO [0m:      	        (36, 0.8122270742358079),
+11:34:51 - 	        (36, 0.8122270742358079),
+[92mINFO [0m:      	        (37, 0.8122270742358079),
+11:34:51 - 	        (37, 0.8122270742358079),
+[92mINFO [0m:      	        (38, 0.8122270742358079),
+11:34:51 - 	        (38, 0.8122270742358079),
+[92mINFO [0m:      	        (39, 0.8122270742358079),
+11:34:51 - 	        (39, 0.8122270742358079),
+[92mINFO [0m:      	        (40, 0.8122270742358079),
+11:34:51 - 	        (40, 0.8122270742358079),
+[92mINFO [0m:      	        (41, 0.8122270742358079),
+11:34:51 - 	        (41, 0.8122270742358079),
+[92mINFO [0m:      	        (42, 0.8122270742358079),
+11:34:51 - 	        (42, 0.8122270742358079),
+[92mINFO [0m:      	        (43, 0.8122270742358079),
+11:34:51 - 	        (43, 0.8122270742358079),
+[92mINFO [0m:      	        (44, 0.8122270742358079),
+11:34:51 - 	        (44, 0.8122270742358079),
+[92mINFO [0m:      	        (45, 0.8122270742358079),
+11:34:51 - 	        (45, 0.8122270742358079),
+[92mINFO [0m:      	        (46, 0.8122270742358079),
+11:34:51 - 	        (46, 0.8122270742358079),
+[92mINFO [0m:      	        (47, 0.8122270742358079),
+11:34:51 - 	        (47, 0.8122270742358079),
+[92mINFO [0m:      	        (48, 0.8122270742358079),
+11:34:51 - 	        (48, 0.8122270742358079),
+[92mINFO [0m:      	        (49, 0.8122270742358079),
+11:34:51 - 	        (49, 0.8122270742358079),
+[92mINFO [0m:      	        (50, 0.8122270742358079),
+11:34:51 - 	        (50, 0.8122270742358079),
+[92mINFO [0m:      	        (51, 0.8122270742358079),
+11:34:51 - 	        (51, 0.8122270742358079),
+[92mINFO [0m:      	        (52, 0.8122270742358079),
+11:34:51 - 	        (52, 0.8122270742358079),
+[92mINFO [0m:      	        (53, 0.8122270742358079),
+11:34:51 - 	        (53, 0.8122270742358079),
+[92mINFO [0m:      	        (54, 0.8122270742358079),
+11:34:51 - 	        (54, 0.8122270742358079),
+[92mINFO [0m:      	        (55, 0.8122270742358079),
+11:34:51 - 	        (55, 0.8122270742358079),
+[92mINFO [0m:      	        (56, 0.8122270742358079),
+11:34:51 - 	        (56, 0.8122270742358079),
+[92mINFO [0m:      	        (57, 0.8122270742358079),
+11:34:51 - 	        (57, 0.8122270742358079),
+[92mINFO [0m:      	        (58, 0.8122270742358079),
+11:34:51 - 	        (58, 0.8122270742358079),
+[92mINFO [0m:      	        (59, 0.8122270742358079),
+11:34:51 - 	        (59, 0.8122270742358079),
+[92mINFO [0m:      	        (60, 0.8122270742358079),
+11:34:51 - 	        (60, 0.8122270742358079),
+[92mINFO [0m:      	        (61, 0.8122270742358079),
+11:34:51 - 	        (61, 0.8122270742358079),
+[92mINFO [0m:      	        (62, 0.8122270742358079),
+11:34:51 - 	        (62, 0.8122270742358079),
+[92mINFO [0m:      	        (63, 0.8122270742358079),
+11:34:51 - 	        (63, 0.8122270742358079),
+[92mINFO [0m:      	        (64, 0.8122270742358079),
+11:34:51 - 	        (64, 0.8122270742358079),
+[92mINFO [0m:      	        (65, 0.8122270742358079),
+11:34:51 - 	        (65, 0.8122270742358079),
+[92mINFO [0m:      	        (66, 0.8122270742358079),
+11:34:51 - 	        (66, 0.8122270742358079),
+[92mINFO [0m:      	        (67, 0.8122270742358079),
+11:34:51 - 	        (67, 0.8122270742358079),
+[92mINFO [0m:      	        (68, 0.8122270742358079),
+11:34:51 - 	        (68, 0.8122270742358079),
+[92mINFO [0m:      	        (69, 0.8122270742358079),
+11:34:51 - 	        (69, 0.8122270742358079),
+[92mINFO [0m:      	        (70, 0.8122270742358079),
+11:34:51 - 	        (70, 0.8122270742358079),
+[92mINFO [0m:      	        (71, 0.8122270742358079),
+11:34:51 - 	        (71, 0.8122270742358079),
+[92mINFO [0m:      	        (72, 0.8122270742358079),
+11:34:51 - 	        (72, 0.8122270742358079),
+[92mINFO [0m:      	        (73, 0.8122270742358079),
+11:34:51 - 	        (73, 0.8122270742358079),
+[92mINFO [0m:      	        (74, 0.8122270742358079),
+11:34:51 - 	        (74, 0.8122270742358079),
+[92mINFO [0m:      	        (75, 0.8122270742358079),
+11:34:51 - 	        (75, 0.8122270742358079),
+[92mINFO [0m:      	        (76, 0.8122270742358079),
+11:34:51 - 	        (76, 0.8122270742358079),
+[92mINFO [0m:      	        (77, 0.8122270742358079),
+11:34:51 - 	        (77, 0.8122270742358079),
+[92mINFO [0m:      	        (78, 0.8122270742358079),
+11:34:51 - 	        (78, 0.8122270742358079),
+[92mINFO [0m:      	        (79, 0.8122270742358079),
+11:34:51 - 	        (79, 0.8122270742358079),
+[92mINFO [0m:      	        (80, 0.8122270742358079),
+11:34:51 - 	        (80, 0.8122270742358079),
+[92mINFO [0m:      	        (81, 0.8122270742358079),
+11:34:51 - 	        (81, 0.8122270742358079),
+[92mINFO [0m:      	        (82, 0.8122270742358079),
+11:34:51 - 	        (82, 0.8122270742358079),
+[92mINFO [0m:      	        (83, 0.8122270742358079),
+11:34:51 - 	        (83, 0.8122270742358079),
+[92mINFO [0m:      	        (84, 0.8122270742358079),
+11:34:51 - 	        (84, 0.8122270742358079),
+[92mINFO [0m:      	        (85, 0.8122270742358079),
+11:34:51 - 	        (85, 0.8122270742358079),
+[92mINFO [0m:      	        (86, 0.8122270742358079),
+11:34:51 - 	        (86, 0.8122270742358079),
+[92mINFO [0m:      	        (87, 0.8122270742358079),
+11:34:51 - 	        (87, 0.8122270742358079),
+[92mINFO [0m:      	        (88, 0.8122270742358079),
+11:34:51 - 	        (88, 0.8122270742358079),
+[92mINFO [0m:      	        (89, 0.8122270742358079),
+11:34:51 - 	        (89, 0.8122270742358079),
+[92mINFO [0m:      	        (90, 0.8122270742358079),
+11:34:51 - 	        (90, 0.8122270742358079),
+[92mINFO [0m:      	        (91, 0.8122270742358079),
+11:34:51 - 	        (91, 0.8122270742358079),
+[92mINFO [0m:      	        (92, 0.8122270742358079),
+11:34:51 - 	        (92, 0.8122270742358079),
+[92mINFO [0m:      	        (93, 0.8122270742358079),
+11:34:51 - 	        (93, 0.8122270742358079),
+[92mINFO [0m:      	        (94, 0.8122270742358079),
+11:34:51 - 	        (94, 0.8122270742358079),
+[92mINFO [0m:      	        (95, 0.8122270742358079),
+11:34:51 - 	        (95, 0.8122270742358079),
+[92mINFO [0m:      	        (96, 0.8122270742358079),
+11:34:51 - 	        (96, 0.8122270742358079),
+[92mINFO [0m:      	        (97, 0.8122270742358079),
+11:34:51 - 	        (97, 0.8122270742358079),
+[92mINFO [0m:      	        (98, 0.8122270742358079),
+11:34:51 - 	        (98, 0.8122270742358079),
+[92mINFO [0m:      	        (99, 0.8122270742358079),
+11:34:51 - 	        (99, 0.8122270742358079),
+[92mINFO [0m:      	        (100, 0.8122270742358079)],
+11:34:51 - 	        (100, 0.8122270742358079)],
+[92mINFO [0m:      	 'testing_loss': [(0, 0.6845992043906567),
+11:34:51 - 	 'testing_loss': [(0, 0.6845992043906567),
+[92mINFO [0m:      	                  (1, 2.882860606729296),
+11:34:51 - 	                  (1, 2.882860606729296),
+[92mINFO [0m:      	                  (2, 4.58353432487039),
+11:34:51 - 	                  (2, 4.58353432487039),
+[92mINFO [0m:      	                  (3, 0.7577821974660836),
+11:34:51 - 	                  (3, 0.7577821974660836),
+[92mINFO [0m:      	                  (4, 2.7956108006465534),
+11:34:51 - 	                  (4, 2.7956108006465534),
+[92mINFO [0m:      	                  (5, 2.4591898816853406),
+11:34:51 - 	                  (5, 2.4591898816853406),
+[92mINFO [0m:      	                  (6, 0.73766708724639),
+11:34:51 - 	                  (6, 0.73766708724639),
+[92mINFO [0m:      	                  (7, 2.15070461993124),
+11:34:51 - 	                  (7, 2.15070461993124),
+[92mINFO [0m:      	                  (8, 1.2603789065398423),
+11:34:51 - 	                  (8, 1.2603789065398423),
+[92mINFO [0m:      	                  (9, 1.3764763560109572),
+11:34:51 - 	                  (9, 1.3764763560109572),
+[92mINFO [0m:      	                  (10, 1.6889774545607175),
+11:34:51 - 	                  (10, 1.6889774545607175),
+[92mINFO [0m:      	                  (11, 1.1796364999357976),
+11:34:51 - 	                  (11, 1.1796364999357976),
+[92mINFO [0m:      	                  (12, 0.6298312690912509),
+11:34:51 - 	                  (12, 0.6298312690912509),
+[92mINFO [0m:      	                  (13, 1.068628452572168),
+11:34:51 - 	                  (13, 1.068628452572168),
+[92mINFO [0m:      	                  (14, 0.684244756605111),
+11:34:51 - 	                  (14, 0.684244756605111),
+[92mINFO [0m:      	                  (15, 0.9176428366233321),
+11:34:51 - 	                  (15, 0.9176428366233321),
+[92mINFO [0m:      	                  (16, 1.356025895980351),
+11:34:51 - 	                  (16, 1.356025895980351),
+[92mINFO [0m:      	                  (17, 1.1776380532001163),
+11:34:51 - 	                  (17, 1.1776380532001163),
+[92mINFO [0m:      	                  (18, 0.6777427681520873),
+11:34:51 - 	                  (18, 0.6777427681520873),
+[92mINFO [0m:      	                  (19, 0.7450198238971186),
+11:34:51 - 	                  (19, 0.7450198238971186),
+[92mINFO [0m:      	                  (20, 0.6840192149667179),
+11:34:51 - 	                  (20, 0.6840192149667179),
+[92mINFO [0m:      	                  (21, 0.7426778230012632),
+11:34:51 - 	                  (21, 0.7426778230012632),
+[92mINFO [0m:      	                  (22, 1.1139550873023623),
+11:34:51 - 	                  (22, 1.1139550873023623),
+[92mINFO [0m:      	                  (23, 1.0795164645156439),
+11:34:51 - 	                  (23, 1.0795164645156439),
+[92mINFO [0m:      	                  (24, 0.718775820498373),
+11:34:51 - 	                  (24, 0.718775820498373),
+[92mINFO [0m:      	                  (25, 0.647586233475629),
+11:34:51 - 	                  (25, 0.647586233475629),
+[92mINFO [0m:      	                  (26, 0.6412072123265734),
+11:34:51 - 	                  (26, 0.6412072123265734),
+[92mINFO [0m:      	                  (27, 0.7182260322220185),
+11:34:51 - 	                  (27, 0.7182260322220185),
+[92mINFO [0m:      	                  (28, 0.9876253907294834),
+11:34:51 - 	                  (28, 0.9876253907294834),
+[92mINFO [0m:      	                  (29, 0.9506986979029927),
+11:34:51 - 	                  (29, 0.9506986979029927),
+[92mINFO [0m:      	                  (30, 0.6877045622643303),
+11:34:51 - 	                  (30, 0.6877045622643303),
+[92mINFO [0m:      	                  (31, 0.6294815207228941),
+11:34:51 - 	                  (31, 0.6294815207228941),
+[92mINFO [0m:      	                  (32, 0.6241953852129918),
+11:34:51 - 	                  (32, 0.6241953852129918),
+[92mINFO [0m:      	                  (33, 0.7564675962808085),
+11:34:51 - 	                  (33, 0.7564675962808085),
+[92mINFO [0m:      	                  (34, 0.9207717695949125),
+11:34:51 - 	                  (34, 0.9207717695949125),
+[92mINFO [0m:      	                  (35, 0.8172793747747645),
+11:34:51 - 	                  (35, 0.8172793747747645),
+[92mINFO [0m:      	                  (36, 0.6440042660516851),
+11:34:51 - 	                  (36, 0.6440042660516851),
+[92mINFO [0m:      	                  (37, 0.6240173753570107),
+11:34:51 - 	                  (37, 0.6240173753570107),
+[92mINFO [0m:      	                  (38, 0.6602098573656643),
+11:34:51 - 	                  (38, 0.6602098573656643),
+[92mINFO [0m:      	                  (39, 0.8147716088330045),
+11:34:51 - 	                  (39, 0.8147716088330045),
+[92mINFO [0m:      	                  (40, 0.83927929956539),
+11:34:51 - 	                  (40, 0.83927929956539),
+[92mINFO [0m:      	                  (41, 0.6954893005244872),
+11:34:51 - 	                  (41, 0.6954893005244872),
+[92mINFO [0m:      	                  (42, 0.6281063445642883),
+11:34:51 - 	                  (42, 0.6281063445642883),
+[92mINFO [0m:      	                  (43, 0.6413076449843014),
+11:34:51 - 	                  (43, 0.6413076449843014),
+[92mINFO [0m:      	                  (44, 0.7471363223066517),
+11:34:51 - 	                  (44, 0.7471363223066517),
+[92mINFO [0m:      	                  (45, 0.8121655359864235),
+11:34:51 - 	                  (45, 0.8121655359864235),
+[92mINFO [0m:      	                  (46, 0.7190504813311147),
+11:34:51 - 	                  (46, 0.7190504813311147),
+[92mINFO [0m:      	                  (47, 0.6396791829782373),
+11:34:51 - 	                  (47, 0.6396791829782373),
+[92mINFO [0m:      	                  (48, 0.6432416748766806),
+11:34:51 - 	                  (48, 0.6432416748766806),
+[92mINFO [0m:      	                  (49, 0.722458538179304),
+11:34:51 - 	                  (49, 0.722458538179304),
+[92mINFO [0m:      	                  (50, 0.7835290706625172),
+11:34:51 - 	                  (50, 0.7835290706625172),
+[92mINFO [0m:      	                  (51, 0.7170146496272555),
+11:34:51 - 	                  (51, 0.7170146496272555),
+[92mINFO [0m:      	                  (52, 0.6485381745824627),
+11:34:51 - 	                  (52, 0.6485381745824627),
+[92mINFO [0m:      	                  (53, 0.6526791009248472),
+11:34:51 - 	                  (53, 0.6526791009248472),
+[92mINFO [0m:      	                  (54, 0.7211177299420038),
+11:34:51 - 	                  (54, 0.7211177299420038),
+[92mINFO [0m:      	                  (55, 0.7620922309510848),
+11:34:51 - 	                  (55, 0.7620922309510848),
+[92mINFO [0m:      	                  (56, 0.7031640077338499),
+11:34:51 - 	                  (56, 0.7031640077338499),
+[92mINFO [0m:      	                  (57, 0.6534800377546572),
+11:34:51 - 	                  (57, 0.6534800377546572),
+[92mINFO [0m:      	                  (58, 0.6679808436071172),
+11:34:51 - 	                  (58, 0.6679808436071172),
+[92mINFO [0m:      	                  (59, 0.729511020230312),
+11:34:51 - 	                  (59, 0.729511020230312),
+[92mINFO [0m:      	                  (60, 0.7422303484351027),
+11:34:51 - 	                  (60, 0.7422303484351027),
+[92mINFO [0m:      	                  (61, 0.6864278705096712),
+11:34:51 - 	                  (61, 0.6864278705096712),
+[92mINFO [0m:      	                  (62, 0.6596037257535785),
+11:34:51 - 	                  (62, 0.6596037257535785),
+[92mINFO [0m:      	                  (63, 0.6896258227381051),
+11:34:51 - 	                  (63, 0.6896258227381051),
+[92mINFO [0m:      	                  (64, 0.7361142237981161),
+11:34:51 - 	                  (64, 0.7361142237981161),
+[92mINFO [0m:      	                  (65, 0.7185784902642754),
+11:34:51 - 	                  (65, 0.7185784902642754),
+[92mINFO [0m:      	                  (66, 0.6741336572404001),
+11:34:51 - 	                  (66, 0.6741336572404001),
+[92mINFO [0m:      	                  (67, 0.673237113976011),
+11:34:51 - 	                  (67, 0.673237113976011),
+[92mINFO [0m:      	                  (68, 0.7135501118267283),
+11:34:51 - 	                  (68, 0.7135501118267283),
+[92mINFO [0m:      	                  (69, 0.729756194879027),
+11:34:51 - 	                  (69, 0.729756194879027),
+[92mINFO [0m:      	                  (70, 0.694237457186568),
+11:34:51 - 	                  (70, 0.694237457186568),
+[92mINFO [0m:      	                  (71, 0.6736545466324863),
+11:34:51 - 	                  (71, 0.6736545466324863),
+[92mINFO [0m:      	                  (72, 0.6968863983364666),
+11:34:51 - 	                  (72, 0.6968863983364666),
+[92mINFO [0m:      	                  (73, 0.7260417038319158),
+11:34:51 - 	                  (73, 0.7260417038319158),
+[92mINFO [0m:      	                  (74, 0.7085828299031538),
+11:34:51 - 	                  (74, 0.7085828299031538),
+[92mINFO [0m:      	                  (75, 0.6809570947114159),
+11:34:51 - 	                  (75, 0.6809570947114159),
+[92mINFO [0m:      	                  (76, 0.6896717262034323),
+11:34:51 - 	                  (76, 0.6896717262034323),
+[92mINFO [0m:      	                  (77, 0.71860945984429),
+11:34:51 - 	                  (77, 0.71860945984429),
+[92mINFO [0m:      	                  (78, 0.7151314367850622),
+11:34:51 - 	                  (78, 0.7151314367850622),
+[92mINFO [0m:      	                  (79, 0.6888620120053198),
+11:34:51 - 	                  (79, 0.6888620120053198),
+[92mINFO [0m:      	                  (80, 0.6886186669854557),
+11:34:51 - 	                  (80, 0.6886186669854557),
+[92mINFO [0m:      	                  (81, 0.7130305714466992),
+11:34:51 - 	                  (81, 0.7130305714466992),
+[92mINFO [0m:      	                  (82, 0.7166963178737491),
+11:34:51 - 	                  (82, 0.7166963178737491),
+[92mINFO [0m:      	                  (83, 0.6946318304421855),
+11:34:51 - 	                  (83, 0.6946318304421855),
+[92mINFO [0m:      	                  (84, 0.6904463169037127),
+11:34:51 - 	                  (84, 0.6904463169037127),
+[92mINFO [0m:      	                  (85, 0.7103656723218805),
+11:34:51 - 	                  (85, 0.7103656723218805),
+[92mINFO [0m:      	                  (86, 0.7160899016787025),
+11:34:51 - 	                  (86, 0.7160899016787025),
+[92mINFO [0m:      	                  (87, 0.697920151200949),
+11:34:51 - 	                  (87, 0.697920151200949),
+[92mINFO [0m:      	                  (88, 0.6932884840404286),
+11:34:51 - 	                  (88, 0.6932884840404286),
+[92mINFO [0m:      	                  (89, 0.7099790955875435),
+11:34:51 - 	                  (89, 0.7099790955875435),
+[92mINFO [0m:      	                  (90, 0.7147293736537298),
+11:34:51 - 	                  (90, 0.7147293736537298),
+[92mINFO [0m:      	                  (91, 0.6993597970873702),
+11:34:51 - 	                  (91, 0.6993597970873702),
+[92mINFO [0m:      	                  (92, 0.696453123700385),
+11:34:51 - 	                  (92, 0.696453123700385),
+[92mINFO [0m:      	                  (93, 0.7109380092690972),
+11:34:51 - 	                  (93, 0.7109380092690972),
+[92mINFO [0m:      	                  (94, 0.7129780255696353),
+11:34:51 - 	                  (94, 0.7129780255696353),
+[92mINFO [0m:      	                  (95, 0.6997879892587662),
+11:34:51 - 	                  (95, 0.6997879892587662),
+[92mINFO [0m:      	                  (96, 0.6998951788626465),
+11:34:51 - 	                  (96, 0.6998951788626465),
+[92mINFO [0m:      	                  (97, 0.7123411227675045),
+11:34:51 - 	                  (97, 0.7123411227675045),
+[92mINFO [0m:      	                  (98, 0.710765430448102),
+11:34:51 - 	                  (98, 0.710765430448102),
+[92mINFO [0m:      	                  (99, 0.7000593718360452),
+11:34:51 - 	                  (99, 0.7000593718360452),
+[92mINFO [0m:      	                  (100, 0.7037209658061757)]}
+11:34:51 - 	                  (100, 0.7037209658061757)]}
+[92mINFO [0m:      
+11:34:51 - 
+11:34:51 - [Server-5ee7e6e9] Finished training!
+11:34:51 - [Server-5ee7e6e9] Saved model!
+11:34:51 - [Server-5ee7e6e9] Exiting...!

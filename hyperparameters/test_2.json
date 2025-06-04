@@ -33,13 +33,13 @@
       {
         "id": 0,
         "ip": "localhost",
-        "port": 9250,
+        "port": 9450,
         "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_0.pth"
       },
       {
         "id": 1,
         "ip": "localhost",
-        "port": 9251,
+        "port": 9451,
         "data_path": "/home/mtheologitis/FDA-Opt-Sys/data/glue/mrpc/c10_1.pth"
       },
       {

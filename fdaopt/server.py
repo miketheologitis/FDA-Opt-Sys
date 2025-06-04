@@ -16,6 +16,11 @@ from transformers import AutoModelForSequenceClassification
 from fdaopt.training import get_weights, get_evaluate_fn
 from fdaopt.networking import start_variance_monitoring_loop, create_pull_socket
 
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+CHECKPOINTS_DIR = SCRIPT_DIR.parent / "logs" / "checkpoints"
+
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s', datefmt='%H:%M:%S')
 
@@ -172,3 +177,13 @@ if __name__ == '__main__':
             config=config,
             strategy=strategy
         )
+        
+    job_id = os.environ.get("JOB_ID", "unknown")
+    model_checkpoint_str = model_checkpoint.replace('/', '-')
+    model_checkpoint_save = f"{model_checkpoint_str}-{job_id}.pth" 
+    save_path = CHECKPOINTS_DIR / model_checkpoint_save
+    torch.save(model.state_dict(), save_path)
+    logging.info(f"[Server-{job_id}] Finished training!")
+    logging.info(f"[Server-{job_id}] Saved model!")
+    logging.info(f"[Server-{job_id}] Exiting...!")
+    

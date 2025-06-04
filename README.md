@@ -63,3 +63,15 @@ Run 1-time local parameters and launch 1 job:
 ```bash
 python mediator.py --cleanup --local /home/mtheologitis/FDA-Opt-Sys/hyperparameters/test_1.json
 ```
+
+### Evaluate
+
+```bash
+python evaluate_model.py \
+  --model_checkpoint prajjwal1/bert-tiny \
+  --local_weights logs/checkpoints/prajjwal1-bert-tiny-039f3834.pth \
+  --ds_path glue \
+  --ds_name mrpc \
+  --device cuda:1 \
+  --num_labels 2
+```
