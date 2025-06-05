@@ -12,7 +12,7 @@
   "training": {
     "num_clients": 2,
     "clients_per_round": 2,
-    "local_epochs": 1,
+    "local_epochs": 10,
     "total_rounds": 100
   },
   "server": {
@@ -25,7 +25,7 @@
     "strategy": {
       "name": "FedAdam",
       "fda": false,
-      "eta": 0.001
+      "eta": 0.0001
     }
   },
   "clients": {
@@ -43,6 +43,6 @@
         "data_path": ""
       }
     ],
-    "lr": 0.01
+    "lr": 0.001
   }
 }
