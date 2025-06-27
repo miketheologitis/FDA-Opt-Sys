@@ -2,7 +2,7 @@
 System implementation for the [CREXDATA](https://crexdata.eu/) Project of
 ```bibtex
 @misc{theologitis2025communication,
-    title={Communication-Efficient Federated Fine-Tuning of Language Models via Dynamic Update Schedules},
+    title={FDA-Opt: Communication-Efficient Federated Fine-Tuning of Language Models},
     author={Michail Theologitis and Vasilis Samoladas and Antonios Deligiannakis},
     year={2025},
     eprint={2505.04535},
