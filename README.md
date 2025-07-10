@@ -98,13 +98,13 @@ In the following example, we’ll demonstrate two steps:
 1. Start the mediator process to listen for FL jobs.
 2. Send FL jobs as JSON configurations to the Kafka topic.
 
-### Start the Mediator:
+### 1. Start the Mediator:
 
 ```bash
 python mediator.py --cleanup
 ```
 
-### Send JSON files to Kafka
+### 2. Send JSON files to Kafka
 
 Go to `/hyperparameters` and send the `test_1-minified.json` to the `FedL` topic:
 ```bash
@@ -116,14 +116,13 @@ kafka-console-producer.sh --bootstrap-server localhost:9092 --topic  FedL < test
 ```
 And so on...
 
-### Read the Logs
+## 📰 Read the Logs 📰
 
 Go to `/logs` and monitor the two different jobs we submitted. You can read anything you like: the mediator's logs,
 one of the two FL server's logs, or any of the client's logs!
 
-### We can also start the mediator locally (for testing purposes)
-
-Run 1-time local parameters and launch 1 job:
+## 🔬 Testing Purposes 🔬
+We can also start the mediator locally for testing purposes. Run 1-time job:
 ```bash
 python mediator.py --cleanup --local <path_to_folder>/test_1-minified.json
 ```
