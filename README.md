@@ -142,11 +142,29 @@ python evaluate_model.py \
   --num_labels 2
 ```
 
-## 📋 Hyperparameters - JSON Schema 📋
+## 📋 Different Options - JSON Schema 📋
 
-These are the configurations expected to come in each JSON from Kafka. **Note**: We expect a minified JSON 
-(no whitespaces, tabs, newlines, comments, etc.)
+Every federated learning (FL) job in our system is defined by a JSON configuration. 
+These configurations give us fine-grained control over the entire 
+FL process—from the model and dataset to the training strategy and network setup.
+Each JSON payload is pushed through Kafka and triggers a fully independent FL cluster.
 
+Given the flexibility of the system, there are many possible combinations of parameters we can provide. 
+While it's not
+feasible to document every combination, we provide here a structured schema of the supported fields, 
+along with explanations and examples of how to use them.
+
+Some fields are optional, 
+and our system is designed to adapt 
+dynamically based on what you provide. 
+For example, if you're using the FDA strategy and omit the theta parameter, 
+the algorithm will dynamically adjust it during training—see our [FDA-Opt](https://arxiv.org/abs/2505.04535) paper for more details on this behavior.
+
+The sections below break down the configuration fields into logical groups 
+(model, dataset, training, server, clients) so we can easily craft powerful job 
+descriptions that meet any needs.
+
+---
 - `model`:
   - `checkpoint`: HuggingFace model checkpoint: Specifies the pre-trained model to use (e.g., "roberta-base").
   - `num_labels`: Defines the number of output labels for the task.
@@ -171,7 +189,8 @@ These are the configurations expected to come in each JSON from Kafka. **Note**:
       - `port_pull_socket`: Server IP address for PULL socket used in FDA.
     - `strategy`: Specifies the federated learning strategy used in Flower.
       - `name`: Name of the strategy (e.g., `"FedAdam"`). See [here](https://flower.ai/docs/framework/ref-api/flwr.server.strategy.html).
-      - `fda`: Whether or not to use FDA extention. Either `True` or `False` 
+      - `fda`: Whether or not to use FDA extention. Either `True` or `False`
+      - `theta`: FDA-Specific and also **Optional** (if `fda` is `True` and this *empty* then we change the value dynamically --- see FDA-Opt paper)
       - **Optional** (All strategy-specific applicable hyperparameters from [here](https://flower.ai/docs/framework/ref-api/flwr.server.strategy.html)):
          - e.g., `eta`: Server-side learning rate hyperparameter.
 
@@ -184,3 +203,6 @@ These are the configurations expected to come in each JSON from Kafka. **Note**:
   - `lr`: Learning rate for the client-side optimizer (SGD). The optimizer is fixed as Stochastic Gradient Descent (SGD) for all clients.
 
 ---
+
+**Note**: We expect a minified JSON 
+(no whitespaces, tabs, newlines, comments, etc.)
