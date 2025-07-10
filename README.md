@@ -34,7 +34,7 @@ building upon the work of
 
 ![alt text](https://github.com/miketheologitis/FDA-Opt-Sys/blob/main/arch.png?raw=true "Project Architecture")
 
-We aim to support the execution of multiple federated learning (FL) jobs, each arriving with its own configuration—such as the number of clients, chosen optimizer, and communication parameters—through a Kafka topic. Each FL job is completely isolated and decoupled from others.
+We aim to support the execution of multiple federated learning (FL) jobs, each arriving with its own configuration—such as the number of clients, chosen optimizer, model name, and many more—through a Kafka topic. Each FL job is completely isolated and decoupled from others.
 
 To coordinate these jobs, we introduce a dedicated orchestrator, called the *mediator*. The mediator is responsible for managing the full lifecycle of every FL job—before, during, and after execution.
 Specifically, the *mediator* process continuously listens to a Kafka topic for incoming JSON messages. Upon receiving one, it:
