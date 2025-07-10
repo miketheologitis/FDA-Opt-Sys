@@ -68,8 +68,8 @@ FDA-Opt-Sys/
 │   └── training.py                        # Training functions with or without FDA
 │
 ├── data/                                  # Data partitioning stuff
-│   ├── save_data.sh                       # Script for partitioning some HuggingFace dataset and saving it
-│   └── /glue/mrpc/*                       # MRPC dataset partitioned in various ways (e.g., between 10 clients or 2 clients)
+│   ├── save_data.py                       # Script for partitioning some HuggingFace dataset and saving it
+│   └── /glue/mrpc/*                       # MRPC dataset partitioned in various ways with `save_data.py` (e.g., between 10 clients or 2 clients)
 │
 ├── hyperparameters/*                      # Hyperparameters in JSON format
 │
