@@ -89,20 +89,28 @@ pip install flwr torch transformers datasets confluent-kafka
 
 ## 🚀 Run 🚀
 
-To launch a federated learning job, all you need to do is start the mediator. Once it’s running, it will continuously listen to a Kafka topic for incoming FL job definitions (in JSON format) and automatically handle their deployment.
+To launch a federated learning job, all you need to do is start the mediator. 
+Once it's running, it will continuously listen to a Kafka topic for incoming FL jobs 
+ (in JSON format) and automatically handle their deployment.
 
-Each job configuration includes everything needed to spin up a complete FL cluster (server and clients). The mediator ensures the entire process—from setup to teardown—is fully automated.
+Each job configuration includes everything needed to spin up a 
+complete FL cluster (server and clients). The mediator ensures the entire 
+process—from setup to teardown—is fully automated.
 
-In the following example, we’ll demonstrate two steps:
+In the following example, we'll demonstrate the two steps:
 
 1. Start the mediator process to listen for FL jobs.
 2. Send FL jobs as JSON configurations to the Kafka topic.
 
 ### 1. Start the Mediator:
 
+We start the mediator entity and let it run in the background:
+
 ```bash
 python mediator.py --cleanup
 ```
+
+Note: the `--cleanup` command instructs the mediator to clean-up logs after it is destroyed/killed by the user.
 
 ### 2. Send JSON files to Kafka
 
@@ -115,6 +123,8 @@ Then, send another JSON, `test_2-minified.json`, with different hyperparameters 
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic  FedL < test_2-minified.json
 ```
 And so on...
+
+Note: we expect a minified JSON (no whitespaces, tabs, newlines, comments, etc.); hence the name!
 
 ## 📰 Read the Logs 📰
 
