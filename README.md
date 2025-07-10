@@ -189,7 +189,7 @@ descriptions that meet any needs.
     - `strategy`: Specifies the federated learning strategy used in Flower.
       - `name`: Name of the strategy (e.g., `"FedAdam"`). See [here](https://flower.ai/docs/framework/ref-api/flwr.server.strategy.html).
       - `fda`: Whether or not to use FDA extention. Either `True` or `False`
-      - `theta`: FDA-Specific and also **Optional** (if `fda` is `True` and this *empty* then we change the value dynamically --- see FDA-Opt paper)
+      - `theta`: FDA-Specific and also **Optional** (if `fda` is `True` and this *empty* then we change the value dynamically—see [paper](https://arxiv.org/abs/2505.04535))
       - **Optional** (All strategy-specific applicable hyperparameters from [here](https://flower.ai/docs/framework/ref-api/flwr.server.strategy.html)):
          - e.g., `eta`: Server-side learning rate hyperparameter.
 
